@@ -31,7 +31,7 @@ export function Login() {
   const onSubmit = e => {
       e.preventDefault();
       if(email != "" && password != "") {
-        fetch('http://localhost:8000/authUser', options)
+        fetch('https://back-phi4free.vercel.app/authUser', options)
         .then((response) => {
             response.json().then((data) => {
                 if(data.auth) {
