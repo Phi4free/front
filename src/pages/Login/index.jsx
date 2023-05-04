@@ -1,6 +1,7 @@
 import { Container, Img, Form, Input, Button } from './styles'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
+import logo from '../../assets/logo.png';
 
 export function Login() {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ export function Login() {
     <Container>
       <Img></Img>
       <Form>
-        <img src="src\assets\logo.png" />
+        <img src={logo} alt='Logo' />
         <Input
           placeholder='E-mail'
           type="email"
