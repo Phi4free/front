@@ -13,6 +13,7 @@ p{
 
 input:focus{
     outline: none;
+    color: #0F0F0F;
 }
 
 button:hover{

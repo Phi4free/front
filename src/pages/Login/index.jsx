@@ -37,6 +37,10 @@ export function Login() {
       setPassword(e.target.value);
   };
 
+  const handleForgotPassword = () => {
+    console.log("Esqueceu a senha? Vamos recuperá-la... (Trabalhando nisso)")
+  }
+
   const onSubmit = e => {
       e.preventDefault();
       isLoading(true);
@@ -83,17 +87,28 @@ export function Login() {
           id="pass-login"
           onInput={handlePassword}
         ></Input>
-        <LinkText>Esqueci a senha</LinkText>
+        <LinkText 
+        onClick={handleForgotPassword}>
+        Esqueci a senha
+        </LinkText>
         {erros != null ? <Erro>{erros}</Erro>  : loading ? <Loading/> : null}
         <Button
           onClick={onSubmit}
         >ENTRAR</Button>
-        <p>Não tem uma conta? <LinkText>Faça o cadastro</LinkText></p>
+        <p>Não tem uma conta? <LinkText onClick={() => console.log("Deve abrir /cadastro")}>Faça o cadastro</LinkText></p>
 
-        <RodapeTermos>Ao fazer login, você concorda com os  
-          <LinkText> Termos de Uso </LinkText> e 
-          <LinkText> Política de Privacidade </LinkText>
-          da plataforma.</RodapeTermos>
+        <RodapeTermos>
+          Ao fazer login, você concorda com os  
+          <LinkText 
+          onClick={() => console.log("Deve abrir /termos")}>
+          {" "}Termos de Uso{" "}
+          </LinkText> e 
+          <LinkText 
+          onClick={() => console.log("Deve abrir /privacidade")}> 
+          {" "}Política de Privacidade{" "}
+          </LinkText>
+          da plataforma.
+          </RodapeTermos>
       </Form>
     </Container>
   )
