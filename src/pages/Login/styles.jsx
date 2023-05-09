@@ -4,17 +4,21 @@ export const Container = styled.div `
   display: flex;
 `
 
-export const Img = styled.div `
-  width: 50%;
+export const ImgCover = styled.div `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
   height: 100vh;
-  background-image: url(https://images.pexels.com/photos/3747474/pexels-photo-3747474.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-image: url(https://images.pexels.com/photos/3747474/pexels-photo-3747474.jpeg?auto=compress&cs=tinysrgb&w=600, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 export const Form = styled.div `
-  width: 50%;
-  background-color: #0c0c0c;
+  width: 45%;
+  background-color: white;
+  opacity: 0.9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,21 +26,41 @@ export const Form = styled.div `
 `
 
 export const Input = styled.input `
-  height: 30px;
-  width: 350px;
-  padding: 10px;
-  margin: 20px;
-  font-size: 20px;
+width: 80%;
+padding: 3%;
+font-size: 100%;
+border-radius: 2vh;
+border: solid #0F0F0F;
+background-color: white;
+color: black;
 `
 
 export const Button = styled.button `
-  background-color: #FCFE0C;
+  background-color: #FFC300;
   color: #000;
-  border: 0px;
-  border-radius: 50px;
-  width: 380px;
-  padding: 15px;
-  margin: 30px;
-  font-size: 20px;
+  width: 87%;
+  margin-top: 8%;
+  padding: 3%;
+  font-size: 100%;
+  border-radius: 2vh;
+  border: solid black;
   font-weight: 600;
+`
+
+export const Erro = styled.a `
+  color: #9F0000;
+`
+
+export const LabelTitulo = styled.h2 `
+  color: #000814;
+`
+
+export const LabelInput = styled.p `
+  color: #0F0F0F;
+  display: flex;
+  width: 87%;
+  font-weight: 600;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  
 `
