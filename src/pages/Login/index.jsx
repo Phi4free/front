@@ -1,4 +1,5 @@
 import { Container, ImgCover, Form, Input, Button, Erro, LabelTitulo, LabelInput} from './styles'
+import './styleComponents.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useNavigate } from "react-router-dom"
@@ -78,10 +79,13 @@ export function Login() {
           onInput={handlePassword}
         ></Input>
         {erros != null ? <Erro>{erros}</Erro>  : null}
-        <Button
-          id='submit-btn'
+        <button 
+        onClick={onSubmit}>
+          Login
+        </button>
+        {/* <Button
           onClick={onSubmit}
-        >Login</Button>
+        >Login</Button> */}
       </Form>
     </Container>
   )
