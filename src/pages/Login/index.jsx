@@ -66,7 +66,7 @@ export function Login() {
     <Container>
       <ImgCover>
         <div>
-          <img style={{position:'relative'}} src={logoAlt} alt='Logo' />
+          <img id='logo' src={logoAlt} alt='Logo' />
         </div>
       </ImgCover>
       <Form>

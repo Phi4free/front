@@ -1,6 +1,5 @@
-button:hover{
-    background-color: #000814;
-    color:#FFC300
+#logo{
+    position: relative;
 }
 
 a{
@@ -10,6 +9,15 @@ a{
 
 p{
     color: #0F0F0F;
+}
+
+input:focus{
+    outline: none;
+}
+
+button:hover{
+    background-color: #000814;
+    color:#FFC300
 }
 
 @keyframes spin {

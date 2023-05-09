@@ -57,7 +57,7 @@ export const Button = styled.button `
   border: solid black;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.5s, color 0.5s;
 `
 
 export const Erro = styled.a `
