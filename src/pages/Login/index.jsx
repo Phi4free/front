@@ -66,21 +66,19 @@ export function Login() {
     <Container>
       <ImgCover>
         <div>
-          <img style={{zIndex:2}} src={logoAlt} alt='Logo' />
+          <img style={{position:'relative'}} src={logoAlt} alt='Logo' />
         </div>
       </ImgCover>
       <Form>
         <LabelTitulo>ENTRAR COMO ESTUDANTE</LabelTitulo>
         <LabelInput>Email:</LabelInput>
         <Input
-          placeholder='E-mail'
           type="email"
           id="email-login"
           onInput={handleEmail}
         ></Input>
-        <LabelInput>Digite sua senha:</LabelInput>
+        <LabelInput>Senha:</LabelInput>
         <Input
-          placeholder='Senha'
           type="password"
           id="pass-login"
           onInput={handlePassword}
@@ -90,7 +88,7 @@ export function Login() {
         <Button
           onClick={onSubmit}
         >ENTRAR</Button>
-        <a style={{color:'black'}}>Não tem uma conta? </a><LinkText>Faça o cadastro</LinkText>
+        <p>Não tem uma conta? <LinkText>Faça o cadastro</LinkText></p>
 
         <RodapeTermos>Ao fazer login, você concorda com os  
           <LinkText> Termos de Uso </LinkText> e 
