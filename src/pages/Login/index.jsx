@@ -1,5 +1,5 @@
 import { Container, ImgCover, Form, Input, Button,
-Erro, LabelTitulo, LabelInput, RodapeTermos, LinkText} from './styles'
+Erro, LabelTitulo, LabelInput, RodapeTermos, LinkText, Loading} from './styles'
 import './styleComponents.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,6 +11,7 @@ import logoAlt from '../../assets/logoalt.png'
 export function Login() {
   const navigate = useNavigate();
   const [erros, setErros] = useState(null);
+  const [loading, isLoading] = useState(false);
 
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
@@ -38,6 +39,8 @@ export function Login() {
 
   const onSubmit = e => {
       e.preventDefault();
+      isLoading(true);
+      setErros(null);
       if(email != "" && password != "") {
         fetch('https://back-phi4free.vercel.app/authUser', options)
         .then((response) => {
@@ -45,14 +48,17 @@ export function Login() {
                 if(data.auth) {
                     localStorage.setItem("token", data.token);
                     setErros(null)
+                    isLoading(false)
                     navigate('/landing-page');
                 } else {
+                  isLoading(false)
                   setErros("Email ou senha inválidos");
                 }
             });
         });
       } else {
-        setErros("Preencha todos os campos para efetuar o login");
+        isLoading(false)
+        setErros("Preencha todos os campos para efetuar o login")
       }
   }
 
@@ -80,7 +86,7 @@ export function Login() {
           onInput={handlePassword}
         ></Input>
         <LinkText>Esqueci a senha</LinkText>
-        {erros != null ? <Erro>{erros}</Erro>  : null}
+        {erros != null ? <Erro>{erros}</Erro>  : loading ? <Loading/> : null}
         <Button
           onClick={onSubmit}
         >ENTRAR</Button>

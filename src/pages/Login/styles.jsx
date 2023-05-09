@@ -18,7 +18,6 @@ export const ImgCover = styled.div `
 export const Form = styled.div `
   width: 45%;
   background-color: white;
-  opacity: 0.9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,12 +38,13 @@ export const Button = styled.button `
   background-color: #FFC300;
   color: #000;
   width: 87%;
-  margin-top: 8%;
+  margin-top: 2%;
   padding: 3%;
   font-size: 100%;
   border-radius: 2vh;
   border: solid black;
   font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
 `
 
@@ -73,5 +73,15 @@ export const RodapeTermos = styled.p `
 `
 
 export const LinkText = styled.a `
-  color: #003566
+  color: #003566;
+  cursor: pointer;
+`
+
+export const Loading = styled.div `
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #003566;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
 `
