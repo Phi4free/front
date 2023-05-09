@@ -1,17 +1,10 @@
-button {
-    background-color: #FFC300;
-    color: #000;
-    width: 87%;
-    margin-top: 8%;
-    padding: 3%;
-    font-size: 100%;
-    border-radius: 2vh;
-    border: solid black;
-    font-weight: 600;
-    transition: background-color 0.2s, color 0.2s;
-}
-
 button:hover{
     background-color: #000814;
     color:#FFC300
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+    display: block;
+    }
 }

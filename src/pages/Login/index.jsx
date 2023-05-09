@@ -1,4 +1,5 @@
-import { Container, ImgCover, Form, Input, Button, Erro, LabelTitulo, LabelInput} from './styles'
+import { Container, ImgCover, Form, Input, Button,
+Erro, LabelTitulo, LabelInput, RodapeTermos, LinkText} from './styles'
 import './styleComponents.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -51,7 +52,7 @@ export function Login() {
             });
         });
       } else {
-        setErros("Preencha os campos de email e senha para efetuar o login");
+        setErros("Preencha todos os campos para efetuar o login");
       }
   }
 
@@ -78,14 +79,17 @@ export function Login() {
           id="pass-login"
           onInput={handlePassword}
         ></Input>
+        <LinkText>Esqueci a senha</LinkText>
         {erros != null ? <Erro>{erros}</Erro>  : null}
-        <button 
-        onClick={onSubmit}>
-          Login
-        </button>
-        {/* <Button
+        <Button
           onClick={onSubmit}
-        >Login</Button> */}
+        >ENTRAR</Button>
+        <a style={{color:'black'}}>Não tem uma conta? </a><LinkText>Faça o cadastro</LinkText>
+
+        <RodapeTermos>Ao fazer login, você concorda com os  
+          <LinkText> Termos de Uso </LinkText> e 
+          <LinkText> Política de Privacidade </LinkText>
+          da plataforma.</RodapeTermos>
       </Form>
     </Container>
   )

@@ -45,6 +45,7 @@ export const Button = styled.button `
   border-radius: 2vh;
   border: solid black;
   font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
 `
 
 export const Erro = styled.a `
@@ -62,5 +63,15 @@ export const LabelInput = styled.p `
   font-weight: 600;
   margin-top: 4%;
   margin-bottom: 2%;
-  
+`
+export const RodapeTermos = styled.p `
+  color: #0F0F0F;
+  font-size: smaller;
+  text-align: center;
+  padding-top: 4%;
+  margin: 0% 16%;
+`
+
+export const LinkText = styled.a `
+  color: #003566
 `
