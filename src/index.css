@@ -18,6 +18,11 @@ body {
   color: aliceblue;
 }
 
+button:hover{
+  background-color: #000814;
+  color:#C880B7;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
