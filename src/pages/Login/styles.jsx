@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div `
+  height: 100%;
   display: flex;
 `
 
@@ -14,7 +15,6 @@ export const ContainerInput = styled.div `
 
 export const ImgCover = styled.div `
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 55%;
@@ -32,15 +32,25 @@ export const ImgCover = styled.div `
     background-size: cover;
     opacity: 0.5;
   }
+
+  display:none;
+  @media only screen and (min-width: 768px) {
+    display: flex;
+  }
 `
 
 export const Form = styled.div `
-  width: 45%;
+  width: 100%;
+  height: 100%;
   background-color: #1A1A1A;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 768px) {
+    width: 45%;
+  }
 `
 
 export const LabelTitulo = styled.h2 `

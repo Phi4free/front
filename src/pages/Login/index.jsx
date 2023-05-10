@@ -87,6 +87,7 @@ export function Login() {
                 </div>
             </ImgCover>
             <Form>
+                <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
                 <LabelTitulo>ENTRAR COMO ESTUDANTE</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
