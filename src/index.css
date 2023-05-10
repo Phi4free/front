@@ -1,8 +1,8 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  /* color-scheme: light dark; */
-  background-color: #242424;
+  color-scheme: light dark;
+  background-color: #1A1A1A;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,6 +15,7 @@ body {
   margin: 0;
   border: 0;
   padding: 0;
+  color: aliceblue;
 }
 
 @media (prefers-color-scheme: light) {

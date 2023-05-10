@@ -4,6 +4,14 @@ export const Container = styled.div `
   display: flex;
 `
 
+export const ContainerInput = styled.div `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: 2%;
+`
+
 export const ImgCover = styled.div `
   position: relative;
   display: flex;
@@ -28,7 +36,7 @@ export const ImgCover = styled.div `
 
 export const Form = styled.div `
   width: 45%;
-  background-color: white;
+  background-color: #1A1A1A;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,9 +48,10 @@ width: 80%;
 padding: 3%;
 font-size: 100%;
 margin-bottom: 2%;
-border-radius: 2vh;
-border: solid #0F0F0F;
-background-color: white;
+border-radius: 1vh;
+border-width: 2px;
+border: solid aliceblue;
+background-color: transparent;
 color: black;
 `
 
@@ -66,7 +75,7 @@ export const Erro = styled.a `
 `
 
 export const LabelTitulo = styled.h2 `
-  color: #000814;
+  padding: 2%;
 `
 
 export const LabelInput = styled.p `
@@ -75,6 +84,7 @@ export const LabelInput = styled.p `
   font-weight: 600;
   margin-bottom: 2%;
 `
+
 export const RodapeTermos = styled.p `
   font-size: smaller;
   text-align: center;
@@ -83,13 +93,13 @@ export const RodapeTermos = styled.p `
 `
 
 export const LinkText = styled.a `
-  color: #003566;
+  color: #C880B7;
   cursor: pointer;
 `
 
 export const Loading = styled.div `
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #003566;
+  border-top: 4px solid #C880B7;
   border-radius: 50%;
   width: 20px;
   height: 20px;

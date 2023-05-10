@@ -8,12 +8,12 @@ a{
 }
 
 p{
-    color: #0F0F0F;
+    /* color: #0F0F0F; */
 }
 
 input:focus{
     outline: none;
-    color: #0F0F0F;
+    /* color: #0F0F0F; */
 }
 
 button:hover{
