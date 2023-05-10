@@ -43,47 +43,8 @@ export const Form = styled.div `
   align-items: center;
 `
 
-export const Input = styled.input `
-width: 80%;
-padding: 3%;
-font-size: 100%;
-margin-bottom: 2%;
-border-radius: 1vh;
-border-width: 2px;
-border: solid aliceblue;
-background-color: transparent;
-color: black;
-`
-
-export const Button = styled.button `
-  background-color: #FFC300;
-  color: #000;
-  width: 87%;
-  margin-top: 6%;
-  padding: 3%;
-  font-size: 100%;
-  border-radius: 2vh;
-  border: solid black;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.5s, color 0.5s;
-`
-
-export const Erro = styled.a `
-  color: #EF2F3A;
-  padding: 1%;
-  font-weight: 600;
-`
-
 export const LabelTitulo = styled.h2 `
   padding: 2%;
-`
-
-export const LabelInput = styled.p `
-  display: flex;
-  width: 87%;
-  font-weight: 600;
-  margin-bottom: 2%;
 `
 
 export const RodapeTermos = styled.p `
@@ -96,13 +57,4 @@ export const RodapeTermos = styled.p `
 export const LinkText = styled.a `
   color: #C880B7;
   cursor: pointer;
-`
-
-export const Loading = styled.div `
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #C880B7;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
 `

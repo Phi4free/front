@@ -10,9 +10,9 @@ export default function DinamicInput(props) {
     const [_type, setType] = useState(type);
 
     useEffect(() => {
-        if (visivel) {
+        if (visivel && type == "password") {
             setType("text");
-        } else {
+        } else if (type == "password") {
             setType("password");
         }
     });
@@ -27,25 +27,27 @@ export default function DinamicInput(props) {
                 placeholder=" "
             />
             <span className="input__label">{label}</span>
-            <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
                 {type == "password" ? (
                     visivel ? (
+                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye",
                                 style: "solid",
                             })}
                         />
+                        </span>
                     ) : (
+                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye-slash",
                                 style: "solid",
                             })}
                         />
+                        </span>
                     )
                 ) : null}
-            </span>
         </label>
     );
 }
