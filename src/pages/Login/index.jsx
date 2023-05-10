@@ -2,6 +2,7 @@ import { Container, ImgCover, Form, Input, Button,
 Erro, LabelTitulo, LabelInput, RodapeTermos, LinkText, Loading} from './styles'
 import './styleComponents.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
@@ -91,7 +92,18 @@ export function Login() {
         onClick={handleForgotPassword}>
         Esqueci a senha
         </LinkText>
-        {erros != null ? <Erro>{erros}</Erro>  : loading ? <Loading/> : null}
+        {erros != null ? <Erro>{
+          <>
+          <FontAwesomeIcon
+          icon={icon({
+          name: "circle-exclamation",
+          style: "solid",
+          })}
+        />
+        {" "}
+        {erros}
+        </>
+        }</Erro>  : loading ? <Loading/> : null}
         <Button
           onClick={onSubmit}
         >ENTRAR</Button>

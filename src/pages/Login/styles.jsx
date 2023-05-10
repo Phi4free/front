@@ -19,7 +19,7 @@ export const ImgCover = styled.div `
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-image: url(https://images.pexels.com/photos/3747474/pexels-photo-3747474.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-image: url(https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.5;
