@@ -3,24 +3,21 @@ import {
     ContainerInput,
     ImgCover,
     Form,
-    Input,
-    Button,
     Erro,
     LabelTitulo,
-    LabelInput,
     RodapeTermos,
     LinkText,
-    Loading,
 } from "./styles";
 import DinamicInput from "../../components/DinamicInput";
+import { Loading } from "../../components/Loading/styles";
 import "./styleComponents.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
+
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logo from "../../assets/logo.png";
 import logoAlt from "../../assets/logoalt.png";
+import PrimaryButton from "../../components/PrimaryButton";
+import ErroText from "../../components/ErroText";
 
 export function Login() {
     const navigate = useNavigate();
@@ -112,23 +109,16 @@ export function Login() {
                     Esqueci a senha
                 </LinkText>
                 {erros != null ? (
-                    <Erro>
-                        {
-                            <>
-                                <FontAwesomeIcon
-                                    icon={icon({
-                                        name: "circle-exclamation",
-                                        style: "solid",
-                                    })}
-                                />{" "}
-                                {erros}
-                            </>
-                        }
-                    </Erro>
+                  
+                    <ErroText iconName="circle-exclamation" label={erros}/>
+                    
                 ) : loading ? (
-                    <Loading />
+                    <Loading/>
                 ) : null}
-                <Button onClick={onSubmit}>ENTRAR</Button>
+                <ContainerInput>
+                  <PrimaryButton label="ENTRAR" onClick={onSubmit}/>
+                </ContainerInput>
+                
                 <p>
                     Não tem uma conta?{" "}
                     <LinkText

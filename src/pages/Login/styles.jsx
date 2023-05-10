@@ -70,7 +70,8 @@ export const Button = styled.button `
 `
 
 export const Erro = styled.a `
-  color: #9F0000;
+  color: #EF2F3A;
+  padding: 1%;
   font-weight: 600;
 `
 
