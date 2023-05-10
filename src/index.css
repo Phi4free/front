@@ -23,6 +23,11 @@ button:hover{
   color:#C880B7;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
