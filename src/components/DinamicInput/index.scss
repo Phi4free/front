@@ -62,7 +62,7 @@ mark {
         position: absolute;
         left: 0;
         top: 0;
-        padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+        padding: 1%;
         margin: calc(var(--size-bezel) * 0.75 + 3px)
             calc(var(--size-bezel) * 0.5);
         background: pink;
@@ -125,4 +125,21 @@ button + button {
 
 .hidden {
     display: none;
+}
+
+.alinha_fim{
+    position: absolute;
+        right: 0;
+        top: 0;
+        padding: 1%;
+        margin: calc(var(--size-bezel) * 0.75 + 3px)
+            calc(var(--size-bezel) * 0.5);
+        background: pink;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        background: var(--color-background);
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
 }

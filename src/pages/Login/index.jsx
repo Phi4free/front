@@ -3,7 +3,6 @@ import {
     ContainerInput,
     ImgCover,
     Form,
-    Erro,
     LabelTitulo,
     RodapeTermos,
     LinkText,
@@ -11,8 +10,8 @@ import {
 import DinamicInput from "../../components/DinamicInput";
 import { Loading } from "../../components/Loading/styles";
 import "./styleComponents.css";
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logoAlt from "../../assets/logoalt.png";
@@ -90,35 +89,33 @@ export function Login() {
             <Form>
                 <LabelTitulo>ENTRAR COMO ESTUDANTE</LabelTitulo>
                 <ContainerInput>
-                    <DinamicInput 
-                    type="email"
-                    id="email-login"
-                    onInput={handleEmail}
-                    label="Email:" 
+                    <DinamicInput
+                        type="email"
+                        id="email-login"
+                        onInput={handleEmail}
+                        label="Email:"
                     />
                 </ContainerInput>
                 <ContainerInput>
-                    <DinamicInput 
-                    type="password"
-                    id="pass-login"
-                    onInput={handlePassword}
-                    label="Senha:" 
+                    <DinamicInput
+                        type="password"
+                        id="pass-login"
+                        onInput={handlePassword}
+                        label="Senha:"
                     />
                 </ContainerInput>
                 <LinkText onClick={handleForgotPassword}>
                     Esqueci a senha
                 </LinkText>
                 {erros != null ? (
-                  
-                    <ErroText iconName="circle-exclamation" label={erros}/>
-                    
+                    <ErroText iconName="circle-exclamation" label={erros} />
                 ) : loading ? (
-                    <Loading/>
+                    <Loading />
                 ) : null}
                 <ContainerInput>
-                  <PrimaryButton label="ENTRAR" onClick={onSubmit}/>
+                    <PrimaryButton label="ENTRAR" onClick={onSubmit} />
                 </ContainerInput>
-                
+
                 <p>
                     Não tem uma conta?{" "}
                     <LinkText
