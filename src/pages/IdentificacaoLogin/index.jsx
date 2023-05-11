@@ -26,10 +26,10 @@ export function LoginIdentificacao() {
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
                 <LabelTitulo>BEM-VINDO(A) DE VOLTA!</LabelTitulo>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR COMO ESTUDANTE" onClick={() => navigate("/login-estudante")} />
+                    <PrimaryButton label="ENTRAR COMO ESTUDANTE" onClick={() => navigate('/login-estudante')} />
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR COMO PROFESSOR" onClick={() => console.log("Deve navegar para login professor")} />
+                    <PrimaryButton label="ENTRAR COMO PROFESSOR" onClick={() => navigate('/login-professor' )} />
                 </ContainerInput>
 
                 <p>
