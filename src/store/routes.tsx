@@ -8,11 +8,13 @@ import {
 
 import { LandingPage } from '../pages/LandingPage'
 import { Login } from '../pages/Login'
+import { LoginIdentificacao } from '../pages/IdentificacaoLogin';
 
 export function AppRoutes () {
   return (
     <Routes>
-      <Route path='/' element={<Login />}></Route>
+      <Route path='/' element={<LoginIdentificacao />}></Route>
+      <Route path='/login-estudante' element={<Login />}></Route>
       <Route path='/landing-page' element={<LandingPage />}></Route>
     </Routes>
   )

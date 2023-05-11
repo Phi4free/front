@@ -1,0 +1,9 @@
+#logo{
+    position: relative;
+}
+
+.degrade{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,1));
+}

@@ -28,9 +28,10 @@ export const ImgCover = styled.div `
     bottom: 0px;
     left: 0px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(107, 0, 173, 0.3)),
-    url(https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    url(https://images.pexels.com/photos/1925533/pexels-photo-1925533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
+
   }
 
   display:none;
