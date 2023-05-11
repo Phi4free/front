@@ -58,7 +58,6 @@ export function LoginProfessor() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        if (email != "" && password != "") {
             fetch(BASE_URL + "authUser", options).then(
                 (response) => {
                     response.json().then((data) => {
@@ -79,10 +78,6 @@ export function LoginProfessor() {
                 console.log(error.message)
                 }
             )
-        } else {
-            isLoading(false);
-            setErros("Preencha todos os campos para efetuar o login");
-        }
     };
 
     return (

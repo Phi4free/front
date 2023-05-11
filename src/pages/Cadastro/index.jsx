@@ -24,6 +24,7 @@ export function Cadastro() {
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
 
+    let [nome, setNome] = useState("");
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
 
@@ -33,9 +34,15 @@ export function Cadastro() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
+            nome: nome,
             email: email,
             senha: password,
         }),
+    };
+
+    const handleNome = (e) => {
+        e.preventDefault();
+        setNome(e.target.value);
     };
 
     const handleEmail = (e) => {
@@ -48,18 +55,20 @@ export function Cadastro() {
         setPassword(e.target.value);
     };
 
-    const handleForgotPassword = () => {
-        console.log(
-            "Esqueceu a senha? Vamos recuperá-la... (Trabalhando nisso)"
-        );
+    const handleConfirmPassword = (e) => {
+        e.preventDefault();
+        if(e.target.value != password){
+            setErros("As senhas são diferentes");
+        } else {
+            setErros(null);
+        }
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        if (email != "" && password != "") {
-            fetch(BASE_URL + "authUser", options).then(
+            fetch(BASE_URL + "criarPerfil", options).then(
                 (response) => {
                     response.json().then((data) => {
                         if (data.auth) {
@@ -69,7 +78,7 @@ export function Cadastro() {
                             navigate("/landing-page");
                         } else {
                             isLoading(false);
-                            setErros("Email ou senha inválidos");
+                            setErros("Erro de validação (especificar)");
                         }
                     });
                 }
@@ -79,10 +88,6 @@ export function Cadastro() {
                 console.log(error.message)
                 }
             )
-        } else {
-            isLoading(false);
-            setErros("Preencha todos os campos para efetuar o login");
-        }
     };
 
     return (
@@ -97,8 +102,16 @@ export function Cadastro() {
                 <LabelTitulo>CRIAR CONTA DE ESTUDANTE</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
+                        type="text"
+                        id="nome"
+                        onInput={handleNome}
+                        label="Nome Completo:"
+                    />
+                </ContainerInput>
+                <ContainerInput>
+                    <DinamicInput
                         type="email"
-                        id="email-login"
+                        id="email-cadastro"
                         onInput={handleEmail}
                         label="Email:"
                     />
@@ -106,14 +119,19 @@ export function Cadastro() {
                 <ContainerInput>
                     <DinamicInput
                         type="password"
-                        id="pass-login"
+                        id="pass-cadastro"
                         onInput={handlePassword}
                         label="Senha:"
                     />
                 </ContainerInput>
-                <LinkText onClick={handleForgotPassword}>
-                    Esqueci a senha
-                </LinkText>
+                <ContainerInput>
+                    <DinamicInput
+                        type="password"
+                        id="pass-confirm-cadastro"
+                        onInput={handleConfirmPassword}
+                        label="Confirme a senha:"
+                    />
+                </ContainerInput>
                 <ContainerInput>
                 {erros != null ? (
                     <ErroText iconName="circle-exclamation" label={erros} />
@@ -122,7 +140,7 @@ export function Cadastro() {
                 ) : null}
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR" onClick={onSubmit} />
+                    <PrimaryButton label="CRIAR CONTA" onClick={onSubmit} />
                 </ContainerInput>
 
                 <p>
@@ -135,7 +153,7 @@ export function Cadastro() {
                 </p>
 
                 <RodapeTermos>
-                    Ao fazer login, você concorda com os
+                    Ao fazer cadastro, você concorda com os
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
                         {" "}
                         Termos de Uso{" "}

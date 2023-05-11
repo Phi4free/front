@@ -26,7 +26,7 @@ export function CadastroIdentificacao() {
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
                 <LabelTitulo>CRIE UMA CONTA E MERGULHE EM CONHECIMENTO DE QUALIDADE!</LabelTitulo>
                 <ContainerInput>
-                    <PrimaryButton label="ESTUDANTE - QUERO APRENDER" onClick={() => navigate('/criarPerfil')} />
+                    <PrimaryButton label="ESTUDANTE - QUERO APRENDER" onClick={() => navigate('/cadastro-estudante')} />
                 </ContainerInput>
                 <ContainerInput>
                     <PrimaryButton label="PROFESSOR - QUERO ENSINAR" onClick={() => navigate('/login-professor' )} />
@@ -42,7 +42,7 @@ export function CadastroIdentificacao() {
                 </p>
 
                 <RodapeTermos>
-                    Ao fazer login, você concorda com os
+                    Ao fazer cadastro, você concorda com os
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
                         {" "}
                         Termos de Uso{" "}
