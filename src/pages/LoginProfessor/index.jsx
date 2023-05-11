@@ -17,6 +17,7 @@ import { useState } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
+import { BASE_URL } from "../../services/api";
 
 export function LoginProfessor() {
     const navigate = useNavigate();
@@ -58,7 +59,7 @@ export function LoginProfessor() {
         isLoading(true);
         setErros(null);
         if (email != "" && password != "") {
-            fetch("https://back-phi4free.vercel.app/authUser", options).then(
+            fetch(BASE_URL + "authUser", options).then(
                 (response) => {
                     response.json().then((data) => {
                         if (data.auth) {
@@ -72,7 +73,12 @@ export function LoginProfessor() {
                         }
                     });
                 }
-            );
+            ).catch(
+                (error) => {
+                setErros("Ocorreu um erro ao efetuar o login. Por favor, tente novamente mais tarde")
+                console.log(error.message)
+                }
+            )
         } else {
             isLoading(false);
             setErros("Preencha todos os campos para efetuar o login");
@@ -108,11 +114,15 @@ export function LoginProfessor() {
                 <LinkText onClick={handleForgotPassword}>
                     Esqueci a senha
                 </LinkText>
+                <ContainerInput>
+                <ContainerInput>
                 {erros != null ? (
                     <ErroText iconName="circle-exclamation" label={erros} />
                 ) : loading ? (
                     <Loading />
                 ) : null}
+                </ContainerInput>
+                </ContainerInput>
                 <ContainerInput>
                     <PrimaryButton label="ENTRAR" onClick={onSubmit} />
                 </ContainerInput>
