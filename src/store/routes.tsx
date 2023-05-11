@@ -12,6 +12,7 @@ import { LoginProfessor } from '../pages/LoginProfessor';
 import { LoginIdentificacao } from '../pages/IdentificacaoLogin';
 import { CadastroIdentificacao } from '../pages/IdentificacaoCadastro';
 import { Cadastro } from '../pages/Cadastro';
+import { CadastroProfessor } from '../pages/CadastroProfessor';
 
 export function AppRoutes () {
   return (
@@ -19,6 +20,7 @@ export function AppRoutes () {
       <Route path='/' element={<LoginIdentificacao />}></Route>
       <Route path='/cadastro' element={<CadastroIdentificacao/>}></Route>
       <Route path='/cadastro-estudante' element={<Cadastro/>}></Route>
+      <Route path='/cadastro-professor' element={<CadastroProfessor/>}></Route>
       <Route path='/login-estudante' element={<Login />}></Route>
       <Route path='/login-professor' element={<LoginProfessor />}></Route>
       <Route path='/landing-page' element={<LandingPage />}></Route>

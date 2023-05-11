@@ -29,7 +29,7 @@ export function CadastroIdentificacao() {
                     <PrimaryButton label="ESTUDANTE - QUERO APRENDER" onClick={() => navigate('/cadastro-estudante')} />
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="PROFESSOR - QUERO ENSINAR" onClick={() => navigate('/login-professor' )} />
+                    <PrimaryButton label="PROFESSOR - QUERO ENSINAR" onClick={() => navigate('/cadastro-professor' )} />
                 </ContainerInput>
 
                 <p>
