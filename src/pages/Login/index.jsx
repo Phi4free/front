@@ -120,7 +120,7 @@ export function Login() {
                 <p>
                     Não tem uma conta?{" "}
                     <LinkText
-                        onClick={() => console.log("Deve abrir /cadastro")}
+                        onClick={() => navigate('/cadastro')}
                     >
                         Faça o cadastro
                     </LinkText>

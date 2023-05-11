@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 
-export function LoginIdentificacao() {
+export function CadastroIdentificacao() {
     const navigate = useNavigate();
 
     return (
@@ -24,20 +24,20 @@ export function LoginIdentificacao() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>BEM-VINDO(A) DE VOLTA!</LabelTitulo>
+                <LabelTitulo>CRIE UMA CONTA E MERGULHE EM CONHECIMENTO DE QUALIDADE!</LabelTitulo>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR COMO ESTUDANTE" onClick={() => navigate('/login-estudante')} />
+                    <PrimaryButton label="ESTUDANTE - QUERO APRENDER" onClick={() => navigate('/login-estudante')} />
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR COMO PROFESSOR" onClick={() => navigate('/login-professor' )} />
+                    <PrimaryButton label="PROFESSOR - QUERO ENSINAR" onClick={() => navigate('/login-professor' )} />
                 </ContainerInput>
 
                 <p>
-                    Não tem uma conta?{" "}
+                    Já tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/cadastro')}
+                        onClick={() => navigate('/')}
                     >
-                        Faça o cadastro
+                        Faça o login
                     </LinkText>
                 </p>
 

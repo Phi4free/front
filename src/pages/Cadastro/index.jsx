@@ -18,7 +18,7 @@ import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
 
-export function LoginProfessor() {
+export function Cadastro() {
     const navigate = useNavigate();
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
@@ -88,7 +88,7 @@ export function LoginProfessor() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>ENTRAR COMO PROFESSOR</LabelTitulo>
+                <LabelTitulo>CRIAR CONTA DE ESTUDANTE</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
@@ -118,11 +118,11 @@ export function LoginProfessor() {
                 </ContainerInput>
 
                 <p>
-                    Não tem uma conta?{" "}
+                    Já tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/cadastro')}
+                        onClick={() => navigate('/')}
                     >
-                        Faça o cadastro
+                        Faça o login
                     </LinkText>
                 </p>
 
