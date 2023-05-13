@@ -75,7 +75,7 @@ export function Cadastro() {
                             localStorage.setItem("token", data.token);
                             setErros(null);
                             isLoading(false);
-                            navigate("/landing-page");
+                            navigate("/home");
                         } else {
                             isLoading(false);
                             setErros("Erro de validação (especificar)");

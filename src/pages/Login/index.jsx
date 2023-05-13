@@ -65,7 +65,7 @@ export function Login() {
                             localStorage.setItem("token", data.token);
                             setErros(null);
                             isLoading(false);
-                            navigate("/landing-page");
+                            navigate("/home");
                         } else {
                             isLoading(false);
                             setErros("Email ou senha inválidos");

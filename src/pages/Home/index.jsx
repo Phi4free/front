@@ -1,9 +1,9 @@
 import { Container } from './styles'
 
-export function LandingPage() {
+export function Home() {
   return (
     <Container>
-      <h1>Landing Page</h1>
+      <h1>Login realizado com sucesso, aqui será a Home</h1>
     </Container>
   )
 }
