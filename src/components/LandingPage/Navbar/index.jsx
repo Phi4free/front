@@ -1,15 +1,34 @@
 import { useState } from "react";
 
-import { close, logo, menu } from "../../assets/LandingPage";
-import { navLinks } from "../../mocks";
+import { close, menu } from "../../../assets/LandingPage";
+import logo from "../../../assets/logo.png";
+import { ButtonLogin, ButtonRegister } from './styles'
 
-const Navbar = () => {
+export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const navLinks = [
+    {
+      id: "home",
+      title: "Home",
+    },
+    {
+      id: "features",
+      title: "Features",
+    },
+    {
+      id: "product",
+      title: "Product",
+    },
+    {
+      id: "clients",
+      title: "Clients",
+    },
+  ];
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
+      <img src={logo} alt="Phi4free" className="w-[124px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -23,6 +42,18 @@ const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
+        <li
+          className={`font-normal cursor-pointer text-[16px]`}
+          onClick={() => console.log("Aluno")}
+        >
+          <ButtonLogin type="button">Login</ButtonLogin>
+        </li>
+        <li
+          className={`font-normal cursor-pointer text-[16px]`}
+          onClick={() => console.log("Professor")}
+        >
+          <ButtonRegister type="button">Cadastre-se</ButtonRegister>
+        </li>
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -55,6 +86,4 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
