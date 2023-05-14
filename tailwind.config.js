@@ -4,10 +4,10 @@ export const mode = "jit";
 export const theme = {
   extend: {
     colors: {
-      primary: "#00040f",
-      secondary: "#00f6ff",
+      primary: "#ffc300",
+      secondary: "#C880B7",
       dimWhite: "rgba(255, 255, 255, 0.7)",
-      dimBlue: "rgba(9, 151, 124, 0.1)",
+      dimYellow: "rgba(255, 195, 0, 0.1)",
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
