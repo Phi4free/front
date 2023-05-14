@@ -29,7 +29,7 @@ export function LandingPage() {
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <Stats />
+          {/* <Stats /> */}
           <Business />
           <Billing />
           <CardDeal />
