@@ -149,7 +149,7 @@ export function Login() {
                 <ContainerInput>
                 <DinamicInput
                         type="email"
-                        id="email-login"
+                        id="email-recover"
                         onInput={handleEmail}
                         label="Email:"
                     />

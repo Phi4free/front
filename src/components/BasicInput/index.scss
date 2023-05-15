@@ -1,0 +1,145 @@
+:root {
+    --color-light: #1A1A1A;
+    --color-dark: aliceblue;
+    --color-signal: #C880B7;
+
+    --color-background: var(--color-light);
+    --color-text: var(--color-dark);
+    --color-accent: var(--color-signal);
+
+    --size-bezel: 0.5rem;
+    --size-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+}
+
+mark {
+    background: var(--color-accent);
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 0 0.2em;
+}
+
+.card {
+    background: var(--color-background);
+    padding: calc(4 * var(--size-bezel));
+    margin-top: calc(4 * var(--size-bezel));
+    border-radius: var(--size-radius);
+    border: 3px solid var(--color-shadow, currentColor);
+    box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+
+    &--inverted {
+        --color-background: var(--color-dark);
+        color: var(--color-light);
+        --color-shadow: var(--color-accent);
+    }
+
+    &--accent {
+        --color-background: var(--color-signal);
+        --color-accent: var(--color-light);
+        color: var(--color-dark);
+    }
+
+    *:first-child {
+        margin-top: 0;
+    }
+}
+
+.l-design-widht {
+    max-width: 40rem;
+    padding: 1rem;
+}
+
+.input {
+    position: relative;
+    width: 100%;
+
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 1%;
+        margin: calc(var(--size-bezel) * 0.75 + 3px)
+            calc(var(--size-bezel) * 0.5);
+        background: pink;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        background: var(--color-background);
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    &__field {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 3px solid currentColor;
+        padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+        color: currentColor;
+        background: transparent;
+        border-radius: var(--size-radius);
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            & + .input__label {
+                transform: translate(0.25rem, -65%) scale(0.8);
+                color: var(--color-accent);
+            }
+        }
+    }
+}
+
+.button-group {
+    margin-top: calc(var(--size-bezel) * 2.5);
+}
+
+button {
+    color: currentColor;
+    padding: var(--size-bezel) calc(var(--size-bezel) * 2);
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--size-radius);
+    font-weight: 900;
+
+    &[type="reset"] {
+        background: var(--color-background);
+        font-weight: 200;
+    }
+}
+
+button + button {
+    margin-left: calc(var(--size-bezel) * 2);
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.alinha_fim{
+    position: absolute;
+        right: 0;
+        top: 0;
+        padding: 1%;
+        margin: calc(var(--size-bezel) * 0.75 + 3px)
+            calc(var(--size-bezel) * 0.5);
+        background: pink;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        background: var(--color-background);
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+}
