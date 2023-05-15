@@ -33,8 +33,8 @@ export function LandingPage() {
           <Business />
           <Future />
           <Pillars />
-          <Testimonials />
-          <Clients />
+          {/* <Testimonials /> */}
+          {/* <Clients /> */}
           <CTA />
           <Footer />
         </div>
