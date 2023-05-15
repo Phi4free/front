@@ -18,6 +18,7 @@ import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
 import { BASE_URL } from "../../services/api";
+import Popup from "../../components/Popup";
 
 export function Login() {
     const navigate = useNavigate();
@@ -46,12 +47,6 @@ export function Login() {
     const handlePassword = (e) => {
         e.preventDefault();
         setPassword(e.target.value);
-    };
-
-    const handleForgotPassword = () => {
-        console.log(
-            "Esqueceu a senha? Vamos recuperá-la... (Trabalhando nisso)"
-        );
     };
 
     const onSubmit = (e) => {
@@ -106,7 +101,7 @@ export function Login() {
                         label="Senha:"
                     />
                 </ContainerInput>
-                <LinkText onClick={handleForgotPassword}>
+                <LinkText href="#forgot-password">
                     Esqueci a senha
                 </LinkText>
                 <ContainerInput>
@@ -145,6 +140,11 @@ export function Login() {
                     da plataforma.
                 </RodapeTermos>
             </Form>
+            <Popup id="forgot-password" title="Repecuração de senha">
+                <>
+                Vamos recuperar a sua senha...
+                </>
+            </Popup>
         </Container>
     );
 }
