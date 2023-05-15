@@ -75,7 +75,7 @@ export function Cadastro() {
                             localStorage.setItem("token", data.token);
                             setErros(null);
                             isLoading(false);
-                            navigate("/landing-page");
+                            navigate("/home");
                         } else {
                             isLoading(false);
                             setErros("Erro de validação (especificar)");
@@ -146,7 +146,7 @@ export function Cadastro() {
                 <p>
                     Já tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/login-estudante')}
                     >
                         Faça o login
                     </LinkText>

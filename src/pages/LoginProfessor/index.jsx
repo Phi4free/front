@@ -65,7 +65,7 @@ export function LoginProfessor() {
                             localStorage.setItem("token", data.token);
                             setErros(null);
                             isLoading(false);
-                            navigate("/landing-page");
+                            navigate("/home");
                         } else {
                             isLoading(false);
                             setErros("Email ou senha inválidos");
@@ -125,7 +125,7 @@ export function LoginProfessor() {
                 <p>
                     Não tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/cadastro')}
+                        onClick={() => navigate('/cadastro-professor')}
                     >
                         Faça o cadastro
                     </LinkText>
