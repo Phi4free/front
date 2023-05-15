@@ -2,7 +2,7 @@ import styles from "../../styles/style";
 import {
   Future,
   Business,
-  CardDeal,
+  Pillars,
   Clients,
   CTA,
   Footer,
@@ -32,7 +32,7 @@ export function LandingPage() {
           {/* <Stats /> */}
           <Business />
           <Future />
-          <CardDeal />
+          <Pillars />
           <Testimonials />
           <Clients />
           <CTA />

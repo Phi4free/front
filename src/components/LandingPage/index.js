@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import Future from "./Future";
-import CardDeal from "./CardDeal";
+import Pillars from "./Pillars";
 import Business from "./Business";
 import Clients from "./Clients";
 import CTA from "./CTA";
@@ -12,7 +12,7 @@ import Hero from "./Hero";
 export {
   Navbar,
   Future,
-  CardDeal,
+  Pillars,
   Business,
   Clients,
   CTA,
