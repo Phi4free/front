@@ -3,12 +3,9 @@ import {
   Future,
   Business,
   Pillars,
-  Clients,
   CTA,
   Footer,
   Navbar,
-  Stats,
-  Testimonials,
   Hero,
 } from "../../components/LandingPage";
 
@@ -29,12 +26,9 @@ export function LandingPage() {
 
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          {/* <Stats /> */}
           <Business />
           <Future />
           <Pillars />
-          {/* <Testimonials /> */}
-          {/* <Clients /> */}
           <CTA />
           <Footer />
         </div>
