@@ -19,7 +19,7 @@
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 50%;
+    width: 80%;
     position: relative;
     transition: all 5s ease-in-out;
   }
@@ -27,6 +27,7 @@
   .popup h2 {
     margin-top: 0;
     color: #333;
+    font-size: large;
     font-family: Tahoma, Arial, sans-serif;
   }
   .popup .close {
@@ -40,7 +41,7 @@
     color: #333;
   }
   .popup .close:hover {
-    color: #06D85F;
+    color: #6B00AD;
   }
   .popup .content {
     max-height: 30%;

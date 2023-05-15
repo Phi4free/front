@@ -140,9 +140,20 @@ export function Login() {
                     da plataforma.
                 </RodapeTermos>
             </Form>
-            <Popup id="forgot-password" title="Repecuração de senha">
+            <Popup id="forgot-password" title="Recuperação de senha">
                 <>
-                Vamos recuperar a sua senha...
+                Não se preocupe, vamos te ajudar a recuperar a senha da sua conta!
+                {" "} Digite o email da conta cadastrada na plataforma:
+                <br/>
+                <br/>
+                <ContainerInput>
+                <DinamicInput
+                        type="email"
+                        id="email-login"
+                        onInput={handleEmail}
+                        label="Email:"
+                    />
+                </ContainerInput>
                 </>
             </Popup>
         </Container>

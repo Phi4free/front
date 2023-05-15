@@ -44,6 +44,9 @@ h2{
   .mobile{
       display: none;
   }
+  .popup{
+    width: 30%;
+  }
 }
 
 
