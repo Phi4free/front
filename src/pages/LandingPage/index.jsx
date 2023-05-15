@@ -1,6 +1,6 @@
 import styles from "../../styles/style";
 import {
-  Billing,
+  Future,
   Business,
   CardDeal,
   Clients,
@@ -31,7 +31,7 @@ export function LandingPage() {
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
           <Business />
-          <Billing />
+          <Future />
           <CardDeal />
           <Testimonials />
           <Clients />
