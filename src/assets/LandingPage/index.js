@@ -1,5 +1,5 @@
 import card from "./card.png";
-import discount from "./discount-symbol";
+import discount from "./discount-symbol.svg";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
