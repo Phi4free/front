@@ -60,7 +60,7 @@ export function CadastroProfessor() {
                 <p>
                     Já tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/login-professor')}
                     >
                         Faça o login
                     </LinkText>

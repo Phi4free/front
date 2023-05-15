@@ -2,9 +2,9 @@ import { card } from "../../../assets/LandingPage";
 import styles, { layout } from "../../../styles/style";
 import Button from "../Button";
 
-export default function LandingPage() {
+export default function Pillars() {
   return (
-    <section className={layout.section}>
+    <section id="pillars" className={layout.section}>
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>Nossos pilares</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>

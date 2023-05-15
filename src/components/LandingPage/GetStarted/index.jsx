@@ -1,9 +1,12 @@
 import styles from "../../../styles/style";
 import { arrowUp } from "../../../assets/LandingPage";
+import { useNavigate } from "react-router-dom";
 
 export default function GetStarted() {
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => navigate("/login-estudante")}
       className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-yellow-gradient p-[2px] cursor-pointer`}
     >
       <div

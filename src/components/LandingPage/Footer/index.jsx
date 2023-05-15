@@ -8,23 +8,23 @@ export default function Footer() {
       links: [
         {
           name: "Quem Somos",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Trabalhe Conosco",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Termos de Uso",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Política de Privacidade",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Apoie o Projeto",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
       ],
     },
@@ -33,19 +33,19 @@ export default function Footer() {
       links: [
         {
           name: "Educação Financeira",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Educação Filosófica",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Educação Física",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "Educação Funcional",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
       ],
     },
@@ -54,11 +54,11 @@ export default function Footer() {
       links: [
         {
           name: "E-mail",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
         {
           name: "FAQ",
-          link: "https://phi4free.netlify.app/landing-page",
+          link: "https://phi4free.netlify.app/",
         },
       ],
     },

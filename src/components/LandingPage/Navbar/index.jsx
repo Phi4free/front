@@ -3,26 +3,28 @@ import { useState } from "react";
 import { close, menu } from "../../../assets/LandingPage";
 import logo from "../../../assets/logo.png";
 import { ButtonLogin, ButtonRegister } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("O que somos");
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
   const navLinks = [
     {
       id: "home",
-      title: "Home",
+      title: "O que somos",
     },
     {
       id: "features",
-      title: "Features",
+      title: "Estude com qualidade",
     },
     {
       id: "product",
-      title: "Product",
+      title: "Prepare-se para o futuro",
     },
     {
-      id: "clients",
-      title: "Clients",
+      id: "pillars",
+      title: "Nossos pilares",
     },
   ];
 
@@ -46,13 +48,23 @@ export default function Navbar() {
           className={`font-normal cursor-pointer text-[16px]`}
           onClick={() => console.log("Aluno")}
         >
-          <ButtonLogin type="button">Login</ButtonLogin>
+          <ButtonLogin
+            type="button"
+            onClick={() => navigate("/login-estudante")}
+          >
+            Sou estudante
+          </ButtonLogin>
         </li>
         <li
           className={`font-normal cursor-pointer text-[16px]`}
           onClick={() => console.log("Professor")}
         >
-          <ButtonRegister type="button">Cadastre-se</ButtonRegister>
+          <ButtonRegister
+            type="button"
+            onClick={() => navigate("/login-professor")}
+          >
+            Sou professor
+          </ButtonRegister>
         </li>
       </ul>
 

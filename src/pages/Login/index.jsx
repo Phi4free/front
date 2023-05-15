@@ -123,7 +123,7 @@ export function Login() {
                 <p>
                     Não tem uma conta?{" "}
                     <LinkText
-                        onClick={() => navigate('/cadastro')}
+                        onClick={() => navigate('/cadastro-estudante')}
                     >
                         Faça o cadastro
                     </LinkText>
