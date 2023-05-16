@@ -4,6 +4,11 @@ export const Container = styled.div `
   height: 100%;
   display: flex;
 `
+export const CentralizedContainer = styled.div `
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+`
 
 export const ContainerInput = styled.div `
   display: flex;
