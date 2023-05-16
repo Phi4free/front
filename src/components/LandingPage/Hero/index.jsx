@@ -40,7 +40,7 @@ export default function Hero() {
           <li>- Educação Financeira</li>
           <li>- Educação Filosófica</li>
           <li>- Educação Física</li>
-          <li>- EducaçãoFuncional</li>
+          <li>- Educação Funcional</li>
         </ul>
       </div>
 

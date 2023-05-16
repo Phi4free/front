@@ -23,7 +23,7 @@ export default function Business() {
       icon: send,
       title: "Compartilhe com os amigos",
       content:
-        "Compartilhe com os amigos nossos conteúdos e evoluam junto nessa trajetória de conhecimento.",
+        "Compartilhe com os amigos nossos conteúdos e evoluam juntos nessa trajetória de conhecimento.",
     },
   ];
 
