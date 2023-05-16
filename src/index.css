@@ -38,6 +38,10 @@ body {
   color: aliceblue;
 }
 
+button{
+  transition: all 0.75s;
+}
+
 button:hover{
   background-color: #000814;
   color:#C880B7;
@@ -59,6 +63,9 @@ h2{
 @media only screen and (min-width: 768px) {
   .mobile{
       display: none;
+  }
+  .popup{
+    width: 30%;
   }
 }
 
