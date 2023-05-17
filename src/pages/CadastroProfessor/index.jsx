@@ -44,6 +44,7 @@ export function CadastroProfessor() {
                 <ContainerInput>
                 <p>{t('registerInfo')}</p>
                 </ContainerInput>
+                <ContainerInput>
                 <ul>
                     <li>
                     {t('registerInfo1')+" "}
@@ -57,6 +58,7 @@ export function CadastroProfessor() {
                     {t('registerInfo3')}
                     </li>
                 </ul>
+                </ContainerInput>
                 <ContainerInput>
                     <PrimaryButton label={t('btnSubscribe')} onClick={() => console.log("Abre processo")} />
                 </ContainerInput>
