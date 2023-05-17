@@ -1,0 +1,32 @@
+import { useTranslation } from "react-i18next";
+
+export function LangSwitcher() {
+    const { t, i18n } = useTranslation();
+
+    const lngs = {
+        en: { nativeName: "English" },
+        "pt-BR": { nativeName: "Português Brasileiro" },
+    };
+    return (
+        <>
+            <p>{t('lang')}</p>
+            <select onInput={(e) => i18n.changeLanguage(e.target.value)}>
+                {Object.keys(lngs).map((lng) => (
+                    <option
+                        key={lng}
+                        selected={i18n.resolvedLanguage === lng}
+                        style={{
+                            fontWeight:
+                                i18n.resolvedLanguage === lng
+                                    ? "bold"
+                                    : "normal",
+                        }}
+                        value={lng}
+                    >
+                        {lngs[lng].nativeName}
+                    </option>
+                ))}
+            </select>
+        </>
+    );
+}

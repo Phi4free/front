@@ -12,29 +12,38 @@ i18n
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         debug: true,
-        fallbackLng: "en",
+        fallbackLng: "pt-BR",
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
         resources: {
             en: {
                 translation: {
+                    // Login & Sign up
                     enterAsStudent: "ENTER AS STUDENT",
                     emailInput: "Email:",
                     passInput: "Password: ",
                     forgotPass: "Forgot password",
                     errorLogin1: "Invalid email or password",
-                    errorLogin2: "An error occurred while logging in. Please try again later"
+                    errorLogin2: "An error occurred while logging in. Please try again later",
+                    // Landing page
+                    lang: "Language:",
+                    usefulLinks: "Useful links"
                 },
             },
             "pt-BR": {
                 translation: {
+                    // Login & Sign up
                     enterAsStudent: "ENTRAR COMO ESTUDANTE",
                     emailInput: "Email:",
                     passInput: "Senha: ",
                     forgotPass: "Esqueci a senha",
                     errorLogin1: "Email ou senha inválidos",
-                    errorLogin2: "Ocorreu um erro ao efetuar o login. Por favor, tente novamente mais tarde"
+                    errorLogin2: "Ocorreu um erro ao efetuar o login. Por favor, tente novamente mais tarde",
+                    // Landing page
+                    lang: "Idioma:",
+                    usefulLinks: "Links Úteis",
+                    
                 },
             },
         },

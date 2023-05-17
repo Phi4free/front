@@ -1,10 +1,15 @@
 import styles from "../../../styles/style";
 import logo from "../../../assets/logo.png";
+import { useTranslation } from "react-i18next";
+import { LangSwitcher } from "../../LangSwitcher";
 
 export default function Footer() {
+
+    const { t } = useTranslation();
+
     const footerLinks = [
         {
-            title: "Links Úteis",
+            title: t('usefulLinks'),
             links: [
                 {
                     name: "Quem Somos",
@@ -80,13 +85,7 @@ export default function Footer() {
                         prática, fácil e confiável.
                     </p>
                     <br />
-                    <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-                        Idioma:
-                    </p>
-                    <select name="language" id="language">
-                        <option value="ptbr">Português Brasileiro</option>
-                        <option value="eng">English</option>
-                    </select>
+                    <LangSwitcher/>
                 </div>
 
                 <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">

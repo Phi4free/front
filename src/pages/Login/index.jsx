@@ -22,14 +22,10 @@ import { BASE_URL } from "../../services/api";
 import Popup from "../../components/Popup";
 import BasicInput from "../../components/BasicInput";
 import { useTranslation } from "react-i18next";
+import { LangSwitcher } from "../../components/LangSwitcher";
 
 export function Login() {
-    const { t, i18n } = useTranslation();
-
-    const lngs = {
-        en: { nativeName: "English" },
-        "pt-BR": { nativeName: "Português Brasileiro" },
-    };
+    const { t } = useTranslation();
 
     const navigate = useNavigate();
     const [erros, setErros] = useState(null);
@@ -158,21 +154,7 @@ export function Login() {
                     da plataforma.
                 </RodapeTermos>
                 <br/>
-                {Object.keys(lngs).map((lng) => (
-                    <button
-                        key={lng}
-                        style={{
-                            fontWeight:
-                                i18n.resolvedLanguage === lng
-                                    ? "bold"
-                                    : "normal",
-                        }}
-                        type="submit"
-                        onClick={() => i18n.changeLanguage(lng)}
-                    >
-                        {lngs[lng].nativeName}
-                    </button>
-                ))}
+                <LangSwitcher/>
             </Form>
             <Popup id="forgot-password" title="Recuperação de senha">
                 <>
