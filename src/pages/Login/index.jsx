@@ -21,8 +21,16 @@ import ErroText from "../../components/ErroText";
 import { BASE_URL } from "../../services/api";
 import Popup from "../../components/Popup";
 import BasicInput from "../../components/BasicInput";
+import { useTranslation } from "react-i18next";
 
 export function Login() {
+    const { t, i18n } = useTranslation();
+
+    const lngs = {
+        en: { nativeName: "English" },
+        "pt-BR": { nativeName: "Português Brasileiro" },
+    };
+
     const navigate = useNavigate();
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
@@ -62,26 +70,24 @@ export function Login() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-            fetch(BASE_URL + "authUser", options).then(
-                (response) => {
-                    response.json().then((data) => {
-                        if (data.auth) {
-                            localStorage.setItem("token", data.token);
-                            setErros(null);
-                            isLoading(false);
-                            navigate("/home");
-                        } else {
-                            isLoading(false);
-                            setErros("Email ou senha inválidos");
-                        }
-                    });
-                }
-            ).catch(
-                (error) => {
-                setErros("Ocorreu um erro ao efetuar o login. Por favor, tente novamente mais tarde")
-                console.log(error.message)
-                }
-            )
+        fetch(BASE_URL + "authUser", options)
+            .then((response) => {
+                response.json().then((data) => {
+                    if (data.auth) {
+                        localStorage.setItem("token", data.token);
+                        setErros(null);
+                        isLoading(false);
+                        navigate("/home");
+                    } else {
+                        isLoading(false);
+                        setErros(t("errorLogin1"));
+                    }
+                });
+            })
+            .catch((error) => {
+                setErros(t("errorLogin2"));
+                console.log(error.message);
+            });
     };
 
     return (
@@ -100,13 +106,13 @@ export function Login() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo>ENTRAR COMO ESTUDANTE</LabelTitulo>
+                <LabelTitulo>{t('enterAsStudent')}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
                         id="email-login"
                         onInput={handleEmail}
-                        label="Email:"
+                        label={t('emailInput')}
                     />
                 </ContainerInput>
                 <ContainerInput>
@@ -114,10 +120,10 @@ export function Login() {
                         type="password"
                         id="pass-login"
                         onInput={handlePassword}
-                        label="Senha:"
+                        label={t('passInput')}
                     />
                 </ContainerInput>
-                <LinkText href="#forgot-password">Esqueci a senha</LinkText>
+                <LinkText href="#forgot-password">{t('forgotPass')}</LinkText>
                 <ContainerInput>
                     {erros != null ? (
                         <ErroText iconName="circle-exclamation" label={erros} />
@@ -131,9 +137,7 @@ export function Login() {
 
                 <p>
                     Não tem uma conta?{" "}
-                    <LinkText
-                        onClick={() => navigate('/cadastro-estudante')}
-                    >
+                    <LinkText onClick={() => navigate("/cadastro-estudante")}>
                         Faça o cadastro
                     </LinkText>
                 </p>
@@ -153,6 +157,22 @@ export function Login() {
                     </LinkText>
                     da plataforma.
                 </RodapeTermos>
+                <br/>
+                {Object.keys(lngs).map((lng) => (
+                    <button
+                        key={lng}
+                        style={{
+                            fontWeight:
+                                i18n.resolvedLanguage === lng
+                                    ? "bold"
+                                    : "normal",
+                        }}
+                        type="submit"
+                        onClick={() => i18n.changeLanguage(lng)}
+                    >
+                        {lngs[lng].nativeName}
+                    </button>
+                ))}
             </Form>
             <Popup id="forgot-password" title="Recuperação de senha">
                 <>
@@ -160,19 +180,17 @@ export function Login() {
                     para ajudar a recuperar o acesso da sua conta!
                     <br />
                     <br />
-                    <strong>
-                        Digite o email da conta cadastrada:
-                    </strong>
+                    <strong>Digite o email da conta cadastrada:</strong>
                     <br />
                     <br />
                     <CentralizedContainer>
-                            <BasicInput
-                                type="email"
-                                id="email-recover"
-                                onInput={handleRecoverEmail}
-                                placeholder="emailCadastrado@email.com"
-                            />
-                        <br/>
+                        <BasicInput
+                            type="email"
+                            id="email-recover"
+                            onInput={handleRecoverEmail}
+                            placeholder="emailCadastrado@email.com"
+                        />
+                        <br />
                         <button
                             onClick={() =>
                                 console.log(
