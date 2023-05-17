@@ -66,6 +66,11 @@ i18n
                     errorRegister3: "An error occurred while registering. Please try again later",
                     byPhi4Free: "",
                     // Landing page
+                    //Hero
+                    heroTitle1: "Awaken your",
+                    heroTitle2: "potential",
+                    heroTitle3: "with education.",
+                    heroAbout: "Phi4Free is a free educational platform, focused on teaching 4 essential pillars for people's personal, professional and social development.",
                     //footer
                     lang: "Language:",
                     usefulLinks: "Useful links",
@@ -129,6 +134,11 @@ i18n
                     errorRegister3: "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
                     byPhi4Free: "da Phi4Free",
                     // Landing page
+                    //Hero
+                    heroTitle1: "Desperte seu",
+                    heroTitle2: "potencial",
+                    heroTitle3: "com educação.",
+                    heroAbout: "A Phi4Free é uma plataforma educacional gratuita, centrada em ensinar 4 pilares essenciais para o desenvolvimento pessoal, profissional e social das pessoas.",
                     //footer
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",
