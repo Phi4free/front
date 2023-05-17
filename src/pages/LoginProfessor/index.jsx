@@ -102,7 +102,7 @@ export function LoginProfessor() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo>{t("enterAsTeacher")}</LabelTitulo>
+                <LabelTitulo  className="font-bold text-2xl">{t("enterAsTeacher")}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"

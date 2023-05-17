@@ -40,7 +40,7 @@ export function CadastroProfessor() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>{t('registerTeacher')}</LabelTitulo>
+                <LabelTitulo className="font-bold text-2xl">{t('registerTeacher')}</LabelTitulo>
                 <ContainerInput>
                 <p>{t('registerInfo')}</p>
                 </ContainerInput>
@@ -63,7 +63,7 @@ export function CadastroProfessor() {
 
                 <p>
                     {t("yesAccount") + " "}
-                    <LinkText onClick={() => navigate("/login-estudante")}>
+                    <LinkText onClick={() => navigate("/login-professor")}>
                         {t("login")}
                     </LinkText>
                 </p>

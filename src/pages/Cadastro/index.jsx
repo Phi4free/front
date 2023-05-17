@@ -108,7 +108,7 @@ export function Cadastro() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo>{t("registerStudent")}</LabelTitulo>
+                <LabelTitulo  className="font-bold text-2xl">{t("registerStudent")}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="text"

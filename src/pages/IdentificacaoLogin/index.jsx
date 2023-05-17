@@ -24,7 +24,7 @@ export function LoginIdentificacao() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>BEM-VINDO(A) DE VOLTA!</LabelTitulo>
+                <LabelTitulo  className="font-bold text-2xl">BEM-VINDO(A) DE VOLTA!</LabelTitulo>
                 <ContainerInput>
                     <PrimaryButton label="ENTRAR COMO ESTUDANTE" onClick={() => navigate('/login-estudante')} />
                 </ContainerInput>

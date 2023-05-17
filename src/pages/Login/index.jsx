@@ -102,7 +102,7 @@ export function Login() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo>{t("enterAsStudent")}</LabelTitulo>
+                <LabelTitulo  className="font-bold text-2xl">{t("enterAsStudent")}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
