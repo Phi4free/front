@@ -21,6 +21,7 @@ i18n
                 translation: {
                     // miscelanous
                     andConnective: "and",
+                    orConnective: "or",
                     // Login
                     enter: "ENTER",
                     noAccount: "Don't have an account?",
@@ -44,15 +45,26 @@ i18n
                     sendEmail: "SEND EMAIL",
                     //Sign in
                     registerStudent: "CREATE STUDENT ACCOUNT",
+                    registerTeacher: "BECOME A TEACHER AT PHI4FREE",
+                    registerRules: "career regulation",
                     nameInput: "Full name:",
                     confirmPassInput: "Confirm password:",
                     createAccount: "CREATE ACCOUNT",
                     yesAccount: "Already have an account?",
                     login: "Log in",
+                    registerInfo: "Share useful and interesting content to thousands of people! With our streamlined application process, you can create knowlodge from the comfort of your home! See how easy it is:",
+                    registerInfo1: "Acess our",
+                    carrers: "carrer site",
+                    "registerInfo1.2": "and select the subject you want to teach",
+                    registerInfo2: "Fill out the registration on the platform and attach your resume and links that can show some of your work",
+                    registerInfo3: "Submit everything for review and good luck!",
                     registerTerms1: "By registering, you agree to the",
+                    registerTerms2: "For more information about the platform's selection processes, visit our",
+                    btnSubscribe: "I WANT TO REGISTER",
                     errorRegister1: "The passwords are different",
                     errorRegister2: "Validation error",
                     errorRegister3: "An error occurred while registering. Please try again later",
+                    byPhi4Free: "",
                     // Landing page
                     lang: "Language:",
                     usefulLinks: "Useful links"
@@ -62,6 +74,7 @@ i18n
                 translation: {
                     //miscelanous
                     andConnective: "e",
+                    orConnective: "ou",
                     // Login
                     enter: "ENTRAR",
                     noAccount: "Não tem uma conta?",
@@ -85,15 +98,26 @@ i18n
                     sendEmail: "ENVIAR EMAIL",
                     //Sign in
                     registerStudent: "CRIAR CONTA DE ESTUDANTE",
+                    registerTeacher: "TORNE-SE UM PROFESSOR DA PHI4FREE",
+                    registerRules: "Regulamento de carreiras",
                     nameInput: "Nome Completo:",
                     confirmPassInput: "Confirme a senha:",
                     createAccount: "CRIAR CONTA",
                     yesAccount: "Já tem uma conta?",
                     login: "Faça o Login",
+                    registerInfo: "Compartilhe conteúdo útil e interessante para milhares de pessoas! Com nosso processo simplificado de inscrição, você pode gerar conhecimento do conforto de sua casa! Veja como é fácil:",
+                    registerInfo1: "Acesse nosso",
+                    carrers: "site de carreiras",
+                    "registerInfo1.2": "e selecione a disciplina que quer lecionar",
+                    registerInfo2: "Preencha o cadastro na plataforma e anexe seu currículo e links que possam mostrar um pouco do seu trabalho",
+                    registerInfo3: "Envie tudo para avaliação e boa sorte!",
                     registerTerms1: "Ao fazer cadastro, você concorda com os",
+                    registerTerms2: "Para mais informações sobre os processos seletivos da plataforma, acesse nosso",
+                    btnSubscribe: "QUERO ME INSCREVER",
                     errorRegister1: "As senhas são diferentes",
                     errorRegister2: "Erro de validação",
                     errorRegister3: "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
+                    byPhi4Free: "da Phi4Free",
                     // Landing page
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",
