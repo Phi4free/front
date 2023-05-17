@@ -12,50 +12,50 @@ export default function Footer() {
             title: t('usefulLinks'),
             links: [
                 {
-                    name: "Quem Somos",
+                    name: t('aboutUs'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Trabalhe Conosco",
+                    name: t('workUs'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Termos de Uso",
+                    name: t('terms'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Política de Privacidade",
+                    name: t('privacy'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Apoie o Projeto",
+                    name: t('support'),
                     link: "https://phi4free.netlify.app/",
                 },
             ],
         },
         {
-            title: "Nossos cursos",
+            title: t('courses'),
             links: [
                 {
-                    name: "Educação Financeira",
+                    name: t('Financial'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Educação Filosófica",
+                    name: t('Philosophical'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Educação Física",
+                    name: t('Physical'),
                     link: "https://phi4free.netlify.app/",
                 },
                 {
-                    name: "Educação Funcional",
+                    name: t('Functional'),
                     link: "https://phi4free.netlify.app/",
                 },
             ],
         },
         {
-            title: "Fale conosco",
+            title: t('contact'),
             links: [
                 {
                     name: "E-mail",

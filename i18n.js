@@ -66,8 +66,18 @@ i18n
                     errorRegister3: "An error occurred while registering. Please try again later",
                     byPhi4Free: "",
                     // Landing page
+                    //footer
                     lang: "Language:",
-                    usefulLinks: "Useful links"
+                    usefulLinks: "Useful links",
+                    aboutUs: "About Us",
+                    workUs: "Carrers",
+                    support: "Support the Project",
+                    courses: "Our courses",
+                    Financial: "Financial Education",
+                    Philosophical: "Philosophical Education",
+                    Physical: "Physical Education",
+                    Functional: "Functional Education",
+                    contact: "Contact us",
                 },
             },
             "pt-BR": {
@@ -119,9 +129,18 @@ i18n
                     errorRegister3: "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
                     byPhi4Free: "da Phi4Free",
                     // Landing page
+                    //footer
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",
-                    
+                    aboutUs: "Quem Somos",
+                    workUs: "Trabalhe Conosco",
+                    support: "Apoie o Projeto",
+                    courses: "Nossos cursos",
+                    Financial: "Educação Financeira",
+                    Philosophical: "Educação Filosófica",
+                    Physical: "Educação Física",
+                    Functional: "Educação Funcional",
+                    contact: "Fale conosco",
                 },
             },
         },
