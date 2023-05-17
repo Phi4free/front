@@ -132,47 +132,46 @@ export function Login() {
                 </ContainerInput>
 
                 <p>
-                    Não tem uma conta?{" "}
+                    {t('noAccount')+ " "}
                     <LinkText onClick={() => navigate("/cadastro-estudante")}>
-                        Faça o cadastro
+                        {t('register')}
                     </LinkText>
                 </p>
 
                 <RodapeTermos>
-                    Ao fazer login, você concorda com os
+                    {t('loginTerms1')}
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
-                        {" "}
-                        Termos de Uso{" "}
+                        {" "+t('terms')+" "}
                     </LinkText>{" "}
-                    e
+                    {t('andConnective')}
                     <LinkText
                         onClick={() => console.log("Deve abrir /privacidade")}
                     >
-                        {" "}
-                        Política de Privacidade{" "}
+                        {" "+t('privacy')+" "}
                     </LinkText>
-                    da plataforma.
+                    {t('loginTerms2')}
                 </RodapeTermos>
                 <br/>
                 <LangSwitcher/>
             </Form>
-            <Popup id="forgot-password" title="Recuperação de senha">
+            <Popup id="forgot-password" title={t('passRecover')}>
                 <>
-                    Esqueceu a senha? Não se preocupe, vamos te enviar um email
-                    para ajudar a recuperar o acesso da sua conta!
+                    {t('passRecover1')}
                     <br />
                     <br />
-                    <strong>Digite o email da conta cadastrada:</strong>
+                    <strong>
+                        {t('passRecover2')}
+                    </strong>
                     <br />
                     <br />
                     <CentralizedContainer>
-                        <BasicInput
-                            type="email"
-                            id="email-recover"
-                            onInput={handleRecoverEmail}
-                            placeholder="emailCadastrado@email.com"
-                        />
-                        <br />
+                            <BasicInput
+                                type="email"
+                                id="email-recover"
+                                onInput={handleRecoverEmail}
+                                placeholder={t('passRecoverEmail')}
+                            />
+                        <br/>
                         <button
                             onClick={() =>
                                 console.log(
@@ -180,7 +179,7 @@ export function Login() {
                                 )
                             }
                         >
-                            ENVIAR EMAIL
+                            {t('sendEmail')}
                         </button>
                     </CentralizedContainer>
                 </>
