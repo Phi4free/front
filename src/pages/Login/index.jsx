@@ -128,7 +128,7 @@ export function Login() {
                     ) : null}
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR" onClick={onSubmit} />
+                    <PrimaryButton label={t('enter')} onClick={onSubmit} />
                 </ContainerInput>
 
                 <p>

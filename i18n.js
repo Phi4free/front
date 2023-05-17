@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     // Login & Sign up
+                    enter: "ENTER",
                     enterAsStudent: "ENTER AS STUDENT",
                     emailInput: "Email:",
                     passInput: "Password: ",
@@ -34,6 +35,7 @@ i18n
             "pt-BR": {
                 translation: {
                     // Login & Sign up
+                    enter: "ENTRAR",
                     enterAsStudent: "ENTRAR COMO ESTUDANTE",
                     emailInput: "Email:",
                     passInput: "Senha: ",

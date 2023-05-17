@@ -8,11 +8,15 @@ export function LangSwitcher() {
         "pt-BR": { nativeName: "Português Brasileiro" },
     };
     return (
-        <>
+        <div className="flex">
             <p>{t('lang')}</p>
-            <select onInput={(e) => i18n.changeLanguage(e.target.value)}>
+            <select 
+            className="mx-4"
+            onInput={(e) => i18n.changeLanguage(e.target.value)}
+            >
                 {Object.keys(lngs).map((lng) => (
                     <option
+                    className="text-center"
                         key={lng}
                         selected={i18n.resolvedLanguage === lng}
                         style={{
@@ -27,6 +31,6 @@ export function LangSwitcher() {
                     </option>
                 ))}
             </select>
-        </>
+        </div>
     );
 }
