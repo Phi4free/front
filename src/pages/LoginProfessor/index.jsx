@@ -66,26 +66,24 @@ export function LoginProfessor() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-            fetch(BASE_URL + "authUser", options).then(
-                (response) => {
-                    response.json().then((data) => {
-                        if (data.auth) {
-                            localStorage.setItem("token", data.token);
-                            setErros(null);
-                            isLoading(false);
-                            navigate("/home");
-                        } else {
-                            isLoading(false);
-                            setErros(t("errorLogin1"));
-                        }
-                    });
-                }
-            ).catch(
-                (error) => {
-                    setErros(t("errorLogin2"));
-                    console.log(error.message)
-                }
-            )
+        fetch(BASE_URL + "authUser", options)
+            .then((response) => {
+                response.json().then((data) => {
+                    if (data.auth) {
+                        localStorage.setItem("token", data.token);
+                        setErros(null);
+                        isLoading(false);
+                        navigate("/home");
+                    } else {
+                        isLoading(false);
+                        setErros(t("errorLogin1"));
+                    }
+                });
+            })
+            .catch((error) => {
+                setErros(t("errorLogin2"));
+                console.log(error.message);
+            });
     };
 
     return (
@@ -96,14 +94,21 @@ export function LoginProfessor() {
                 </div>
             </ImgCover>
             <Form>
-                <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>{t('enterAsTeacher')}</LabelTitulo>
+                <img
+                    id="logo"
+                    className="mobile"
+                    src={logoAlt}
+                    alt="Logo"
+                    width="200px"
+                    height="80px"
+                />
+                <LabelTitulo>{t("enterAsTeacher")}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
                         id="email-login"
                         onInput={handleEmail}
-                        label={t('emailInput')}
+                        label={t("emailInput")}
                     />
                 </ContainerInput>
                 <ContainerInput>
@@ -111,10 +116,10 @@ export function LoginProfessor() {
                         type="password"
                         id="pass-login"
                         onInput={handlePassword}
-                        label={t('passInput')}
+                        label={t("passInput")}
                     />
                 </ContainerInput>
-                <LinkText href="#forgot-password">{t('forgotPass')}</LinkText>
+                <LinkText href="#forgot-password">{t("forgotPass")}</LinkText>
                 <ContainerInput>
                     {erros != null ? (
                         <ErroText iconName="circle-exclamation" label={erros} />
@@ -123,52 +128,48 @@ export function LoginProfessor() {
                     ) : null}
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label={t('enter')} onClick={onSubmit} />
+                    <PrimaryButton label={t("enter")} onClick={onSubmit} />
                 </ContainerInput>
 
                 <p>
-                    {t('noAccount')+" "}
-                    <LinkText
-                        onClick={() => navigate('/cadastro-professor')}
-                    >
-                    {t('register')}
+                    {t("noAccount") + " "}
+                    <LinkText onClick={() => navigate("/cadastro-professor")}>
+                        {t("register")}
                     </LinkText>
                 </p>
 
                 <RodapeTermos>
-                    {t('loginTerms1')}
+                    {t("loginTerms1")}
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
-                        {" "+t('terms')+" "}
+                        {" " + t("terms") + " "}
                     </LinkText>{" "}
-                    {t('andConnective')}
+                    {t("andConnective")}
                     <LinkText
                         onClick={() => console.log("Deve abrir /privacidade")}
                     >
-                        {" "+t('privacy')+" "}
+                        {" " + t("privacy") + " "}
                     </LinkText>
-                    {t('loginTerms2')}
+                    {t("loginTerms2")}
                 </RodapeTermos>
-                <br/>
-                <LangSwitcher/>
+                <br />
+                <LangSwitcher />
             </Form>
-            <Popup id="forgot-password" title={t('passRecover')}>
+            <Popup id="forgot-password" title={t("passRecover")}>
                 <>
-                    {t('passRecover1')}
+                    {t("passRecover1")}
                     <br />
                     <br />
-                    <strong>
-                        {t('passRecover2')}
-                    </strong>
+                    <strong>{t("passRecover2")}</strong>
                     <br />
                     <br />
                     <CentralizedContainer>
-                            <BasicInput
-                                type="email"
-                                id="email-recover"
-                                onInput={handleRecoverEmail}
-                                placeholder={t('passRecoverEmail')}
-                            />
-                        <br/>
+                        <BasicInput
+                            type="email"
+                            id="email-recover"
+                            onInput={handleRecoverEmail}
+                            placeholder={t("passRecoverEmail")}
+                        />
+                        <br />
                         <button
                             onClick={() =>
                                 console.log(
@@ -176,7 +177,7 @@ export function LoginProfessor() {
                                 )
                             }
                         >
-                            {t('sendEmail')}
+                            {t("sendEmail")}
                         </button>
                     </CentralizedContainer>
                 </>

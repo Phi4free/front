@@ -21,7 +21,7 @@ i18n
                 translation: {
                     // miscelanous
                     andConnective: "and",
-                    // Login & Sign up
+                    // Login
                     enter: "ENTER",
                     noAccount: "Don't have an account?",
                     register: "Register",
@@ -42,6 +42,17 @@ i18n
                     passRecover2: "Enter the registered account email:",
                     passRecoverEmail: "registeredEmail@email.com",
                     sendEmail: "SEND EMAIL",
+                    //Sign in
+                    registerStudent: "CREATE STUDENT ACCOUNT",
+                    nameInput: "Full name:",
+                    confirmPassInput: "Confirm password:",
+                    createAccount: "CREATE ACCOUNT",
+                    yesAccount: "Already have an account?",
+                    login: "Log in",
+                    registerTerms1: "By registering, you agree to the",
+                    errorRegister1: "The passwords are different",
+                    errorRegister2: "Validation error",
+                    errorRegister3: "An error occurred while registering. Please try again later",
                     // Landing page
                     lang: "Language:",
                     usefulLinks: "Useful links"
@@ -51,7 +62,7 @@ i18n
                 translation: {
                     //miscelanous
                     andConnective: "e",
-                    // Login & Sign up
+                    // Login
                     enter: "ENTRAR",
                     noAccount: "Não tem uma conta?",
                     register: "Faça o cadastro",
@@ -72,6 +83,17 @@ i18n
                     passRecover2: "Digite o email da conta cadastrada:",
                     passRecoverEmail: "emailCadastrado@email.com",
                     sendEmail: "ENVIAR EMAIL",
+                    //Sign in
+                    registerStudent: "CRIAR CONTA DE ESTUDANTE",
+                    nameInput: "Nome Completo:",
+                    confirmPassInput: "Confirme a senha:",
+                    createAccount: "CRIAR CONTA",
+                    yesAccount: "Já tem uma conta?",
+                    login: "Faça o Login",
+                    registerTerms1: "Ao fazer cadastro, você concorda com os",
+                    errorRegister1: "As senhas são diferentes",
+                    errorRegister2: "Erro de validação",
+                    errorRegister3: "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
                     // Landing page
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",

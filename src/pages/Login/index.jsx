@@ -102,13 +102,13 @@ export function Login() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo>{t('enterAsStudent')}</LabelTitulo>
+                <LabelTitulo>{t("enterAsStudent")}</LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
                         id="email-login"
                         onInput={handleEmail}
-                        label={t('emailInput')}
+                        label={t("emailInput")}
                     />
                 </ContainerInput>
                 <ContainerInput>
@@ -116,10 +116,10 @@ export function Login() {
                         type="password"
                         id="pass-login"
                         onInput={handlePassword}
-                        label={t('passInput')}
+                        label={t("passInput")}
                     />
                 </ContainerInput>
-                <LinkText href="#forgot-password">{t('forgotPass')}</LinkText>
+                <LinkText href="#forgot-password">{t("forgotPass")}</LinkText>
                 <ContainerInput>
                     {erros != null ? (
                         <ErroText iconName="circle-exclamation" label={erros} />
@@ -128,50 +128,48 @@ export function Login() {
                     ) : null}
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label={t('enter')} onClick={onSubmit} />
+                    <PrimaryButton label={t("enter")} onClick={onSubmit} />
                 </ContainerInput>
 
                 <p>
-                    {t('noAccount')+ " "}
+                    {t("noAccount") + " "}
                     <LinkText onClick={() => navigate("/cadastro-estudante")}>
-                        {t('register')}
+                        {t("register")}
                     </LinkText>
                 </p>
 
                 <RodapeTermos>
-                    {t('loginTerms1')}
+                    {t("loginTerms1")}
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
-                        {" "+t('terms')+" "}
+                        {" " + t("terms") + " "}
                     </LinkText>{" "}
-                    {t('andConnective')}
+                    {t("andConnective")}
                     <LinkText
                         onClick={() => console.log("Deve abrir /privacidade")}
                     >
-                        {" "+t('privacy')+" "}
+                        {" " + t("privacy") + " "}
                     </LinkText>
-                    {t('loginTerms2')}
+                    {t("loginTerms2")}
                 </RodapeTermos>
-                <br/>
-                <LangSwitcher/>
+                <br />
+                <LangSwitcher />
             </Form>
-            <Popup id="forgot-password" title={t('passRecover')}>
+            <Popup id="forgot-password" title={t("passRecover")}>
                 <>
-                    {t('passRecover1')}
+                    {t("passRecover1")}
                     <br />
                     <br />
-                    <strong>
-                        {t('passRecover2')}
-                    </strong>
+                    <strong>{t("passRecover2")}</strong>
                     <br />
                     <br />
                     <CentralizedContainer>
-                            <BasicInput
-                                type="email"
-                                id="email-recover"
-                                onInput={handleRecoverEmail}
-                                placeholder={t('passRecoverEmail')}
-                            />
-                        <br/>
+                        <BasicInput
+                            type="email"
+                            id="email-recover"
+                            onInput={handleRecoverEmail}
+                            placeholder={t("passRecoverEmail")}
+                        />
+                        <br />
                         <button
                             onClick={() =>
                                 console.log(
@@ -179,7 +177,7 @@ export function Login() {
                                 )
                             }
                         >
-                            {t('sendEmail')}
+                            {t("sendEmail")}
                         </button>
                     </CentralizedContainer>
                 </>
