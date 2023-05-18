@@ -50,10 +50,8 @@ export default function Popup(props) {
                                             >
                                                 {title}
                                             </Dialog.Title>
-                                            <div className="mt-2">
-                                                <p className="text-sm text-gray-500">
-                                                    {children}
-                                                </p>
+                                            <div className="mt-2 text-sm text-gray-500">
+                                                {children}
                                             </div>
                                         </div>
                                     </div>
