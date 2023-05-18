@@ -24,6 +24,7 @@ import BasicInput from "../../components/BasicInput";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 import i18n from "../../../i18n";
+import api from "../../services/api";
 
 export function Login() {
     const { t } = useTranslation();
@@ -37,18 +38,6 @@ export function Login() {
     let [password, setPassword] = useState("");
 
     let [recoverEmail, setRecoverEmail] = useState("");
-
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Language": i18n.resolvedLanguage,
-        },
-        body: JSON.stringify({
-            email: email,
-            senha: password,
-        }),
-    };
 
     const handleEmail = (e) => {
         e.preventDefault();
@@ -69,7 +58,10 @@ export function Login() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        fetch(BASE_URL + "authUser", options)
+        api.post("authUser", {
+            email: email,
+            senha: password,
+        })
             .then((response) => {
                 response.json().then((data) => {
                     if (data.auth) {

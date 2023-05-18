@@ -18,11 +18,12 @@ import { useState } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
-import { BASE_URL } from "../../services/api";
+import api, { BASE_URL } from "../../services/api";
 import Popup from "../../components/Popup";
 import BasicInput from "../../components/BasicInput";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
+import api from "../../services/api";
 
 export function LoginProfessor() {
     const { t } = useTranslation();
@@ -36,17 +37,6 @@ export function LoginProfessor() {
     let [password, setPassword] = useState("");
 
     let [recoverEmail, setRecoverEmail] = useState("");
-
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            email: email,
-            senha: password,
-        }),
-    };
 
     const handleEmail = (e) => {
         e.preventDefault();
@@ -67,7 +57,10 @@ export function LoginProfessor() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        fetch(BASE_URL + "authUser", options)
+        api.post("authUser", {
+            email: email,
+            senha: password,
+        })
             .then((response) => {
                 response.json().then((data) => {
                     if (data.auth) {

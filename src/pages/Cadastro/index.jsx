@@ -32,18 +32,6 @@ export function Cadastro() {
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
 
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            nome: nome,
-            email: email,
-            senha: password,
-        }),
-    };
-
     const handleNome = (e) => {
         e.preventDefault();
         setNome(e.target.value);
@@ -72,7 +60,11 @@ export function Cadastro() {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        fetch(BASE_URL + "criarPerfil", options)
+        api.post("criarPerfil", {
+            nome: nome,
+            email: email,
+            senha: password,
+        })
             .then((response) => {
                 response.json().then((data) => {
                     if (data.auth) {
@@ -108,7 +100,9 @@ export function Cadastro() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo  className="font-bold text-2xl">{t("registerStudent")}</LabelTitulo>
+                <LabelTitulo className="font-bold text-2xl">
+                    {t("registerStudent")}
+                </LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="text"
