@@ -5,7 +5,7 @@ import logo from "../../../assets/logo.png";
 import { ButtonLogin, ButtonRegister } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar() { //CONTINUE POR AQUI
   const [active, setActive] = useState("O que somos");
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();

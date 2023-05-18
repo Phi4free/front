@@ -1,29 +1,31 @@
 import styles, { layout } from "../../../styles/style";
 import Button from "../Button";
 import { send, shield, star } from "../../../assets/LandingPage";
+import { useTranslation } from "react-i18next";
 
 export default function Business() {
+  const { t } = useTranslation();
   const features = [
     {
       id: "feature-1",
       icon: star,
-      title: "Profesores qualificados",
+      title: t('busItem1Title'),
       content:
-        "Selecionamos apenas profissionais comprovadamente especialistas para criarem conteúdos.",
+      t('busItem1Par'),
     },
     {
       id: "feature-2",
       icon: shield,
-      title: "Material confiável",
+      title: t('busItem2Title'),
       content:
-        "Nossa equipe de curadoria possui um rígido processo de análise antes da publicação de um novo material.",
+      t('busItem2Par'),
     },
     {
       id: "feature-3",
       icon: send,
-      title: "Compartilhe com os amigos",
+      title: t('busItem3Title'),
       content:
-        "Compartilhe com os amigos nossos conteúdos e evoluam junto nessa trajetória de conhecimento.",
+      t('busItem3Par'),
     },
   ];
 
@@ -52,20 +54,11 @@ export default function Business() {
   return (
     <section id="features" className={layout.section}>
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}>Estude com qualidade</h2>
+        <h2 className={styles.heading2}>{t('businessTitle')}</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          A Phi4Free conta com professores altamente qualificados e uma
-          curadoria de conteúdo impecável. Você terá acesso a uma comunidade de
-          aprendizado única e inspiradora, com artigos, quizzes, desafios e
-          fóruns para compartilhar suas dúvidas e descobertas com outros
-          estudantes e professores.
+          {t('businessPar1')}
           <br />
-          Você poderá aprender sobre assuntos que realmente importam, como como
-          cuidar da sua saúde física e mental, como gerenciar suas finanças
-          pessoais, como manter uma rotina funcional e saudável e até mesmo como
-          desenvolver seu pensamento crítico e filosófico sobre as questões mais
-          profundas da vida. E o melhor de tudo: Tudo isso de forma
-          completamente gratuita!
+          {t('businessPar2')}
         </p>
 
         <Button styles={`mt-10`} />

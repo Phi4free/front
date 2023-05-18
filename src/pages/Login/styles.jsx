@@ -5,7 +5,13 @@ export const Container = styled.div`
   display: flex;
 `;
 
-export const ContainerInput = styled.div`
+export const CentralizedContainer = styled.div `
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+export const ContainerInput = styled.div `
   display: flex;
   align-items: center;
   justify-content: center;

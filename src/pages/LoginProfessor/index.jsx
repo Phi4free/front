@@ -6,6 +6,7 @@ import {
     LabelTitulo,
     RodapeTermos,
     LinkText,
+    CentralizedContainer,
 } from "./styles";
 import DinamicInput from "../../components/DinamicInput";
 import { Loading } from "../../components/Loading/styles";
@@ -18,14 +19,23 @@ import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
 import { BASE_URL } from "../../services/api";
+import Popup from "../../components/Popup";
+import BasicInput from "../../components/BasicInput";
+import { useTranslation } from "react-i18next";
+import { LangSwitcher } from "../../components/LangSwitcher";
 
 export function LoginProfessor() {
+    const { t } = useTranslation();
+
     const navigate = useNavigate();
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
+    const [senhaPopup, setSenhaPopup] = useState(false);
 
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
+
+    let [recoverEmail, setRecoverEmail] = useState("");
 
     const options = {
         method: "POST",
@@ -48,36 +58,33 @@ export function LoginProfessor() {
         setPassword(e.target.value);
     };
 
-    const handleForgotPassword = () => {
-        console.log(
-            "Esqueceu a senha? Vamos recuperá-la... (Trabalhando nisso)"
-        );
+    const handleRecoverEmail = (e) => {
+        e.preventDefault();
+        setRecoverEmail(e.target.value);
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
         isLoading(true);
         setErros(null);
-            fetch(BASE_URL + "authUser", options).then(
-                (response) => {
-                    response.json().then((data) => {
-                        if (data.auth) {
-                            localStorage.setItem("token", data.token);
-                            setErros(null);
-                            isLoading(false);
-                            navigate("/home");
-                        } else {
-                            isLoading(false);
-                            setErros("Email ou senha inválidos");
-                        }
-                    });
-                }
-            ).catch(
-                (error) => {
-                setErros("Ocorreu um erro ao efetuar o login. Por favor, tente novamente mais tarde")
-                console.log(error.message)
-                }
-            )
+        fetch(BASE_URL + "authUser", options)
+            .then((response) => {
+                response.json().then((data) => {
+                    if (data.auth) {
+                        localStorage.setItem("token", data.token);
+                        setErros(null);
+                        isLoading(false);
+                        navigate("/home");
+                    } else {
+                        isLoading(false);
+                        setErros(t("errorLogin1"));
+                    }
+                });
+            })
+            .catch((error) => {
+                setErros(t("errorLogin2"));
+                console.log(error.message);
+            });
     };
 
     return (
@@ -88,14 +95,23 @@ export function LoginProfessor() {
                 </div>
             </ImgCover>
             <Form>
-                <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>ENTRAR COMO PROFESSOR</LabelTitulo>
+                <img
+                    id="logo"
+                    className="mobile"
+                    src={logoAlt}
+                    alt="Logo"
+                    width="200px"
+                    height="80px"
+                />
+                <LabelTitulo className="font-bold text-2xl">
+                    {t("enterAsTeacher")}
+                </LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
                         id="email-login"
                         onInput={handleEmail}
-                        label="Email:"
+                        label={t("emailInput")}
                     />
                 </ContainerInput>
                 <ContainerInput>
@@ -103,50 +119,81 @@ export function LoginProfessor() {
                         type="password"
                         id="pass-login"
                         onInput={handlePassword}
-                        label="Senha:"
+                        label={t("passInput")}
                     />
                 </ContainerInput>
-                <LinkText onClick={handleForgotPassword}>
-                    Esqueci a senha
+                <LinkText onClick={() => setSenhaPopup(true)}>
+                    {t("forgotPass")}
                 </LinkText>
                 <ContainerInput>
-                <ContainerInput>
-                {erros != null ? (
-                    <ErroText iconName="circle-exclamation" label={erros} />
-                ) : loading ? (
-                    <Loading />
-                ) : null}
-                </ContainerInput>
+                    {erros != null ? (
+                        <ErroText iconName="circle-exclamation" label={erros} />
+                    ) : loading ? (
+                        <Loading />
+                    ) : null}
                 </ContainerInput>
                 <ContainerInput>
-                    <PrimaryButton label="ENTRAR" onClick={onSubmit} />
+                    <PrimaryButton label={t("enter")} onClick={onSubmit} />
                 </ContainerInput>
 
                 <p>
-                    Não tem uma conta?{" "}
-                    <LinkText
-                        onClick={() => navigate('/cadastro-professor')}
-                    >
-                        Faça o cadastro
+                    {t("noAccount") + " "}
+                    <LinkText onClick={() => navigate("/cadastro-professor")}>
+                        {t("register")}
                     </LinkText>
                 </p>
 
                 <RodapeTermos>
-                    Ao fazer login, você concorda com os
+                    {t("loginTerms1")}
                     <LinkText onClick={() => console.log("Deve abrir /termos")}>
-                        {" "}
-                        Termos de Uso{" "}
+                        {" " + t("terms") + " "}
                     </LinkText>{" "}
-                    e
+                    {t("andConnective")}
                     <LinkText
                         onClick={() => console.log("Deve abrir /privacidade")}
                     >
-                        {" "}
-                        Política de Privacidade{" "}
+                        {" " + t("privacy") + " "}
                     </LinkText>
-                    da plataforma.
+                    {t("loginTerms2")}
                 </RodapeTermos>
+                <br />
+                <LangSwitcher />
             </Form>
+            <Popup
+                id="forgot-password"
+                title={t("passRecover")}
+                actionName={t("sendEmail")}
+                action={() => {
+                    if (recoverEmail != "") {
+                        console.log(
+                            "Devia disparar email para " + recoverEmail
+                        );
+                        setRecoverEmail("");
+                        return true;
+                    }
+                    return false;
+                }}
+                open={senhaPopup}
+                setOpen={setSenhaPopup}
+            >
+                <>
+                    {t("passRecover1")}
+                    <br />
+                    <br />
+                    <strong>{t("passRecover2")}</strong>
+                    <br />
+                    <br />
+                    <CentralizedContainer>
+                        <BasicInput
+                            type="email"
+                            id="email-recover"
+                            onInput={handleRecoverEmail}
+                            placeholder={t("passRecoverEmail")}
+                        />
+                        <br />
+                    </CentralizedContainer>
+                </>
+            </Popup>
         </Container>
     );
 }

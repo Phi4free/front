@@ -24,7 +24,7 @@ export function CadastroIdentificacao() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>CRIE UMA CONTA E MERGULHE EM CONHECIMENTO DE QUALIDADE!</LabelTitulo>
+                <LabelTitulo  className="font-bold text-2xl">CRIE UMA CONTA E MERGULHE EM CONHECIMENTO DE QUALIDADE!</LabelTitulo>
                 <ContainerInput>
                     <PrimaryButton label="ESTUDANTE - QUERO APRENDER" onClick={() => navigate('/cadastro-estudante')} />
                 </ContainerInput>

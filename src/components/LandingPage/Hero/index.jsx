@@ -1,8 +1,10 @@
 import styles from "../../../styles/style";
 import { discount, lampada } from "../../../assets/LandingPage";
 import GetStarted from "../GetStarted";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section
       id="home"
@@ -20,8 +22,8 @@ export default function Hero() {
 
         <div className="flex flex-row justify-between items-center w-full">
           <h1 className="flex-1 font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
-            Desperte seu <br className="sm:block hidden" />{" "}
-            <span className="text-gradient">potencial</span>{" "}
+            {t('heroTitle1')} <br className="sm:block hidden" />{" "}
+            <span className="text-gradient">{t('heroTitle2')}</span>{" "}
           </h1>
           <div className="ss:flex hidden md:mr-4 mr-0">
             <GetStarted />
@@ -29,18 +31,16 @@ export default function Hero() {
         </div>
 
         <h1 className="font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
-          com educação.
+        {t('heroTitle3')}
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          A Phi4Free é uma plataforma educacional gratuita, centrada em ensinar
-          4 pilares essenciais para o desenvolvimento pessoal, profissional e
-          social das pessoas.
+          {t('heroAbout')}
         </p>
         <ul className={`${styles.paragraph} max-w-[470px] mt-5 ml-5`}>
-          <li>- Educação Financeira</li>
-          <li>- Educação Filosófica</li>
-          <li>- Educação Física</li>
-          <li>- EducaçãoFuncional</li>
+          <li>{t('Financial')}</li>
+          <li>{t('Philosophical')}</li>
+          <li>{t('Physical')}</li>
+          <li>{t('Functional')}</li>
         </ul>
       </div>
 

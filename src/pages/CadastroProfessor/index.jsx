@@ -19,8 +19,13 @@ import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
 import { BASE_URL } from "../../services/api";
+import { useTranslation } from "react-i18next";
+import { LangSwitcher } from "../../components/LangSwitcher";
 
 export function CadastroProfessor() {
+
+    const { t } = useTranslation();
+
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
@@ -36,52 +41,50 @@ export function CadastroProfessor() {
             </ImgCover>
             <Form>
                 <img id="logo" className="mobile" src={logoAlt} alt="Logo" width="200px" height="80px" />
-                <LabelTitulo>TORNE-SE UM PROFESSOR DA PHI4FREE</LabelTitulo>
+                <LabelTitulo className="font-bold text-2xl">{t('registerTeacher')}</LabelTitulo>
                 <ContainerInput>
-                <p>Compartilhe conteúdo útil e interessante para milhares de pessoas! Com nosso processo simplificado de inscrição, você pode gerar conhecimento do conforto de sua casa! Veja como é fácil:</p>
+                <p>{t('registerInfo')}</p>
                 </ContainerInput>
                 <List>
                     <li>
-                    Acesse nosso {" "}
-                    <a href="https://phi4free.blogspot.com/" target="_blank">site de carreiras</a>
-                    {" "}
-                    e selecione a disciplina que quer lecionar
+                    {t('registerInfo1')+" "}
+                    <a href="https://phi4free.blogspot.com/" target="_blank">{t('carrers')}</a>
+                    {" " + t('registerInfo1.2')}
                     </li>
                     <li>
-                    Preencha o cadastro na plataforma e anexe seu currículo e links que possam mostrar um pouco do seu trabalho
+                    {t('registerInfo2')}
                     </li>
                     <li>
-                    Envie tudo para avaliação e boa sorte!
+                    {t('registerInfo3')}
                     </li>
                 </List>
                 <ContainerInput>
-                    <PrimaryButton label="QUERO ME INSCREVER" onClick={() => console.log("Faz algo")} />
+                    <PrimaryButton label={t('btnSubscribe')} onClick={() => console.log("Abre processo")} />
                 </ContainerInput>
 
                 <p>
-                    Já tem uma conta?{" "}
-                    <LinkText
-                        onClick={() => navigate('/login-professor')}
-                    >
-                        Faça o login
+                    {t("yesAccount") + " "}
+                    <LinkText onClick={() => navigate("/login-professor")}>
+                        {t("login")}
                     </LinkText>
                 </p>
 
                 <RodapeTermos>
-                    Para mais informações sobre os processos seletivos da plataforma, acesse nosso {" "}
+                    {t('registerTerms2')+" "}
                     <LinkText onClick={() => console.log("Deve abrir regulamento")}>
-                        {" "}
-                        Regulamento de carreiras{" "}
+                        {" "+t('registerRules')+" "}
                     </LinkText>{" "}
-                    ou
+                    {t('orConnective')}
                     <LinkText
                         onClick={() => console.log("Deve abrir FAQ")}
                     >
                         {" "}
                         FAQ{" "}
                     </LinkText>
-                    da Phi4Free.
+                    {t('byPhi4Free')}
                 </RodapeTermos>
+                <br/>
+                <LangSwitcher/>
             </Form>
         </Container>
     );
