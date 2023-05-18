@@ -30,6 +30,7 @@ export function LoginProfessor() {
     const navigate = useNavigate();
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
+    const [senhaPopup, setSenhaPopup] = useState(false);
 
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
@@ -102,7 +103,9 @@ export function LoginProfessor() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo  className="font-bold text-2xl">{t("enterAsTeacher")}</LabelTitulo>
+                <LabelTitulo className="font-bold text-2xl">
+                    {t("enterAsTeacher")}
+                </LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="email"
@@ -119,7 +122,9 @@ export function LoginProfessor() {
                         label={t("passInput")}
                     />
                 </ContainerInput>
-                <LinkText href="#forgot-password">{t("forgotPass")}</LinkText>
+                <LinkText onClick={() => setSenhaPopup(true)}>
+                    {t("forgotPass")}
+                </LinkText>
                 <ContainerInput>
                     {erros != null ? (
                         <ErroText iconName="circle-exclamation" label={erros} />
@@ -154,7 +159,23 @@ export function LoginProfessor() {
                 <br />
                 <LangSwitcher />
             </Form>
-            <Popup id="forgot-password" title={t("passRecover")}>
+            <Popup
+                id="forgot-password"
+                title={t("passRecover")}
+                actionName={t("sendEmail")}
+                action={() => {
+                    if (recoverEmail != "") {
+                        console.log(
+                            "Devia disparar email para " + recoverEmail
+                        );
+                        setRecoverEmail("");
+                        return true;
+                    }
+                    return false;
+                }}
+                open={senhaPopup}
+                setOpen={setSenhaPopup}
+            >
                 <>
                     {t("passRecover1")}
                     <br />
@@ -170,15 +191,6 @@ export function LoginProfessor() {
                             placeholder={t("passRecoverEmail")}
                         />
                         <br />
-                        <button
-                            onClick={() =>
-                                console.log(
-                                    "Devia disparar email para " + recoverEmail
-                                )
-                            }
-                        >
-                            {t("sendEmail")}
-                        </button>
                     </CentralizedContainer>
                 </>
             </Popup>
