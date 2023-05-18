@@ -23,6 +23,7 @@ import Popup from "../../components/Popup";
 import BasicInput from "../../components/BasicInput";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
+import i18n from "../../../i18n";
 
 export function Login() {
     const { t } = useTranslation();
@@ -41,6 +42,7 @@ export function Login() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Language": i18n.resolvedLanguage,
         },
         body: JSON.stringify({
             email: email,
@@ -77,7 +79,7 @@ export function Login() {
                         navigate("/home");
                     } else {
                         isLoading(false);
-                        setErros(t("errorLogin1"));
+                        setErros(data.message);
                     }
                 });
             })
