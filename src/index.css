@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --primary: #C880B7;
+}
+
 html, body, #root{
   height: 100%;
 }

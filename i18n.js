@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    cancel: "CANCEL",
                     andConnective: "and",
                     orConnective: "or",
                     // Login
@@ -113,6 +114,7 @@ i18n
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    cancel: "CANCELAR",
                     andConnective: "e",
                     orConnective: "ou",
                     // Login

@@ -1,12 +1,13 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { set } from "immutable";
-// import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
 
 export default function Popup(props) {
     const { id, title, children, action, actionName, open, setOpen } = props;
 
     const cancelButtonRef = useRef(null);
+
+    const { t } = useTranslation();
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -60,8 +61,9 @@ export default function Popup(props) {
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     {actionName != null ? (
                                         <button
+                                            // Arrumar css do btn
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                                            className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
                                             onClick={() => {
                                                 if (action()) setOpen(false);
                                             }}
@@ -76,7 +78,7 @@ export default function Popup(props) {
                                         onClick={() => setOpen(false)}
                                         ref={cancelButtonRef}
                                     >
-                                        Cancel
+                                        {t("cancel")}
                                     </button>
                                 </div>
                             </Dialog.Panel>
