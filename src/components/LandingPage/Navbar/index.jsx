@@ -5,7 +5,7 @@ import logo from "../../../assets/logo.png";
 import { ButtonLogin, ButtonRegister } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() { //CONTINUE POR AQUI
+export default function Navbar() {
   const [active, setActive] = useState("O que somos");
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
@@ -44,10 +44,7 @@ export default function Navbar() { //CONTINUE POR AQUI
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
-        <li
-          className={`font-normal cursor-pointer text-[16px]`}
-          onClick={() => console.log("Aluno")}
-        >
+        <li className={`font-normal cursor-pointer text-[16px]`}>
           <ButtonLogin
             type="button"
             onClick={() => navigate("/login-estudante")}
@@ -55,10 +52,7 @@ export default function Navbar() { //CONTINUE POR AQUI
             Sou estudante
           </ButtonLogin>
         </li>
-        <li
-          className={`font-normal cursor-pointer text-[16px]`}
-          onClick={() => console.log("Professor")}
-        >
+        <li className={`font-normal cursor-pointer text-[16px]`}>
           <ButtonRegister
             type="button"
             onClick={() => navigate("/login-professor")}
@@ -84,15 +78,15 @@ export default function Navbar() { //CONTINUE POR AQUI
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             <li
               className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-              onClick={() => console.log("Aluno")}
+              onClick={() => navigate("/login-estudante")}
             >
-              Login
+              Sou estudante
             </li>
             <li
               className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-              onClick={() => console.log("Professor")}
+              onClick={() => navigate("/login-professor")}
             >
-              Cadastre-se
+              Sou professor
             </li>
             {navLinks.map((nav, index) => (
               <li
