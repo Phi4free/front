@@ -69,7 +69,7 @@ export function LoginProfessor() {
                         navigate("/home");
                     } else {
                         isLoading(false);
-                        setErros(t("errorLogin1"));
+                        setErros(data.message);
                     }
                 });
             })

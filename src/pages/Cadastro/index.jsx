@@ -74,7 +74,7 @@ export function Cadastro() {
                         navigate("/home");
                     } else {
                         isLoading(false);
-                        setErros(t("errorRegister2"));
+                        setErros(data.message);
                     }
                 });
             })
