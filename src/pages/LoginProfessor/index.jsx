@@ -18,7 +18,6 @@ import { useState } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
-import api, { BASE_URL } from "../../services/api";
 import Popup from "../../components/Popup";
 import BasicInput from "../../components/BasicInput";
 import { useTranslation } from "react-i18next";

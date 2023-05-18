@@ -17,7 +17,7 @@ import { useState } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
-import { BASE_URL } from "../../services/api";
+import api, { BASE_URL } from "../../services/api";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 
