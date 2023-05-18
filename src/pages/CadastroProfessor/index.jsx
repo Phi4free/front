@@ -6,6 +6,7 @@ import {
     LabelTitulo,
     RodapeTermos,
     LinkText,
+    List
 } from "./styles";
 import DinamicInput from "../../components/DinamicInput";
 import { Loading } from "../../components/Loading/styles";
@@ -39,7 +40,7 @@ export function CadastroProfessor() {
                 <ContainerInput>
                 <p>Compartilhe conteúdo útil e interessante para milhares de pessoas! Com nosso processo simplificado de inscrição, você pode gerar conhecimento do conforto de sua casa! Veja como é fácil:</p>
                 </ContainerInput>
-                <ul>
+                <List>
                     <li>
                     Acesse nosso {" "}
                     <a href="https://phi4free.blogspot.com/" target="_blank">site de carreiras</a>
@@ -52,7 +53,7 @@ export function CadastroProfessor() {
                     <li>
                     Envie tudo para avaliação e boa sorte!
                     </li>
-                </ul>
+                </List>
                 <ContainerInput>
                     <PrimaryButton label="QUERO ME INSCREVER" onClick={() => console.log("Faz algo")} />
                 </ContainerInput>

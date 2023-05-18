@@ -55,6 +55,8 @@ export const Form = styled.div `
 
 export const LabelTitulo = styled.h2 `
   padding: 2%;
+  font-size: x-large;
+  font-weight: 700;
 `
 
 export const RodapeTermos = styled.p `

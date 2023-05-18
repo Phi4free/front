@@ -10,7 +10,7 @@ export const theme = {
       dimYellow: "rgba(255, 195, 0, 0.1)",
     },
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
     },
   },
   screens: {
