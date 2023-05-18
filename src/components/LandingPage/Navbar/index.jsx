@@ -41,7 +41,7 @@ export default function Navbar() {
             }`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`${nav.id}`}>{nav.title}</a>
           </li>
         ))}
         <li className={`font-normal cursor-pointer text-[16px]`}>
@@ -96,7 +96,7 @@ export default function Navbar() {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a href={`${nav.id}`}>{nav.title}</a>
               </li>
             ))}
           </ul>
