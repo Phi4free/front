@@ -6,6 +6,7 @@ import {
     LabelTitulo,
     RodapeTermos,
     LinkText,
+    List
 } from "./styles";
 import DinamicInput from "../../components/DinamicInput";
 import { Loading } from "../../components/Loading/styles";
@@ -44,8 +45,7 @@ export function CadastroProfessor() {
                 <ContainerInput>
                 <p>{t('registerInfo')}</p>
                 </ContainerInput>
-                <ContainerInput>
-                <ul>
+                <List>
                     <li>
                     {t('registerInfo1')+" "}
                     <a href="https://phi4free.blogspot.com/" target="_blank">{t('carrers')}</a>
@@ -57,8 +57,7 @@ export function CadastroProfessor() {
                     <li>
                     {t('registerInfo3')}
                     </li>
-                </ul>
-                </ContainerInput>
+                </List>
                 <ContainerInput>
                     <PrimaryButton label={t('btnSubscribe')} onClick={() => console.log("Abre processo")} />
                 </ContainerInput>

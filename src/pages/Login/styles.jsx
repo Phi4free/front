@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
   height: 100%;
   display: flex;
-`
+`;
 
 export const CentralizedContainer = styled.div `
   display:flex;
@@ -17,9 +17,9 @@ export const ContainerInput = styled.div `
   justify-content: center;
   width: 80%;
   margin-bottom: 2%;
-`
+`;
 
-export const ImgCover = styled.div `
+export const ImgCover = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
@@ -27,28 +27,32 @@ export const ImgCover = styled.div `
   height: 100vh;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(107, 0, 173, 0.3)),
-    url(https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.75),
+        rgba(107, 0, 173, 0.3)
+      ),
+      url(https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
   }
 
-  display:none;
+  display: none;
   @media only screen and (min-width: 768px) {
     display: flex;
   }
-`
+`;
 
-export const Form = styled.div `
+export const Form = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,20 +61,22 @@ export const Form = styled.div `
   @media only screen and (min-width: 768px) {
     width: 45%;
   }
-`
+`;
 
-export const LabelTitulo = styled.h2 `
+export const LabelTitulo = styled.h2`
   padding: 2%;
-`
+  font-size: x-large;
+  font-weight: 700;
+`;
 
-export const RodapeTermos = styled.p `
+export const RodapeTermos = styled.p`
   font-size: smaller;
   text-align: center;
   padding-top: 4%;
   margin: 0% 16%;
-`
+`;
 
-export const LinkText = styled.a `
-  color: #C880B7;
+export const LinkText = styled.a`
+  color: #c880b7;
   cursor: pointer;
-`
+`;
