@@ -104,6 +104,8 @@ i18n
                     //future
                     futureTitle: "Get ready for the future",
                     futurePar: "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
+                    //pillars
+                    pillarsTitle: "Our pillars",
                     //footer
                     lang: "Language:",
                     usefulLinks: "Useful links",
@@ -204,6 +206,8 @@ i18n
                     //future
                     futureTitle: "Prepare-se para o futuro",
                     futurePar: "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
+                    // pillars
+                    pillarsTitle: "Nossos pilares",
                     //footer
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",

@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { card } from "../../../assets/LandingPage";
 import styles, { layout } from "../../../styles/style";
 import Button from "../Button";
@@ -6,7 +7,7 @@ export default function Pillars() {
   return (
     <section id="pillars" className={layout.section}>
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}>Nossos pilares</h2>
+        <h2 className={styles.heading2}>{t('pillarsTitle')}</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           Viver uma vida equilibrada e plena requer uma abordagem holística que
           abrange diferentes áreas do conhecimento e habilidades práticas. O

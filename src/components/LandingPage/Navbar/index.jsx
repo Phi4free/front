@@ -32,7 +32,7 @@ export default function Navbar() {
     },
     {
       id: "pillars",
-      title:  t('navPillars'),
+      title:  t('pillarsTitle'),
     },
   ];
 
