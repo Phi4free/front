@@ -1,4 +1,5 @@
 import card from "./card.png";
+import cardENG from "./cardENG.png";
 import discount from "./discount-symbol.svg";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
@@ -11,6 +12,7 @@ import lampada from "./lampada.png";
 export {
   lampada,
   card,
+  cardENG,
   discount,
   send,
   shield,

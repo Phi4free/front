@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    langSigle: "en",
                     cancel: "CANCEL",
                     andConnective: "and",
                     orConnective: "or",
@@ -106,6 +107,7 @@ i18n
                     futurePar: "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
                     //pillars
                     pillarsTitle: "Our pillars",
+                    pillarsPar: "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
                     //footer
                     lang: "Language:",
                     usefulLinks: "Useful links",
@@ -123,6 +125,7 @@ i18n
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    langSigle: "pt-BR",
                     cancel: "CANCELAR",
                     andConnective: "e",
                     orConnective: "ou",
@@ -208,6 +211,7 @@ i18n
                     futurePar: "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
                     // pillars
                     pillarsTitle: "Nossos pilares",
+                    pillarsPar: "Viver uma vida equilibrada e plena requer uma abordagem holística que abrange diferentes áreas do conhecimento e habilidades práticas. O Phi4free abrangendo educação financeira, física, filosófica e funcional oferece uma jornada única para auxiliar a desenvolver competências fundamentais para uma vida saudável, equilibrada e satisfatória.",
                     //footer
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",
