@@ -73,6 +73,7 @@ i18n
                     errorRegister2: "Validation error",
                     errorRegister3:
                         "An error occurred while registering. Please try again later",
+                    errorRegister4: "Enter your name to create an account",
                     byPhi4Free: "",
                     // Landing page
                     //Hero
@@ -166,6 +167,7 @@ i18n
                     errorRegister2: "Erro de validação",
                     errorRegister3:
                         "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
+                    errorRegister4: "Coloque seu nome para criar uma conta",
                     byPhi4Free: "da Phi4Free",
                     // Landing page
                     //Hero

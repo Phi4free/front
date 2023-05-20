@@ -34,6 +34,11 @@ export function Cadastro() {
 
     const handleNome = (e) => {
         e.preventDefault();
+        if(nome == ""){
+            setErros(t("errorRegister4"));
+        } else {
+            setErros(null)
+        }
         setNome(e.target.value);
     };
 
@@ -57,6 +62,7 @@ export function Cadastro() {
     };
 
     const onSubmit = (e) => {
+        if (erros != null) return
         e.preventDefault();
         isLoading(true);
         setErros(null);
