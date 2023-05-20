@@ -81,8 +81,7 @@ export default function Footer() {
                         className="w-[266px] h-[72.14px] object-contain"
                     />
                     <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-                        Uma nova maneira de adquirir conhecimento de forma
-                        prática, fácil e confiável.
+                        {t('footerPar')}
                     </p>
                     <br />
                     <LangSwitcher/>

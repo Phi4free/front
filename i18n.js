@@ -108,8 +108,12 @@ i18n
                     //pillars
                     pillarsTitle: "Our pillars",
                     pillarsPar: "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
+                    //cta
+                    ctaTitle: "So, shall we begin?",
+                    ctaPar: "Gain knowledge to build a solid foundation for a balanced, meaningful and authentic life.",
                     //footer
                     lang: "Language:",
+                    footerPar: "A new way to acquire knowledge in a practical, easy and reliable way.",
                     usefulLinks: "Useful links",
                     aboutUs: "About Us",
                     workUs: "Carrers",
@@ -212,8 +216,12 @@ i18n
                     // pillars
                     pillarsTitle: "Nossos pilares",
                     pillarsPar: "Viver uma vida equilibrada e plena requer uma abordagem holística que abrange diferentes áreas do conhecimento e habilidades práticas. O Phi4free abrangendo educação financeira, física, filosófica e funcional oferece uma jornada única para auxiliar a desenvolver competências fundamentais para uma vida saudável, equilibrada e satisfatória.",
+                    //cta
+                    ctaTitle: "E aí? Vamos começar?",
+                    ctaPar: "Adquira conhecimento para construir uma base sólida para uma vida equilibrada, significativa e autêntica.",
                     //footer
                     lang: "Idioma:",
+                    footerPar: "Uma nova maneira de adquirir conhecimento de forma prática, fácil e confiável.",
                     usefulLinks: "Links Úteis",
                     aboutUs: "Quem Somos",
                     workUs: "Trabalhe Conosco",
