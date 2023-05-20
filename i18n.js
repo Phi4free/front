@@ -76,6 +76,10 @@ i18n
                     errorRegister4: "Enter your name to create an account",
                     byPhi4Free: "",
                     // Landing page
+                    //Navbar
+                    navWhat: "What are we",
+                    imStudent: "I'm a Student",
+                    imTeacher: "I'm a Teacher",
                     //Hero
                     heroTitle1: "Awaken your",
                     heroTitle2: "potential",
@@ -97,7 +101,9 @@ i18n
                     busItem3Title: "Share with friends",
                     busItem3Par:
                         "Share our content with your friends and evolve together in this trajectory of knowledge.",
-
+                    //future
+                    futureTitle: "Get ready for the future",
+                    futurePar: "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
                     //footer
                     lang: "Language:",
                     usefulLinks: "Useful links",
@@ -170,6 +176,10 @@ i18n
                     errorRegister4: "Coloque seu nome para criar uma conta",
                     byPhi4Free: "da Phi4Free",
                     // Landing page
+                    //Navbar
+                    navWhat: "O que somos",
+                    imStudent: "Sou Estudante",
+                    imTeacher: "Sou Professor",
                     //Hero
                     heroTitle1: "Desperte seu",
                     heroTitle2: "potencial",
@@ -191,7 +201,9 @@ i18n
                     busItem3Title: "Compartilhe com os amigos",
                     busItem3Par:
                         "Compartilhe com os amigos nossos conteúdos e evoluam juntos nessa trajetória de conhecimento.",
-
+                    //future
+                    futureTitle: "Prepare-se para o futuro",
+                    futurePar: "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
                     //footer
                     lang: "Idioma:",
                     usefulLinks: "Links Úteis",
