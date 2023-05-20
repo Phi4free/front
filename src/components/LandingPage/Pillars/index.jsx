@@ -1,10 +1,12 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { card, cardENG } from "../../../assets/LandingPage";
 
 import styles, { layout } from "../../../styles/style";
 import Button from "../Button";
 
 export default function Pillars() {
+
+  const { t } = useTranslation();
 
   const switchBanner = () => {
     switch (t('langSigle')) {

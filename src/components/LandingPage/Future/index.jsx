@@ -1,7 +1,9 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import styles, { layout } from "../../../styles/style";
 
 export default function Future() {
+  const { t } = useTranslation();
+
   const videoId = "tcLLTsP3wlo";
   const posterUrl = "https://i.ytimg.com/vi/tcLLTsP3wlo/hq720.jpg";
 

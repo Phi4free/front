@@ -4,16 +4,17 @@ import { close, menu } from "../../../assets/LandingPage";
 import logo from "../../../assets/logo.png";
 import { ButtonLogin, ButtonRegister } from "./styles";
 import { useNavigate } from "react-router-dom";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 /**
- * DOIS PROBLEMAS PARA VERIFICAR
+ * PROBLEMA PARA VERIFICAR
  *
  * 1 - Botões do Navbar não estão realizando scroll para a porção da tela esperada, na vdd não estão fazendo scroll nenhum
- * 2 - Tradução, ao realizar o switch language, não está traduzindo automaticamente, só quando a tela é atualizada
- */
+*/
 
 export default function Navbar() {
+  const { t } = useTranslation();
+
   const [active, setActive] = useState("O que somos");
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();

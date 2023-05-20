@@ -1,8 +1,10 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import styles from "../../../styles/style";
 import Button from "../Button";
 
 export default function CTA() {
+  const { t } = useTranslation();
+
   return (
     <section
       className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow`}
