@@ -31,13 +31,14 @@ export function Cadastro() {
     let [nome, setNome] = useState("");
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
+    let [confirmPassword, setConfirmPassword] = useState("");
 
     const handleNome = (e) => {
         e.preventDefault();
-        if(nome == ""){
+        if (nome == "") {
             setErros(t("errorRegister4"));
         } else {
-            setErros(null)
+            setErros(null);
         }
         setNome(e.target.value);
     };
@@ -54,15 +55,26 @@ export function Cadastro() {
 
     const handleConfirmPassword = (e) => {
         e.preventDefault();
-        if (e.target.value != password) {
+        setConfirmPassword(e.target.value);
+        if (confirmPassword != password) {
             setErros(t("errorRegister1"));
         } else {
             setErros(null);
         }
     };
 
+    const validateErros = () => {
+        if (nome == "") {
+            setErros(t("errorRegister4"));
+            return false;
+        }
+        if (confirmPassword != password) return false;
+
+        return true;
+    };
+
     const onSubmit = (e) => {
-        if (erros != null) return
+        if (!validateErros()) return;
         e.preventDefault();
         isLoading(true);
         setErros(null);
