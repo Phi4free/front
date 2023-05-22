@@ -1,7 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div `
-  padding: 50px 100px;
 `
 
-//Styled component de uma página específica
+export const Lists = styled.section `
+  margin-top: -150px;
+`
+
+export const Footer = styled.footer `
+  margin: 50px 0;
+  text-align: center;
+  padding-bottom: 30px;
+`
