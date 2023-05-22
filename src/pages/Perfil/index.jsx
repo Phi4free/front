@@ -29,7 +29,7 @@ export function Perfil() {
             </button>
             {
                 showAdvancedMenu ?
-                <FlyoutMenu id="advanced-menu"/>
+                <FlyoutMenu id="advanced-menu" keepOnMenu={isShowAdvancedMenu}/>
                 : null
             }
         </>
