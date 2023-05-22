@@ -14,6 +14,7 @@ import { CadastroIdentificacao } from '../pages/IdentificacaoCadastro';
 import { Cadastro } from '../pages/Cadastro';
 import { CadastroProfessor } from '../pages/CadastroProfessor';
 import { Home } from '../pages/Home'
+import { Perfil } from '../pages/Perfil';
 
 export function AppRoutes () {
   return (
@@ -26,6 +27,7 @@ export function AppRoutes () {
       <Route path='/login-estudante' element={<Login />}></Route>
       <Route path='/login-professor' element={<LoginProfessor />}></Route>
       <Route path='/home' element={<Home />}></Route>
+      <Route path='/meu-perfil' element={<Perfil/>}></Route>
     </Routes>
   )
 }
