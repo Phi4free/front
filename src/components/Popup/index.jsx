@@ -61,7 +61,7 @@ export default function Popup(props) {
                                         <button
                                             // Arrumar css do btn
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
+                                            className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnsecondary"
                                             onClick={() => {
                                                 if (action()) setOpen(false);
                                             }}

@@ -14,36 +14,28 @@ export function Perfil() {
 
     const opcoesAvancadas = {
         email: {
-            titulo: "ALTERAR EMAIL",
-            descricao: "Altere o email ao qual sua conta está associada",
+            label: "Alterar email",
             acao: () => {
                 console.log("handle: Alterar email");
             },
-            //   icon: logoalt,
         },
         senha: {
-            titulo: "ALTERAR SENHA",
-            descricao: "Altere a senha de acesso da sua conta",
+            label: "Alterar senha",
             acao: () => {
                 console.log("handle: Alterar senha");
             },
-            //    icon: logoalt,
         },
         segConta: {
-            titulo: "SEGURANÇA & CONTA",
-            descricao: "Opções de segurança da conta e plataforma",
+            label: "Segurança & Conta",
             acao: () => {
                 console.log("handle: Segurança & Conta");
             },
-            //    icon: logoalt,
         },
         logout: {
-            titulo: "FAZER LOGOUT",
-            descricao: "Desconecte a conta logada deste dispositivo",
+            label: "Logout",
             acao: () => {
                 console.log("handle: Fazer logout");
             },
-            //    icon: logoalt,
         },
     };
 
@@ -60,7 +52,7 @@ export function Perfil() {
                 </button>
                 <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
+                    className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnsecondary"
                     onClick={() => console.log("Editar perfil")}
                 >
                     Editar
@@ -68,7 +60,7 @@ export function Perfil() {
             </div>
             {showAdvancedMenu ? (
                 <SideMenu
-                    id="advanced-menu"
+                    title="OPÇÕES AVANÇADAS"
                     options={opcoesAvancadas}
                     keepOnMenu={isShowAdvancedMenu}
                 />
