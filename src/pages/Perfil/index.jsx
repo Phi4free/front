@@ -2,13 +2,42 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
-import FlyoutMenu from "../../components/FlyoutMenu";
+import SideMenu from "../../components/SideMenu";
+//import {logoalt} from "../../assets/logoalt.png";
 
 export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false)
+
+    const opcoesAvancadas = {
+        email: {
+            titulo: "ALTERAR EMAIL",
+            descricao: "Altere o email ao qual sua conta está associada",
+            acao: () => {console.log("handle: Alterar email")},
+         //   icon: logoalt,
+        },
+        senha: {
+            titulo: "ALTERAR SENHA",
+            descricao: "Altere a senha de acesso da sua conta",
+            acao: () => {console.log("handle: Alterar senha")},
+        //    icon: logoalt,
+        },
+        segConta: {
+            titulo: "SEGURANÇA & CONTA",
+            descricao: "Opções de segurança da conta e plataforma",
+            acao: () => {console.log("handle: Segurança & Conta")},
+        //    icon: logoalt,
+        },
+        logout: {
+            titulo: "FAZER LOGOUT",
+            descricao: "Desconecte a conta logada deste dispositivo",
+            acao: () => {console.log("handle: Fazer logout")},
+        //    icon: logoalt,
+        },
+
+    }
 
     return (
         <>
@@ -29,7 +58,10 @@ export function Perfil() {
             </button>
             {
                 showAdvancedMenu ?
-                <FlyoutMenu id="advanced-menu" keepOnMenu={isShowAdvancedMenu}/>
+                <SideMenu 
+                id="advanced-menu"
+                options={opcoesAvancadas}
+                keepOnMenu={isShowAdvancedMenu}/>
                 : null
             }
         </>
