@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 import SideMenu from "../../components/SideMenu";
-import "./styles.css"
+import "./styles.css";
 //import {logoalt} from "../../assets/logoalt.png";
 
 export function Perfil() {
@@ -46,7 +46,7 @@ export function Perfil() {
                 <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => isShowAdvancedMenu(true)}
+                    onClick={() => isShowAdvancedMenu(!showAdvancedMenu)}
                 >
                     Opções avançadas
                 </button>
@@ -58,13 +58,12 @@ export function Perfil() {
                     Editar
                 </button>
             </div>
-            {showAdvancedMenu ? (
-                <SideMenu
-                    title="OPÇÕES AVANÇADAS"
-                    options={opcoesAvancadas}
-                    keepOnMenu={isShowAdvancedMenu}
-                />
-            ) : null}
+            <SideMenu
+                title="OPÇÕES AVANÇADAS"
+                options={opcoesAvancadas}
+                open={showAdvancedMenu}
+                setOpen={isShowAdvancedMenu}
+            />
         </>
     );
 }
