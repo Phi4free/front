@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
 
 export default function SideMenu(props) {
-    const { title, open, setOpen, options } = props;
+    const { title, open, setOpen, options, children } = props;
     const { t } = useTranslation();
+
     return (
         
         <div className={"transition-all fixed top-0 " + (open ? "left-0" : "-left-72")}>
@@ -12,7 +13,9 @@ export default function SideMenu(props) {
                         <h1>{title}</h1>
                         <br/>
                     </div>
-                    {Object.keys(options).map((id) => (
+                    {
+                    options != null ?
+                    Object.keys(options).map((id) => (
                         <div key={id} className="w-full flex items-center gap-x-1.5 group select-none">
                             <div className="w-1 rounded-xl h-8 bg-transparent transition-colors duration-200 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-[102%] translate-y-full group-hover:translate-y-0 bg-btnprimary transition-all duration-300"></div>
@@ -24,14 +27,15 @@ export default function SideMenu(props) {
                                 {options[id].label}
                             </button>
                         </div>
-                    ))}
+                    )) : null}
                 </div>
+                {children}
                 <div>
                     <button
-                        className="inline-flex w-full justify-center rounded-md py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary text-btnhover px-20"
+                        className="inline-flex w-full justify-center rounded-md py-2 text-sm border-4 border-primary hover:border-0 shadow-sm sm:ml-3 sm:w-auto text-primary px-20"
                         onClick={() => setOpen(false)}
                     >
-                        {t("close")}
+                        {t("back")}
                     </button>
                 </div>
             </aside>

@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    back: "GO BACK",
                     close: "CLOSE",
                     langSigle: "en",
                     cancel: "CANCEL",
@@ -131,6 +132,7 @@ i18n
                 translation: {
                     //miscelanous
                     close: "FECHAR",
+                    back: "VOLTAR",
                     langSigle: "pt-BR",
                     cancel: "CANCELAR",
                     andConnective: "e",

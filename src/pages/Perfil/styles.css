@@ -4,3 +4,9 @@
     justify-content: flex-end;
     margin-right: 2vw;
 }
+
+.username{
+    margin-left: 2vw;
+    font-size: x-large;
+    font-weight: 600;
+}
