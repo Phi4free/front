@@ -3,7 +3,9 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
+import DinamicInput from "../../../components/DinamicInput";
 import BasicInput from "../../../components/BasicInput";
+import {ContainerInput} from "../style";
 
 export function AlterarSenha(props) {
     const { open, setOpen } = props;
@@ -20,6 +22,11 @@ export function AlterarSenha(props) {
             setErros(null);
         }
     }, [newPassword, confirmNewPassword]);
+
+    const handleCurrentPassword = (e) => {
+        e.preventDefault();
+        setCurrentPassword(e.target.value);
+    }
 
     const handleNewPassword = (e) => {
         e.preventDefault();
@@ -40,7 +47,37 @@ export function AlterarSenha(props) {
     >
         <div className="text-gray-500">
                     <a>Digite sua senha atual:</a>
-                    
+                    <br/>
+                    <ContainerInput>
+                    <DinamicInput
+                        type="password"
+                        id="pass-current"
+                        onInput={handleCurrentPassword}
+                        label={null}
+                    />
+                    </ContainerInput>
+                    <br />
+                    <a>Digite uma nova senha:</a>
+                    <br/>
+                    <ContainerInput>
+                    <DinamicInput
+                        type="password"
+                        id="pass-new"
+                        onInput={handleNewPassword}
+                        label={null}
+                    />
+                    </ContainerInput>
+                    <br />
+                    <a>Confirme a nova senha:</a>
+                    <br/>
+                    <ContainerInput>
+                    <DinamicInput
+                        type="password"
+                        id="pass-new-confirm"
+                        onInput={handleConfirmNewPassword}
+                        label={null}
+                    />
+                    </ContainerInput>
                     <br />
                     
                 </div>
