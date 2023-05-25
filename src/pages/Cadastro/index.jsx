@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
@@ -28,10 +29,18 @@ export function Cadastro() {
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
 
-    let [nome, setNome] = useState("");
-    let [email, setEmail] = useState("");
-    let [password, setPassword] = useState("");
-    let [confirmPassword, setConfirmPassword] = useState("");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    useEffect(() => {
+        if (password != confirmPassword && confirmPassword != "") {
+            setErros(t("errorRegister1"));
+        } else {
+            setErros(null);
+        }
+    }, [password, confirmPassword]);
 
     const handleNome = (e) => {
         e.preventDefault();
@@ -56,11 +65,6 @@ export function Cadastro() {
     const handleConfirmPassword = (e) => {
         e.preventDefault();
         setConfirmPassword(e.target.value);
-        if (confirmPassword != password) {
-            setErros(t("errorRegister1"));
-        } else {
-            setErros(null);
-        }
     };
 
     const validateErros = () => {

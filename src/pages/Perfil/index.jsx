@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 import ErroText from "../../components/ErroText";
@@ -14,9 +15,17 @@ export function Perfil() {
     const navigate = useNavigate();
     const [newEmail, setNewEmail] = useState("");
     const [confirmNewEmail, setConfirmNewEmail] = useState("");
-    const [erros, setErros] = useState("");
+    const [erros, setErros] = useState(null);
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
+
+    useEffect(() => {
+        if (newEmail != confirmNewEmail && confirmNewEmail != "") {
+            setErros("Os emails são diferentes");
+        } else {
+            setErros(null);
+        }
+    }, [newEmail, confirmNewEmail]);
 
     const opcoesAvancadas = {
         email: {
@@ -53,9 +62,6 @@ export function Perfil() {
     const handleConfirmEmail = (e) => {
         e.preventDefault();
         setConfirmNewEmail(e.target.value);
-        if (newEmail != confirmNewEmail){
-            setErros("Os emails são diferentes");
-        }
     };
 
     return (
@@ -97,29 +103,31 @@ export function Perfil() {
             >
                 <div className="text-gray-500">
                     <p>Seu email atual é: email@email.com</p>
-                    <br/>
+                    <br />
                     <a>Insira um novo email:</a>
                     <BasicInput
-                            type="email"
-                            id="email-change"
-                            onInput={handleEmail}
+                        type="email"
+                        id="email-change"
+                        onInput={handleEmail}
                     />
                     <br />
                     <a>Confirme o email:</a>
                     <BasicInput
-                            type="email"
-                            id="email-change-confirm"
-                            onInput={handleConfirmEmail}
+                        type="email"
+                        id="email-change-confirm"
+                        onInput={handleConfirmEmail}
                     />
-                    <br/>
-                    <ErroText iconName="circle-exclamation" label={"Errou!"} />
+                    <br />
+                    {erros != null ? (
+                        <ErroText iconName="circle-exclamation" label={erros} />
+                    ) : null}
                 </div>
-                    <button
-                        className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                        onClick={() => console.log("update email")}
-                    >
-                        ATUALIZAR EMAIL
-                    </button>
+                <button
+                    className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+                    onClick={() => console.log("update email")}
+                >
+                    ATUALIZAR EMAIL
+                </button>
             </SideMenu>
         </>
     );
