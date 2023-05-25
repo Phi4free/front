@@ -7,25 +7,17 @@ import ErroText from "../../components/ErroText";
 import SideMenu from "../../components/SideMenu";
 import BasicInput from "../../components/BasicInput";
 import "./styles.css";
+import { AlterarEmail } from "./SideMenuItems/alterarEmail";
+import { AlterarSenha } from "./SideMenuItems/alterarSenha";
 //import {logoalt} from "../../assets/logoalt.png";
 
 export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const [newEmail, setNewEmail] = useState("");
-    const [confirmNewEmail, setConfirmNewEmail] = useState("");
-    const [erros, setErros] = useState(null);
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
-
-    useEffect(() => {
-        if (newEmail != confirmNewEmail && confirmNewEmail != "") {
-            setErros("Os emails são diferentes");
-        } else {
-            setErros(null);
-        }
-    }, [newEmail, confirmNewEmail]);
+    const [showChangePassword, isShowChangePassword] = useState(false);
 
     const opcoesAvancadas = {
         email: {
@@ -37,7 +29,7 @@ export function Perfil() {
         senha: {
             label: "Alterar senha",
             acao: () => {
-                console.log("handle: Alterar senha");
+                isShowChangePassword(true);
             },
         },
         segConta: {
@@ -52,16 +44,6 @@ export function Perfil() {
                 console.log("handle: Fazer logout");
             },
         },
-    };
-
-    const handleEmail = (e) => {
-        e.preventDefault();
-        setNewEmail(e.target.value);
-    };
-
-    const handleConfirmEmail = (e) => {
-        e.preventDefault();
-        setConfirmNewEmail(e.target.value);
     };
 
     return (
@@ -95,40 +77,27 @@ export function Perfil() {
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
             />
-            <SideMenu
-                title="ALTERAR EMAIL"
+            <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail}/>
+            <AlterarSenha open={showChangePassword} setOpen={isShowChangePassword}/>
+            {/* <SideMenu
+                title="ALTERAR SENHA"
                 options={null}
-                open={showChangeEmail}
-                setOpen={isShowChangeEmail}
+                open={showChangePassword}
+                setOpen={isShowChangePassword}
             >
                 <div className="text-gray-500">
-                    <p>Seu email atual é: email@email.com</p>
+                    <a>Digite sua senha atual:</a>
+                    
                     <br />
-                    <a>Insira um novo email:</a>
-                    <BasicInput
-                        type="email"
-                        id="email-change"
-                        onInput={handleEmail}
-                    />
-                    <br />
-                    <a>Confirme o email:</a>
-                    <BasicInput
-                        type="email"
-                        id="email-change-confirm"
-                        onInput={handleConfirmEmail}
-                    />
-                    <br />
-                    {erros != null ? (
-                        <ErroText iconName="circle-exclamation" label={erros} />
-                    ) : null}
+                    
                 </div>
                 <button
                     className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                    onClick={() => console.log("update email")}
+                    onClick={() => console.log("update password")}
                 >
-                    ATUALIZAR EMAIL
+                    ATUALIZAR SENHA
                 </button>
-            </SideMenu>
+            </SideMenu> */}
         </>
     );
 }
