@@ -32,7 +32,7 @@ export default function SideMenu(props) {
                 {children}
                 <div>
                     <button
-                        className="inline-flex w-full justify-center rounded-md py-2 text-sm border-2 border-solid border-primary hover:border-transparent shadow-sm sm:ml-3 sm:w-auto text-primary px-20"
+                        className="inline-flex w-full justify-center rounded-md py-2 text-sm border-2 border-solid border-primary hover:border-transparent shadow-sm sm:w-auto text-primary px-20"
                         onClick={() => setOpen(false)}
                     >
                         {t("back")}

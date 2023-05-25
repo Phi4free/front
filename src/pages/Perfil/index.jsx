@@ -80,12 +80,14 @@ export function Perfil() {
                 <div className="text-gray-500 fill-gray-500 text-sm">
                     <p>O email atual é: XYZ</p>
                     <a>Insira um novo email:</a>
-                    <br/>
+                    <br />
                     <a>Confirme o email:</a>
                 </div>
-
-                <button className="inline-flex w-full justify-center rounded-md py-2 text-sm shadow-sm sm:ml-3 sm:w-auto text-btnhover bg-btnprimary px-20">
-                    ATUALIZAR EMAIL
+                    <button
+                        className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+                        onClick={() => console.log("update email")}
+                    >
+                        ATUALIZAR EMAIL
                     </button>
             </SideMenu>
         </>
