@@ -5,6 +5,7 @@ import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
 import DinamicInput from "../../../components/DinamicInput";
 import { ContainerInput, CentralizedContainer, LinkText } from "../style";
+import Toast from "../../../components/Toast";
 
 export function AlterarSenhaStep2(props) {
     const { open, setOpen } = props;
@@ -75,6 +76,12 @@ export function AlterarSenhaStep2(props) {
                 ATUALIZAR SENHA
             </button>
         </SideMenu>
+        {
+            /**
+             * Arrumar funcionamento do toast
+             */
+        }
+        <Toast message="Senha não foi alterada ainda..."/>
     </>
     );
 }
