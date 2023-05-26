@@ -26,28 +26,36 @@ export default function DinamicInput(props) {
                 onInput={onInput}
                 placeholder=" "
             />
-            <span className="input__label">{label}</span>
-                {type == "password" ? (
-                    visivel ? (
-                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
+            {label != null ? (
+                <span className="input__label">{label}</span>
+            ) : null}
+            {type == "password" ? (
+                visivel ? (
+                    <span
+                        className="alinha_fim"
+                        onClick={() => isVisivel(!visivel)}
+                    >
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye",
                                 style: "solid",
                             })}
                         />
-                        </span>
-                    ) : (
-                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
+                    </span>
+                ) : (
+                    <span
+                        className="alinha_fim"
+                        onClick={() => isVisivel(!visivel)}
+                    >
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye-slash",
                                 style: "solid",
                             })}
                         />
-                        </span>
-                    )
-                ) : null}
+                    </span>
+                )
+            ) : null}
         </label>
     );
 }
