@@ -45,7 +45,7 @@ i18n
                     // password recover
                     passRecover: "Password recover",
                     passRecover1:
-                        "Forgot password? Don't worry, we'll send you an email to help you regain access to your account!",
+                        "Forgot password? Don't worry, we'll send you an email to help you keep your account safe!",
                     passRecover2: "Enter the registered account email:",
                     passRecoverEmail: "registeredEmail@email.com",
                     sendEmail: "SEND EMAIL",
@@ -156,7 +156,7 @@ i18n
                     // password recover
                     passRecover: "Recuperação de senha",
                     passRecover1:
-                        "Esqueceu a senha? Não se preocupe, vamos te enviar um email para ajudar a recuperar o acesso da sua conta!",
+                        "Esqueceu a senha? Não se preocupe, vamos te enviar um email para ajudar a manter sua conta segura!",
                     passRecover2: "Digite o email da conta cadastrada:",
                     passRecoverEmail: "emailCadastrado@email.com",
                     sendEmail: "ENVIAR EMAIL",

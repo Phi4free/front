@@ -21,19 +21,15 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
  */
 
 const icons = {
-  'circle-exclamation': solid('circle-exclamation')
-}
+    "circle-exclamation": solid("circle-exclamation"),
+};
 
 export default function ErroText(props) {
     const { iconName, label } = props;
-    
+
     return (
         <Erro>
-            <FontAwesomeIcon
-                icon={icons[iconName]}
-            />
-            {" "}
-            {label}
+            <FontAwesomeIcon icon={icons[iconName]} /> {label}
         </Erro>
     );
 }
