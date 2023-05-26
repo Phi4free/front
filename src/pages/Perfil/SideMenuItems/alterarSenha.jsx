@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
@@ -7,45 +6,41 @@ import DinamicInput from "../../../components/DinamicInput";
 import BasicInput from "../../../components/BasicInput";
 import Popup from "../../../components/Popup";
 import { ContainerInput, CentralizedContainer, LinkText } from "../style";
+import { AlterarSenhaStep2 } from "./alterarSenhaStep2";
 
 export function AlterarSenha(props) {
     const { open, setOpen } = props;
     const { t } = useTranslation();
-    const [senhaPopup, setSenhaPopup] = useState(false);
 
     const [currentPassword, setCurrentPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [confirmNewPassword, setconfirmNewPassword] = useState("");
+    const [senhaPopup, setSenhaPopup] = useState(false);
     const [recoverEmail, setRecoverEmail] = useState("");
+    const [verifiedCurrentPassword, isVerifiedCurrentPassword] = useState(false);
     const [erros, setErros] = useState(null);
-
-    useEffect(() => {
-        if (newPassword != confirmNewPassword && confirmNewPassword != "") {
-            // setErros("Os emails são diferentes");
-        } else {
-            setErros(null);
-        }
-    }, [newPassword, confirmNewPassword]);
 
     const handleCurrentPassword = (e) => {
         e.preventDefault();
         setCurrentPassword(e.target.value);
     };
 
-    const handleNewPassword = (e) => {
-        e.preventDefault();
-        setNewPassword(e.target.value);
-    };
-
-    const handleConfirmNewPassword = (e) => {
-        e.preventDefault();
-        setconfirmNewPassword(e.target.value);
-    };
-
-        const handleRecoverEmail = (e) => {
+    const handleRecoverEmail = (e) => {
         e.preventDefault();
         setRecoverEmail(e.target.value);
     };
+
+    function verifyCurrentPassword(){
+        /**
+         * Deve pegar email atual do usuário LOGADO
+         * Deve fazer o método de authUser (Atualiza o token também?)
+         * Deve informar que a senha foi atualizada e fechar o sidebar OU
+         * Deve informar que ocorreu um erro e solicitar a repetição da operação
+         */
+
+
+        // Após checagem com backend estar concluída, remover isso aqui embaixo
+        isVerifiedCurrentPassword(!verifiedCurrentPassword);
+
+    }
 
     return (
         <>
@@ -57,7 +52,7 @@ export function AlterarSenha(props) {
         >
             <div className="text-gray-500">
                 <a>Digite sua senha atual:</a>
-                <br />
+                <br /><br/>
                 <ContainerInput>
                     <DinamicInput
                         type="password"
@@ -69,40 +64,15 @@ export function AlterarSenha(props) {
                 <LinkText onClick={() => setSenhaPopup(true)}>
                     {t("forgotPass")}
                 </LinkText>
-                <br /><br/>
-                <a>Digite uma nova senha:</a>
-                <br />
-                <ContainerInput>
-                    <DinamicInput
-                        type="password"
-                        id="pass-new"
-                        onInput={handleNewPassword}
-                        label={null}
-                    />
-                </ContainerInput>
-                <br />
-                <a>Confirme a nova senha:</a>
-                <br />
-                <ContainerInput>
-                    <DinamicInput
-                        type="password"
-                        id="pass-new-confirm"
-                        onInput={handleConfirmNewPassword}
-                        label={null}
-                    />
-                </ContainerInput>
-                <br />
             </div>
-            {
-                /**
-                 * Deve pegar resposta do banco de dados e exibir erro, caso ocorra, abaixo:
-                 */
-            }
+            {erros != null ? (
+                <ErroText iconName="circle-exclamation" label={erros} />
+            ) : null}
             <button
                 className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                onClick={() => console.log("update password")}
+                onClick={() => verifyCurrentPassword()}
             >
-                ATUALIZAR SENHA
+                CONTINUAR
             </button>
         </SideMenu>
         <Popup
@@ -140,6 +110,7 @@ export function AlterarSenha(props) {
             </CentralizedContainer>
         </>
     </Popup>
+    <AlterarSenhaStep2 open={verifiedCurrentPassword} setOpen={isVerifiedCurrentPassword}/>
     </>
     );
 }
