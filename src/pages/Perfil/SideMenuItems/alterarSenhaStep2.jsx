@@ -10,6 +10,7 @@ import Toast from "../../../components/Toast";
 export function AlterarSenhaStep2(props) {
     const { open, setOpen } = props;
     const { t } = useTranslation();
+
     const [senhaPopup, setSenhaPopup] = useState(false);
 
     const [newPassword, setNewPassword] = useState("");
@@ -71,17 +72,12 @@ export function AlterarSenhaStep2(props) {
             ) : null}
             <button
                 className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                onClick={() => console.log("update password")}
+                onClick={() => setSenhaPopup(!senhaPopup)}
             >
                 ATUALIZAR SENHA
             </button>
         </SideMenu>
-        {
-            /**
-             * Arrumar funcionamento do toast
-             */
-        }
-        <Toast message="Senha não foi alterada ainda..."/>
+        <Toast open={senhaPopup} setOpen={setSenhaPopup} message="Senha não foi alterada ainda..."/>
     </>
     );
 }

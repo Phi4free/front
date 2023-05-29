@@ -9,6 +9,7 @@ import BasicInput from "../../components/BasicInput";
 import "./styles.css";
 import { AlterarEmail } from "./SideMenuItems/alterarEmail";
 import { AlterarSenha } from "./SideMenuItems/alterarSenha";
+import Toast from "../../components/Toast";
 //import {logoalt} from "../../assets/logoalt.png";
 
 export function Perfil() {
@@ -18,6 +19,7 @@ export function Perfil() {
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
+    const [showUnderConstructionToast, isShowUnderConstructionToast] = useState(false);
 
     const opcoesAvancadas = {
         email: {
@@ -35,7 +37,7 @@ export function Perfil() {
         segConta: {
             label: "Segurança & Conta",
             acao: () => {
-                console.log("handle: Segurança & Conta");
+                isShowUnderConstructionToast(true);
             },
         },
         logout: {
@@ -79,25 +81,11 @@ export function Perfil() {
             />
             <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail}/>
             <AlterarSenha open={showChangePassword} setOpen={isShowChangePassword}/>
-            {/* <SideMenu
-                title="ALTERAR SENHA"
-                options={null}
-                open={showChangePassword}
-                setOpen={isShowChangePassword}
-            >
-                <div className="text-gray-500">
-                    <a>Digite sua senha atual:</a>
-                    
-                    <br />
-                    
-                </div>
-                <button
-                    className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                    onClick={() => console.log("update password")}
-                >
-                    ATUALIZAR SENHA
-                </button>
-            </SideMenu> */}
+            <Toast 
+            open={showUnderConstructionToast} 
+            setOpen={isShowUnderConstructionToast} 
+            iconName="wrench"
+            message="Desculpe! Esta opção ainda não está disponível"/>
         </>
     );
 }
