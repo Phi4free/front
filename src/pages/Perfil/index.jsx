@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 import ErroText from "../../components/ErroText";
 import SideMenu from "../../components/SideMenu";
-import BasicInput from "../../components/BasicInput";
 import "./styles.css";
 import { AlterarEmail } from "./SideMenuItems/alterarEmail";
 import { AlterarSenha } from "./SideMenuItems/alterarSenha";
 import Toast from "../../components/Toast";
 import { Logout } from "./SideMenuItems/fazerLogout";
-//import {logoalt} from "../../assets/logoalt.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
@@ -21,7 +21,8 @@ export function Perfil() {
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
     const [showLogout, isShowLogout] = useState(false);
-    const [showUnderConstructionToast, isShowUnderConstructionToast] = useState(false);
+    const [showUnderConstructionToast, isShowUnderConstructionToast] =
+        useState(false);
 
     const opcoesAvancadas = {
         email: {
@@ -52,12 +53,67 @@ export function Perfil() {
 
     return (
         <>
-            <br />
+            <div className="py-2">
+                <div className="flex items-end justify-end mx-4">
+                    <button
+                        type="button"
+                        className="border-1 border-solid border-primary hover:border-transparent px-2 py-1 text-sm text-primary"
+                        onClick={() => isShowUnderConstructionToast(true)}
+                    >
+                        RANKING
+                    </button>
+                    <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md text-btnhover px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
+                        onClick={() => isShowUnderConstructionToast(true)}
+                    >
+                        PHISTORE
+                    </button>
+                </div>
+            </div>
             <div className="md:block lg:flex justify-between">
-                <a className="username">
-                    {localStorage.getItem("username") ||
-                        "Usuário não encontrado"}
-                </a>
+                <div className="flex">
+                    <img
+                        // placeholder image
+                        src="https://images.pexels.com/photos/7828324/pexels-photo-7828324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        className="mx-4 rounded-full h-24 w-24"
+                        alt="Avatar"
+                    ></img>
+                    <div>
+                        <a className="username">
+                            {localStorage.getItem("username") ||
+                                "Usuário não encontrado"}
+                        </a>
+                        <p>
+                            <strong>Interesses:</strong> Lista de Interesses
+                        </p>
+                        {
+                            // deverá puxar um array e exibir as principais badges do usuário
+                        }
+                        <div className="md:block lg:flex">
+                            <div className="badge">
+                                <FontAwesomeIcon
+                                    className="mx-1"
+                                    icon={icon({
+                                        name: "certificate",
+                                        style: "solid",
+                                    })}
+                                />
+                                <a>Bagde de conquista do usuário</a>
+                            </div>
+                            <div className="badge">
+                                <FontAwesomeIcon
+                                    className="mx-1"
+                                    icon={icon({
+                                        name: "certificate",
+                                        style: "solid",
+                                    })}
+                                />
+                                <a>Bagde de conquista do usuário 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="flex items-end justify-end mx-4">
                     <button
                         type="button"
@@ -69,7 +125,7 @@ export function Perfil() {
                     <button
                         type="button"
                         className="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnsecondary"
-                        onClick={() => console.log("Editar perfil")}
+                        onClick={() => isShowUnderConstructionToast(true)}
                     >
                         EDITAR
                     </button>
@@ -81,14 +137,18 @@ export function Perfil() {
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
             />
-            <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail}/>
-            <AlterarSenha open={showChangePassword} setOpen={isShowChangePassword}/>
-            <Logout open={showLogout} setOpen={isShowLogout}/>
-            <Toast 
-            open={showUnderConstructionToast} 
-            setOpen={isShowUnderConstructionToast} 
-            iconName="wrench"
-            message="Desculpe! Esta opção ainda não está disponível"/>
+            <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail} />
+            <AlterarSenha
+                open={showChangePassword}
+                setOpen={isShowChangePassword}
+            />
+            <Logout open={showLogout} setOpen={isShowLogout} />
+            <Toast
+                open={showUnderConstructionToast}
+                setOpen={isShowUnderConstructionToast}
+                iconName="wrench"
+                message="Desculpe! Esta opção ainda não está disponível"
+            />
         </>
     );
 }
