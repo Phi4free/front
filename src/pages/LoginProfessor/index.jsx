@@ -66,7 +66,7 @@ export function LoginProfessor() {
                         localStorage.setItem("token", data.token);
                         setErros(null);
                         isLoading(false);
-                        navigate("/home");
+                        navigate("/");
                     } else {
                         isLoading(false);
                         setErros(data.message);

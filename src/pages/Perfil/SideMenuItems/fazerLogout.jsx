@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
-import BasicInput from "../../../components/BasicInput";
+
 
 export function Logout(props) {
     const { open, setOpen } = props;
@@ -11,7 +10,8 @@ export function Logout(props) {
 
     function handleLogout() {
         localStorage.clear();
-        navigate("/");
+        //navigate("/", {state:null, replace:true});
+        navigate(-1);
     }
     
     return (<SideMenu
