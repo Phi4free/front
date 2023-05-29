@@ -10,8 +10,7 @@ export function Logout(props) {
 
     function handleLogout() {
         localStorage.clear();
-        //navigate("/", {state:null, replace:true});
-        navigate(-1);
+        navigate("/", {state:null, replace:true});
     }
     
     return (<SideMenu
@@ -25,7 +24,7 @@ export function Logout(props) {
             <br />
         </div>
         <button
-            className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+            className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
             onClick={() => handleLogout()}
         >
             ENCERRAR SESSÃO

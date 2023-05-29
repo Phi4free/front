@@ -23,6 +23,11 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] = useState(false);
 
+    /*
+    TO DO NEXT:
+    Arrumar responsividade dos itens até agora para o mobile antes de prosseguir
+    */
+
     const opcoesAvancadas = {
         email: {
             label: "Alterar email",

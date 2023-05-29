@@ -69,7 +69,7 @@ export function AlterarSenha(props) {
                 <ErroText iconName="circle-exclamation" label={erros} />
             ) : null}
             <button
-                className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+                className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
                 onClick={() => verifyCurrentPassword()}
             >
                 CONTINUAR

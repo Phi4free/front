@@ -54,7 +54,7 @@ export function AlterarEmail(props) {
             ) : null}
         </div>
         <button
-            className="inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+            className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
             onClick={() => console.log("update email")}
         >
             ATUALIZAR EMAIL
