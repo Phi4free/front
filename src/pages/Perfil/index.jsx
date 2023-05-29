@@ -10,6 +10,7 @@ import "./styles.css";
 import { AlterarEmail } from "./SideMenuItems/alterarEmail";
 import { AlterarSenha } from "./SideMenuItems/alterarSenha";
 import Toast from "../../components/Toast";
+import { Logout } from "./SideMenuItems/fazerLogout";
 //import {logoalt} from "../../assets/logoalt.png";
 
 export function Perfil() {
@@ -19,6 +20,7 @@ export function Perfil() {
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
+    const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] = useState(false);
 
     const opcoesAvancadas = {
@@ -43,7 +45,7 @@ export function Perfil() {
         logout: {
             label: "Logout",
             acao: () => {
-                console.log("handle: Fazer logout");
+                isShowLogout(true);
             },
         },
     };
@@ -81,6 +83,7 @@ export function Perfil() {
             />
             <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail}/>
             <AlterarSenha open={showChangePassword} setOpen={isShowChangePassword}/>
+            <Logout open={showLogout} setOpen={isShowLogout}/>
             <Toast 
             open={showUnderConstructionToast} 
             setOpen={isShowUnderConstructionToast} 

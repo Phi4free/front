@@ -51,7 +51,7 @@ export function AlterarSenha(props) {
             setOpen={setOpen}
         >
             <div className="text-gray-500">
-                <a>Digite sua senha atual:</a>
+                <a className="text-center">Digite sua senha atual:</a>
                 <br /><br/>
                 <ContainerInput>
                     <DinamicInput
