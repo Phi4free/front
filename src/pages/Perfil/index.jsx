@@ -23,11 +23,6 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] = useState(false);
 
-    /*
-    TO DO NEXT:
-    Arrumar responsividade dos itens até agora para o mobile antes de prosseguir
-    */
-
     const opcoesAvancadas = {
         email: {
             label: "Alterar email",
@@ -58,12 +53,12 @@ export function Perfil() {
     return (
         <>
             <br />
-            <div className="flex justify-between">
+            <div className="md:block lg:flex justify-between">
                 <a className="username">
                     {localStorage.getItem("username") ||
                         "Usuário não encontrado"}
                 </a>
-                <div className="edit-btns">
+                <div className="flex items-end justify-end mx-4">
                     <button
                         type="button"
                         className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
