@@ -38,8 +38,8 @@ export function AlterarEmail(props) {
             open={open}
             setOpen={setOpen}
         >
-            <div className="text-gray-500">
-                <p>Seu email atual é: {currentEmail}</p>
+            <div className="text-gray-500 mx-4">
+                <p className="text-center">Seu email atual é: {currentEmail}</p>
                 <br />
                 <a>Insira um novo email:</a>
                 <BasicInput
