@@ -7,7 +7,7 @@ import BasicInput from "../../../components/BasicInput";
 import api from "../../../services/api";
 
 export function AlterarEmail(props) {
-    const { open, setOpen } = props;
+    const { currentEmail, open, setOpen } = props;
     const { t } = useTranslation();
     const [newEmail, setNewEmail] = useState("");
     const [confirmNewEmail, setConfirmNewEmail] = useState("");
@@ -39,8 +39,7 @@ export function AlterarEmail(props) {
             setOpen={setOpen}
         >
             <div className="text-gray-500">
-                {// open ? <p>Seu email atual é: {getCurrentEmail()}</p> : null
-                }
+                <p>Seu email atual é: {currentEmail}</p>
                 <br />
                 <a>Insira um novo email:</a>
                 <BasicInput

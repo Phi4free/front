@@ -1,5 +1,4 @@
 import i18n from "../../../i18n";
-import { useState } from "react";
 import api from "../../services/api";
 /**
  * TO DO:
@@ -7,14 +6,14 @@ import api from "../../services/api";
  * NÃO retorne dados sensíveis! Esses dados devem ficar restritos para o holder desses dados.
  */
 
-// const [uRole, setRole] = useState(null);
-// const [u_id, set_id] = useState(null);
-// const [uNome, setNome] = useState(null);
-// const [uEmail, setEmail] = useState(null);
-// const [uNumArt, setNumArt] = useState(null); // def. 0
-// const [uNotas, setNotas] = useState(null); // def. []
-// const [uDataIni, setDataIni] = useState(null);
-// const [u__v, setV] = useState(null); // def. 0
+let uRole = null;
+let u_id = null;
+let uNome = null;
+let uEmail = null;
+let uNumArt = 0;
+let uNotas = [];
+let uDataIni = null;
+let u__v = 0;
 
 export function fetchUserData() {
     api.get(
@@ -24,7 +23,14 @@ export function fetchUserData() {
         .then((response) => {
             response.json().then((_data) => {
                 if (_data.message == "OK") {
-                    console.log(_data.data.email);
+                    uRole = _data.data.role;
+                    u_id = _data.data._id;
+                    uNome = _data.data.nome;
+                    uEmail = _data.data.email;
+                    uNumArt = _data.data.numArt;
+                    uNotas = _data.data.notas;
+                    uDataIni = _data.data.dataIni;
+                    u__v = _data.data.__v;
                 } else {
                     console.log(_data.message);
                 }
@@ -34,16 +40,14 @@ export function fetchUserData() {
             console.log(error.message);
         });
 
- //   return user;
+    return {
+        role: uRole,
+        _id: u_id,
+        nome: uNome,
+        email: uEmail,
+        numArt: uNumArt,
+        notas: uNotas,
+        dataIni: uDataIni,
+        __v: u__v,
+    };
 }
-
-// const user = {
-//     role: uRole,
-//     _id: u_id,
-//     nome: uNome,
-//     email: uEmail,
-//     numArt: uNumArt,
-//     notas: uNotas,
-//     dataIni: uDataIni,
-//     __v: u__v,
-// };

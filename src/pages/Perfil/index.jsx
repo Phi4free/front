@@ -25,6 +25,7 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
+    const [user, setUser] = useState();
 
     /**
      * Faz o fetch das informações do perfil do usuário 1x quando inicializado;
@@ -33,7 +34,7 @@ export function Perfil() {
      */
 
     useEffect(() => {
-        fetchUserData();
+        setUser(fetchUserData());
     }, [showAdvancedMenu]);
 
     const opcoesAvancadas = {
@@ -149,7 +150,10 @@ export function Perfil() {
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
             />
-            <AlterarEmail open={showChangeEmail} setOpen={isShowChangeEmail} />
+            <AlterarEmail
+                open={showChangeEmail}
+                setOpen={isShowChangeEmail}
+            />
             <AlterarSenha
                 open={showChangePassword}
                 setOpen={isShowChangePassword}
