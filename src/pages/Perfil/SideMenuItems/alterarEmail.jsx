@@ -21,21 +21,6 @@ export function AlterarEmail(props) {
         }
     }, [newEmail, confirmNewEmail]);
 
-    const getCurrentEmail = () => {
-        let currentEmail = "";
-        api.get("verPerfil?id=64663c1a847bbfbcf7a02ab6", localStorage.getItem('token'))
-        .then((response) => {
-            response.json().then((_data) => {
-                if (_data.message == "OK") {
-                    currentEmail = _data.data.email;
-                } else {
-                    console.log(_data.message);
-                }
-            });
-        });
-        return currentEmail;
-    };
-
     const handleEmail = (e) => {
         e.preventDefault();
         setNewEmail(e.target.value);
@@ -54,7 +39,8 @@ export function AlterarEmail(props) {
             setOpen={setOpen}
         >
             <div className="text-gray-500">
-                {open ? <p>Seu email atual é: {getCurrentEmail()}</p> : null}
+                {// open ? <p>Seu email atual é: {getCurrentEmail()}</p> : null
+                }
                 <br />
                 <a>Insira um novo email:</a>
                 <BasicInput

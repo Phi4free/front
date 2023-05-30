@@ -12,6 +12,8 @@ import Toast from "../../components/Toast";
 import { Logout } from "./SideMenuItems/fazerLogout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import api from "../../services/api";
+import { fetchUserData } from "./userConstructor";
 
 export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
@@ -23,6 +25,16 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
+
+    /**
+     * Faz o fetch das informações do perfil do usuário 1x quando inicializado;
+     * Após isso, vai refazer o fetch sempre que ele abrir e fechar os menus de configuração, para garantir
+     * que caso alguma informação foi alterada, ela será atualizada imediatamente após concluir as edições
+     */
+
+    useEffect(() => {
+        fetchUserData();
+    }, [showAdvancedMenu]);
 
     const opcoesAvancadas = {
         email: {
