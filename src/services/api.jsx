@@ -8,12 +8,13 @@ export const BASE_URL =
 
 export default {
     baseUrl: BASE_URL,
-    async get(url) {
+    async get(url, _authorization = null) {
         const options = {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Language: i18n.resolvedLanguage,
+                authorization: _authorization,
             },
         };
         return await fetch(this.baseUrl + url, options);
