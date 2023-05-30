@@ -1,10 +1,5 @@
 import i18n from "../../../i18n";
 import api from "../../services/api";
-/**
- * TO DO:
- * Coloque uma validação: Se o id do usuário requisitado é diferente do usuário requisitante:
- * NÃO retorne dados sensíveis! Esses dados devem ficar restritos para o holder desses dados.
- */
 
 let uRole = null;
 let u_id = null;
@@ -17,7 +12,7 @@ let u__v = 0;
 
 export function fetchUserData() {
     api.get(
-        "verPerfil?id=64663c1a847bbfbcf7a02ab6",
+        `verPerfil?id=${getId()}`,
         localStorage.getItem("token")
     )
         .then((response) => {
@@ -50,4 +45,10 @@ export function fetchUserData() {
         dataIni: uDataIni,
         __v: u__v,
     };
+}
+
+function getId(){
+    let mToken = localStorage.getItem('token').split('.');
+    let payload = JSON.parse(window.atob(mToken[1]));
+    return payload.id;
 }

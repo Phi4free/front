@@ -5,7 +5,7 @@ export const BASE_URL =
     !process.env.NODE_ENV || process.env.NODE_ENV === "development"
         ? "http://localhost:3000/"
         : "https://back-phi4free.vercel.app/";
-        
+
 export default {
     baseUrl: BASE_URL,
     async get(url, _authorization = null) {
@@ -25,6 +25,18 @@ export default {
             headers: {
                 "Content-Type": "application/json",
                 Language: i18n.resolvedLanguage,
+            },
+            body: JSON.stringify(body),
+        };
+        return await fetch(this.baseUrl + url, options);
+    },
+    async put(url, _authorization = null, body) {
+        const options = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Language: i18n.resolvedLanguage,
+                authorization: _authorization,
             },
             body: JSON.stringify(body),
         };

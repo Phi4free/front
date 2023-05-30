@@ -31,6 +31,13 @@ export function AlterarEmail(props) {
         setConfirmNewEmail(e.target.value);
     };
 
+    // TO DO: Entender como funciona o put, testar no postman, arrumar o jeito que está na api.jsx e consertar aqui
+    // function updateEmail() {
+    //     api.put("atualizarPerfil", localStorage.getItem("token"), {
+    //         email: newEmail,
+    //     });
+    // }
+
     return (
         <SideMenu
             title="ALTERAR EMAIL"
@@ -61,7 +68,7 @@ export function AlterarEmail(props) {
             </div>
             <button
                 className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                onClick={() => console.log("update email")}
+                onClick={() => updateEmail()}
             >
                 ATUALIZAR EMAIL
             </button>
