@@ -15,6 +15,7 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import api from "../../services/api";
 import { fetchUserData } from "./userConstructor";
 
+// MEU PERFIL - Exibe o perfil do usuário logado
 export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
     const { t } = useTranslation();
@@ -25,7 +26,7 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
 
     /**
      * Faz o fetch das informações do perfil do usuário 1x quando inicializado;
@@ -35,7 +36,7 @@ export function Perfil() {
 
     useEffect(() => {
         setUser(fetchUserData());
-    }, [showAdvancedMenu]);
+    }, [showAdvancedMenu, !showAdvancedMenu]);
 
     const opcoesAvancadas = {
         email: {
@@ -150,10 +151,10 @@ export function Perfil() {
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
             />
-            <AlterarEmail
-                open={showChangeEmail}
-                setOpen={isShowChangeEmail}
-            />
+            <AlterarEmail 
+            currentEmail={user != null ? user.email : null}
+            open={showChangeEmail} 
+            setOpen={isShowChangeEmail} />
             <AlterarSenha
                 open={showChangePassword}
                 setOpen={isShowChangePassword}
