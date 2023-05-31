@@ -8,13 +8,13 @@ export const BASE_URL =
 
 export default {
     baseUrl: BASE_URL,
-    async get(url, _authorization = null) {
+    async get(url) {
         const options = {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Language: i18n.resolvedLanguage,
-                authorization: _authorization,
+                authorization: localStorage.getItem('token'),
             },
         };
         return await fetch(this.baseUrl + url, options);
@@ -25,18 +25,19 @@ export default {
             headers: {
                 "Content-Type": "application/json",
                 Language: i18n.resolvedLanguage,
+                authorization: localStorage.getItem('token'),
             },
             body: JSON.stringify(body),
         };
         return await fetch(this.baseUrl + url, options);
     },
-    async put(url, _authorization = null, body) {
+    async put(url, body) {
         const options = {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
                 Language: i18n.resolvedLanguage,
-                authorization: _authorization,
+                authorization: localStorage.getItem('token'),
             },
             body: JSON.stringify(body),
         };

@@ -35,7 +35,8 @@ export function Perfil() {
      */
 
     useEffect(() => {
-        setUser(fetchUserData());
+        // To do: Adicionar efeito de carregamento quando estiver no carregamento do fetchUser
+        fetchUserData().then((data) => setUser(data));
     }, [showAdvancedMenu, !showAdvancedMenu]);
 
     const opcoesAvancadas = {
@@ -151,10 +152,11 @@ export function Perfil() {
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
             />
-            <AlterarEmail 
-            currentEmail={user != null ? user.email : null}
-            open={showChangeEmail} 
-            setOpen={isShowChangeEmail} />
+            <AlterarEmail
+                currentEmail={user != null ? user.email : null}
+                open={showChangeEmail}
+                setOpen={isShowChangeEmail}
+            />
             <AlterarSenha
                 open={showChangePassword}
                 setOpen={isShowChangePassword}
