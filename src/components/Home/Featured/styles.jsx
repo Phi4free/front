@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import Reader from "../../../assets/reader.png";
 
 export const Container = styled.section`
   height: 100vh;
+  background-image: url(${Reader});
   background-size: cover;
   background-position: center;
 
@@ -13,19 +15,22 @@ export const Container = styled.section`
 export const Vertical = styled.div`
   width: inherit;
   height: inherit;
-  background: linear-gradient(to top, #1a1a1a 10%, transparent 90%);
+  background: linear-gradient(to top, #1a1a1a 10%, transparent 80%);
 `;
 
 export const Horizontal = styled.div`
   width: inherit;
   height: inherit;
-  background: linear-gradient(to right, #1a1a1a 30%, transparent 70%);
+  background: linear-gradient(to right, #1a1a1a 30%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 30px;
   padding-bottom: 150px;
   padding-top: 70px;
+  @media (max-width: 760px) {
+    background: linear-gradient(to right, #1a1a1a 40%, transparent 100%);
+  }
 `;
 
 export const Name = styled.div`
@@ -49,7 +54,7 @@ export const Info = styled.div`
 
 export const Points = styled.div`
   display: inline-block;
-  color: #46d369;
+  color: #ffc300;
   margin-right: 15px;
 `;
 

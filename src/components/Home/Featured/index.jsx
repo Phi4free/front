@@ -24,56 +24,32 @@ export default function Featured({ item }) {
 
   let description = item.overview;
   if (description.length > 200) {
-    description = description.substring(0, 200) + '...'
+    description = description.substring(0, 200) + "...";
   }
 
   return (
-    <Container
-      style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`,
-      }}
-    >
+    <Container>
       <Vertical>
         <Horizontal>
-          <Name>{item.original_name}</Name>
+          <Name>Explore, aprenda, evolua.</Name>
           <Info>
-            <Points>{item.vote_average} pontos</Points>
-            <Year>{firstDate.getFullYear()}</Year>
-            <Seasons>
-              {item.number_of_seasons} temporada
-              {item.number_of_seasons !== 1 ? "s" : ""}
-            </Seasons>
+            <Points>Seja bem-vindo(a)</Points>
           </Info>
-          <Description>{description}</Description>
+          <Description>
+            A busca pelo conhecimento é como abrir as janelas da mente para um
+            mundo de possibilidades - Carl Sagan
+          </Description>
           <Buttons>
             <Button
-              href={`/watch/${item.id}`}
-              style={{
-                backgroundColor: "#fff",
-                color: "#000",
-              }}
-            >
-              <FontAwesomeIcon
-                icon={icon({
-                  name: "play",
-                  style: "solid",
-                })}
-              />{" "}
-              Assistir
-            </Button>
-            <Button
-              href={`/list/add/${item.id}`}
+              href="/#/home"
               style={{
                 backgroundColor: "#333",
                 color: "#fff",
               }}
             >
-              + Minha lista
+              Minha lista
             </Button>
           </Buttons>
-          <Genres>
-            <strong>Gênero:</strong> {genres.join(", ")}
-          </Genres>
         </Horizontal>
       </Vertical>
     </Container>
