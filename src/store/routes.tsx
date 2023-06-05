@@ -13,6 +13,7 @@ import { LoginIdentificacao } from '../pages/IdentificacaoLogin';
 import { CadastroIdentificacao } from '../pages/IdentificacaoCadastro';
 import { Cadastro } from '../pages/Cadastro';
 import { CadastroProfessor } from '../pages/CadastroProfessor';
+import { Perfil } from '../pages/Perfil';
 import { Home } from '../pages/Home';
 import { TermosDeUso } from '../pages/TermosDeUso';
 
@@ -26,6 +27,7 @@ export function AppRoutes () {
       <Route path='/cadastro-professor' element={<CadastroProfessor/>}></Route>
       <Route path='/login-estudante' element={<Login />}></Route>
       <Route path='/login-professor' element={<LoginProfessor />}></Route>
+      <Route path='/meu-perfil' element={<Perfil/>}></Route>
       <Route path='/home' element={<Home />}></Route>
       <Route path='/termos-de-uso' element={<TermosDeUso />}></Route>
     </Routes>
