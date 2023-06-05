@@ -13,7 +13,8 @@ import { LoginIdentificacao } from '../pages/IdentificacaoLogin';
 import { CadastroIdentificacao } from '../pages/IdentificacaoCadastro';
 import { Cadastro } from '../pages/Cadastro';
 import { CadastroProfessor } from '../pages/CadastroProfessor';
-import { Home } from '../pages/Home'
+import { Home } from '../pages/Home';
+import { TermosDeUso } from '../pages/TermosDeUso';
 
 export function AppRoutes () {
   return (
@@ -26,6 +27,7 @@ export function AppRoutes () {
       <Route path='/login-estudante' element={<Login />}></Route>
       <Route path='/login-professor' element={<LoginProfessor />}></Route>
       <Route path='/home' element={<Home />}></Route>
+      <Route path='/termos-de-uso' element={<TermosDeUso />}></Route>
     </Routes>
   )
 }
