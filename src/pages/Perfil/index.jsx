@@ -20,6 +20,7 @@ export function Perfil() {
     // TO DO: Remember to translate do english all the static content from this page
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const [loading, isLoading] = useState(false); //later on, implement loading animation
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
@@ -35,7 +36,6 @@ export function Perfil() {
      */
 
     useEffect(() => {
-        // To do: Adicionar efeito de carregamento quando estiver no carregamento do fetchUser
         fetchUserData().then((data) => setUser(data));
     }, [showAdvancedMenu, !showAdvancedMenu]);
 

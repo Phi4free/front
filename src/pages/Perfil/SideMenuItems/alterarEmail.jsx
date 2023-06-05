@@ -31,12 +31,16 @@ export function AlterarEmail(props) {
         setConfirmNewEmail(e.target.value);
     };
 
-    // TO DO: Entender como funciona o put, testar no postman, arrumar o jeito que está na api.jsx e consertar aqui
-    // function updateEmail() {
-    //     api.put("atualizarPerfil", localStorage.getItem("token"), {
-    //         email: newEmail,
-    //     });
-    // }
+    function updateEmail() {
+        if (newEmail == confirmNewEmail && newEmail != "") {
+            console.log("os emails são iguais");
+            api.put("atualizarEmail", {
+                email: newEmail,
+            });
+        } else {
+            console.log("os emails são diferentes");
+        }
+    }
 
     return (
         <SideMenu
