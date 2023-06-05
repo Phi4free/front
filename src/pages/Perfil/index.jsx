@@ -37,7 +37,7 @@ export function Perfil() {
 
     useEffect(() => {
         fetchUserData().then((data) => setUser(data));
-    }, [showAdvancedMenu, !showAdvancedMenu]);
+    }, [showAdvancedMenu, !showAdvancedMenu, !showChangeEmail, !showChangeEmail]);
 
     const opcoesAvancadas = {
         email: {

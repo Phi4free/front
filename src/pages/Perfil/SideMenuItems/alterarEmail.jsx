@@ -5,6 +5,7 @@ import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
 import BasicInput from "../../../components/BasicInput";
 import api from "../../../services/api";
+import Toast from "../../../components/Toast";
 
 export function AlterarEmail(props) {
     const { currentEmail, open, setOpen } = props;
@@ -12,6 +13,9 @@ export function AlterarEmail(props) {
     const [newEmail, setNewEmail] = useState("");
     const [confirmNewEmail, setConfirmNewEmail] = useState("");
     const [erros, setErros] = useState(null);
+    const [message, setMessage] = useState();
+    const [ShowToast, isShowToast] =
+    useState(false);
 
     useEffect(() => {
         if (newEmail != confirmNewEmail && confirmNewEmail != "") {
@@ -31,51 +35,75 @@ export function AlterarEmail(props) {
         setConfirmNewEmail(e.target.value);
     };
 
-    function updateEmail() {
+    function updateEmail() { // TO DO: Colocar mensagem mais evidente em caso de falha para atualizar o email!
+        setMessage(null);
         if (newEmail == confirmNewEmail && newEmail != "") {
-            console.log("os emails são iguais");
             api.put("atualizarEmail", {
                 email: newEmail,
-            });
+            })
+                .then((response) => {
+                    response.json().then((data) => {
+                        setOpen(false);
+                        isShowToast(true);
+                        setConfirmNewEmail("");
+                        setNewEmail("");
+                        setMessage(data.message);
+                    });
+                })
+                .catch((error) => {
+                    setErros(t("errorRegister3"));
+                    console.log(error.message);
+                });
         } else {
-            console.log("os emails são diferentes");
+            setErros("O novo email não pode ficar vazio");
         }
     }
 
     return (
-        <SideMenu
-            title="ALTERAR EMAIL"
-            options={null}
-            open={open}
-            setOpen={setOpen}
-        >
-            <div className="text-gray-500 mx-4">
-                <p className="text-center">Seu email atual é: {currentEmail}</p>
-                <br />
-                <a>Insira um novo email:</a>
-                <BasicInput
-                    type="email"
-                    id="email-change"
-                    onInput={handleEmail}
-                />
-                <br />
-                <a>Confirme o email:</a>
-                <BasicInput
-                    type="email"
-                    id="email-change-confirm"
-                    onInput={handleConfirmEmail}
-                />
-                <br />
-                {erros != null ? (
-                    <ErroText iconName="circle-exclamation" label={erros} />
-                ) : null}
-            </div>
-            <button
-                className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
-                onClick={() => updateEmail()}
+        <>
+            <Toast
+                open={ShowToast}
+                setOpen={isShowToast}
+                iconName="wrench"
+                message={message}
+            />
+
+            <SideMenu
+                title="ALTERAR EMAIL"
+                options={null}
+                open={open}
+                setOpen={setOpen}
             >
-                ATUALIZAR EMAIL
-            </button>
-        </SideMenu>
+                <div className="text-gray-500 mx-4">
+                    <p className="text-center">
+                        Seu email atual é: {currentEmail}
+                    </p>
+                    <br />
+                    <a>Insira um novo email:</a>
+                    <BasicInput
+                        type="email"
+                        id="email-change"
+                        onInput={handleEmail}
+                    />
+                    <br />
+                    <a>Confirme o email:</a>
+                    <BasicInput
+                        type="email"
+                        id="email-change-confirm"
+                        onInput={handleConfirmEmail}
+                    />
+                    <br />
+                    {erros != null ? (
+                        <ErroText iconName="circle-exclamation" label={erros} />
+                    ) : null}
+                </div>
+                <button
+                    className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
+                    onClick={() => updateEmail()}
+                >
+                    ATUALIZAR EMAIL
+                </button>
+            </SideMenu>
+        </>
     );
 }
