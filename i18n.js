@@ -29,6 +29,7 @@ i18n
                     // error
                     sessionExpired: "Session expired",
                     sessionExpText: "Log in again to continue where you were",
+                    goFrontPage: "Or go to the front page",
                     // Login
                     enter: "ENTER",
                     noAccount: "Don't have an account?",
@@ -143,6 +144,7 @@ i18n
                     // error
                     sessionExpired: "Sessão expirada",
                     sessionExpText: "Faça login novamente para continuar de onde parou.",
+                    goFrontPage: "Ou vá para a página inicial",
                     // Login
                     enter: "ENTRAR",
                     noAccount: "Não tem uma conta?",
