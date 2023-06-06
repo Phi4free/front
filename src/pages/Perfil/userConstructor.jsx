@@ -5,9 +5,7 @@ export async function fetchUserData() {
     try {
         let response = await api.get(`verMeuPerfil`);
         response = await response.json();
-        if (response.message == 200) {
-            return response.data;
-        }
+        return response;
     } catch (error) {
         console.log(error.message);
     }

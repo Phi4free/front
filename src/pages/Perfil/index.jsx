@@ -36,8 +36,25 @@ export function Perfil() {
      */
 
     useEffect(() => {
-        fetchUserData().then((data) => setUser(data));
-    }, [showAdvancedMenu, !showAdvancedMenu, !showChangeEmail, !showChangeEmail]);
+        fetchUserData().then((data) => {
+            switch (data.status) {
+                case 200:
+                    setUser(data.response);
+                    break;
+                case 401:
+                    navigate("/session-expired");
+                    break;
+                default:
+                    console.log(data);
+                    break;
+            }
+        });
+    }, [
+        showAdvancedMenu,
+        !showAdvancedMenu,
+        !showChangeEmail,
+        !showChangeEmail,
+    ]);
 
     const opcoesAvancadas = {
         email: {

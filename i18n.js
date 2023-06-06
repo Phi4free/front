@@ -26,6 +26,9 @@ i18n
                     cancel: "CANCEL",
                     andConnective: "and",
                     orConnective: "or",
+                    // error
+                    sessionExpired: "Session expired",
+                    sessionExpText: "Log in again to continue where you were",
                     // Login
                     enter: "ENTER",
                     noAccount: "Don't have an account?",
@@ -137,6 +140,9 @@ i18n
                     cancel: "CANCELAR",
                     andConnective: "e",
                     orConnective: "ou",
+                    // error
+                    sessionExpired: "Sessão expirada",
+                    sessionExpText: "Faça login novamente para continuar de onde parou.",
                     // Login
                     enter: "ENTRAR",
                     noAccount: "Não tem uma conta?",
