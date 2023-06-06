@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { close, menu } from "../../assets/LandingPage";
+import { useState } from "react";''
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
@@ -21,6 +22,7 @@ export function Perfil() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [loading, isLoading] = useState(false); //later on, implement loading animation
+    const [toggle, setToggle] = useState(false);
     const [showAdvancedMenu, isShowAdvancedMenu] = useState(false);
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
@@ -39,13 +41,13 @@ export function Perfil() {
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:
-                    setUser(data.response);
+                    setUser(data.body.data);
                     break;
                 case 401:
                     navigate("/session-expired");
                     break;
                 default:
-                    console.log(data);
+                    console.log(data.status);
                     break;
             }
         });
@@ -86,6 +88,26 @@ export function Perfil() {
     return (
         <>
             <div className="py-2">
+                <div
+                    className={`${
+                        !toggle ? "hidden" : "flex"
+                    } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+                >
+                    <ul className="list-none flex justify-end items-start flex-1 flex-col">
+                        <li
+                            className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
+                            onClick={() => isShowUnderConstructionToast(true)}
+                        >
+                            PHISTORE
+                        </li>
+                        <li
+                            className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
+                            onClick={() => isShowUnderConstructionToast(true)}
+                        >
+                            RANKING
+                        </li>
+                    </ul>
+                </div>
                 <div className="flex items-end justify-end mx-4">
                     <button
                         type="button"
@@ -145,6 +167,14 @@ export function Perfil() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="sm:hidden flex flex-1 justify-end items-center">
+                    <img
+                        src={toggle ? close : menu}
+                        alt="menu"
+                        className="w-[28px] h-[28px] object-contain"
+                        onClick={() => setToggle(!toggle)}
+                    />
                 </div>
                 <div className="flex items-end justify-end mx-4">
                     <button
