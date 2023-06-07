@@ -47,7 +47,7 @@ export function AlterarSenha(props) {
                         setCurrentPassword("");
                         setErros(null);
                     } else {
-                        setErros(t("errorRegister2"));
+                        setErros("Senha inválida");
                         console.log(data.message)
                     }
                 });
