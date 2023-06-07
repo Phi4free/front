@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export default function DinamicInput(props) {
-    const { label, type, id, onInput } = props;
+    const { value, label, type, id, onInput } = props;
     const [visivel, isVisivel] = useState(false);
     const [_type, setType] = useState(type);
 
@@ -25,6 +25,7 @@ export default function DinamicInput(props) {
                 id={id}
                 onInput={onInput}
                 placeholder=" "
+                value={value}
             />
             {label != null ? (
                 <span className="input__label">{label}</span>

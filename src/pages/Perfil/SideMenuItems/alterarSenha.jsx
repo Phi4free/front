@@ -44,6 +44,7 @@ export function AlterarSenha(props) {
                         localStorage.setItem("username", data.username);
                         localStorage.setItem("token", data.token);
                         isVerifiedCurrentPassword(true);
+                        setCurrentPassword("");
                         setErros(null);
                     } else {
                         setErros(t("errorRegister2"));
@@ -74,6 +75,7 @@ export function AlterarSenha(props) {
                         id="pass-current"
                         onInput={handleCurrentPassword}
                         label={null}
+                        value={currentPassword}
                     />
                 </ContainerInput>
                 <LinkText onClick={() => setSenhaPopup(true)}>
@@ -125,7 +127,7 @@ export function AlterarSenha(props) {
             </CentralizedContainer>
         </>
     </Popup>
-    <AlterarSenhaStep2 open={verifiedCurrentPassword} setOpen={isVerifiedCurrentPassword}/>
+    <AlterarSenhaStep2 open={verifiedCurrentPassword} setOpen={isVerifiedCurrentPassword} step1={setOpen}/>
     </>
     );
 }
