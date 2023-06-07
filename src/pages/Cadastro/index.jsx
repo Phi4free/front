@@ -44,7 +44,7 @@ export function Cadastro() {
 
     const handleNome = (e) => {
         e.preventDefault();
-        if (nome == "") {
+        if (e.target.value == "") {
             setErros(t("errorRegister4"));
         } else {
             setErros(null);
