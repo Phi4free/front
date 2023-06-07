@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { close, menu } from "../../assets/LandingPage";
-import { useState } from "react";''
+import { useState } from "react";
+("");
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
@@ -36,6 +37,11 @@ export function Perfil() {
      * Após isso, vai refazer o fetch sempre que ele abrir e fechar os menus de configuração, para garantir
      * que caso alguma informação foi alterada, ela será atualizada imediatamente após concluir as edições
      */
+
+// to DO:
+// 1 - Implementar mecanismo de alteração de senha
+// 2 - Implementar responsividade
+// 3 - Dar continuidade a UI
 
     useEffect(() => {
         fetchUserData().then((data) => {
@@ -87,6 +93,14 @@ export function Perfil() {
 
     return (
         <>
+            <div className="sm:hidden flex flex-1 justify-end items-center px-2 py-2">
+                <img
+                    src={toggle ? close : menu}
+                    alt="menu"
+                    className="w-[28px] h-[28px] object-contain"
+                    onClick={() => setToggle(!toggle)}
+                />
+            </div>
             <div className="py-2">
                 <div
                     className={`${
@@ -167,14 +181,6 @@ export function Perfil() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="sm:hidden flex flex-1 justify-end items-center">
-                    <img
-                        src={toggle ? close : menu}
-                        alt="menu"
-                        className="w-[28px] h-[28px] object-contain"
-                        onClick={() => setToggle(!toggle)}
-                    />
                 </div>
                 <div className="flex items-end justify-end mx-4">
                     <button
