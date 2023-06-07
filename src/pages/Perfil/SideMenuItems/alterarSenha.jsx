@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import api from "../../../services/api";
 import ErroText from "../../../components/ErroText";
 import SideMenu from "../../../components/SideMenu";
 import DinamicInput from "../../../components/DinamicInput";
@@ -9,7 +10,7 @@ import { ContainerInput, CentralizedContainer, LinkText } from "../style";
 import { AlterarSenhaStep2 } from "./alterarSenhaStep2";
 
 export function AlterarSenha(props) {
-    const { open, setOpen } = props;
+    const { currentEmail, open, setOpen } = props;
     const { t } = useTranslation();
 
     const [currentPassword, setCurrentPassword] = useState("");
@@ -29,17 +30,31 @@ export function AlterarSenha(props) {
     };
 
     function verifyCurrentPassword(){
-        /**
-         * Deve pegar email atual do usuário LOGADO
-         * Deve fazer o método de authUser (Atualiza o token também?)
-         * Deve informar que a senha foi atualizada e fechar o sidebar OU
-         * Deve informar que ocorreu um erro e solicitar a repetição da operação
-         */
-
-
-        // Após checagem com backend estar concluída, remover isso aqui embaixo
-        isVerifiedCurrentPassword(!verifiedCurrentPassword);
-
+        if(currentPassword == "") {
+            setErros(t("blankInput"));
+            return;
+        }
+        api.post("authUser", {
+            email: currentEmail,
+            senha: currentPassword,
+        })
+            .then((response) => {
+                response.json().then((data) => {
+                    if (data.auth) {
+                        localStorage.setItem("username", data.username);
+                        localStorage.setItem("token", data.token);
+                        isVerifiedCurrentPassword(true);
+                        setErros(null);
+                    } else {
+                        setErros(t("errorRegister2"));
+                        console.log(data.message)
+                    }
+                });
+            })
+            .catch((error) => {
+                setErros(t("errorAuth"));
+                console.log(error.message);
+            });
     }
 
     return (

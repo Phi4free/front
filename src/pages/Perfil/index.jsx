@@ -211,6 +211,7 @@ export function Perfil() {
                 setOpen={isShowChangeEmail}
             />
             <AlterarSenha
+                currentEmail={user != null ? user.email : null}
                 open={showChangePassword}
                 setOpen={isShowChangePassword}
             />

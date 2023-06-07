@@ -26,7 +26,9 @@ i18n
                     cancel: "CANCEL",
                     andConnective: "and",
                     orConnective: "or",
+                    blankInput: "This field cannot be empty",
                     // error
+                    errorAuth: "A validation error has occured",
                     sessionExpired: "Session expired",
                     sessionExpText: "Log in again to continue where you were",
                     goFrontPage: "Or go to the front page",
@@ -141,7 +143,9 @@ i18n
                     cancel: "CANCELAR",
                     andConnective: "e",
                     orConnective: "ou",
+                    blankInput: "Este campo não pode ficar vazio",
                     // error
+                    errorAuth: "Ocorreu um erro de validação",
                     sessionExpired: "Sessão expirada",
                     sessionExpText: "Faça login novamente para continuar de onde parou.",
                     goFrontPage: "Ou vá para a página inicial",
