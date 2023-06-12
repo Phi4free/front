@@ -9,6 +9,7 @@ export default function Toast(props) {
 
     const icons = {
         "circle-exclamation": solid("circle-exclamation"),
+        "certificate": solid("certificate"),
         "wrench": solid("wrench"),
     };
 
