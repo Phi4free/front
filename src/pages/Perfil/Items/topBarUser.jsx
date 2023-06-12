@@ -3,6 +3,7 @@ import { close, menu } from "../../../assets/LandingPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
+import { useTranslation } from "react-i18next";
 
 export function TopBarUser(props) {
     const {
@@ -10,6 +11,7 @@ export function TopBarUser(props) {
         isShowAdvancedMenu,
         showAdvancedMenu,
     } = props;
+    const { t } = useTranslation();
     const [toggle, setToggle] = useState(false);
     const [showBadgeToast, isShowBadgeToast] = useState(false);
 
@@ -35,7 +37,7 @@ export function TopBarUser(props) {
                 <img
                     src={toggle ? close : menu}
                     alt="menu"
-                    className="w-[28px] h-[28px] object-contain"
+                    className="w-[28px] h-[28px] object-contain cursor-pointer"
                     onClick={() => setToggle(!toggle)}
                 />
             </div>
@@ -84,12 +86,12 @@ export function TopBarUser(props) {
                     </ul>
                 </div>
             </div>
-            <div className="md:block lg:flex justify-between">
+            <div className="md:block lg:flex">
                 <div className="flex">
                     <img
                         // placeholder image
                         src="https://images.pexels.com/photos/7828324/pexels-photo-7828324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        className="mx-4 rounded-full h-24 w-24 border-2 border-btnprimary"
+                        className={`${""} w-24 mx-4 rounded-full h-24 border-2 border-btnprimary`}
                         alt="Avatar"
                     ></img>
                     <div>
@@ -97,20 +99,24 @@ export function TopBarUser(props) {
                             {localStorage.getItem("username") ||
                                 "Usuário não encontrado"}
                         </a>
-                        <p>
-                            <strong>Interesses: </strong>
-                            {
-                                // deverá puxar um array e exibir as principais badges do usuário
-                                <>Lista de interesses</>
-                            }
-                        </p>
+                            <p>
+                                <strong>Interesses: </strong>
+                                {
+                                    // deverá puxar um array e exibir as principais badges do usuário dinamicamente
+                                    <a className="opacity-75">
+                                        {t("Financial")}, {t("Philosophical")},
+                                        {t("Physical")}, {t("Functional")}
+                                    </a>
+                                }
+                            </p>
+
                         {
                             // deverá puxar um array e exibir as 3 principais conquistas do usuário
                             <div
                                 className="md:block lg:flex"
                                 onClick={() => isShowBadgeToast(true)}
                             >
-                                <div className="badge">
+                                <div className="badge cursor-pointer">
                                     <FontAwesomeIcon
                                         className="mx-1"
                                         icon={icon({
