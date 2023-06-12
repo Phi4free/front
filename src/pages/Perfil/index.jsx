@@ -80,7 +80,7 @@ export function Perfil() {
     };
 
     return (
-        <>
+        <div className="bg-gradient-to-r from-transparent to-black  ">
             <TopBarUser
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
@@ -109,6 +109,6 @@ export function Perfil() {
                 iconName="wrench"
                 message="Desculpe! Esta opção ainda não está disponível"
             />
-        </>
+        </div>
     );
 }
