@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import Toast from "../../../components/Toast";
 
 export function Feed() {
-    const [selectedFeed, setSelectedFeed] = useState('0');
+    const [selectedFeed, setSelectedFeed] = useState("0");
 
     useEffect(() => {
         renderMockedItems();
-        console.log(selectedFeed)
     }, [selectedFeed]);
 
     const feeds = {
@@ -18,23 +18,40 @@ export function Feed() {
 
     function renderMockedItems() {
         const mockedBadges = {
-            "Pioneiros da Phi4Free": "Seja um dos 100 primeiros usuários da plataforma",
+            "Que comecem os estudos": "Complete 1 dia de estudos",
             "Primeiros Passos": "Leia um artigo",
-            "Estudante Coruja": "Complete 1 dia de estudos"
-        }
+            "Pioneiros da Phi4Free":
+            "Seja um dos 100 primeiros usuários da plataforma",
+        };
 
         switch (selectedFeed) {
-            case '0':
-                return <div>
-                {Object.keys(mockedBadges).map((nome) => (
-                    <a key={nome}>{nome}</a>
-                ))
-                }
-                
-                </div>;
-            case '1':
+            case "0":
+                return (
+                    <div className="mx-8 py-4 grid grid-rows-2">
+                        {Object.keys(mockedBadges).map((nome) => (
+                            <div keys={"key-div-" + nome} className="rounded mx-4 my-2 px-4 py-4 bg-btnhover border-4 border-transparent border-s-btnsecondary">
+                                <div keys={"key-div2-" + nome} className="text-btnprimary">
+                                    <FontAwesomeIcon
+                                        className="mx-2"
+                                        icon={icon({
+                                            name: "certificate",
+                                            style: "solid",
+                                        })}
+                                    />
+                                    <a className="text-xl" key={nome}>
+                                        {nome}
+                                    </a>
+                                </div>
+                                <p className="mx-8" key={"paragrafo-" + nome}>
+                                    {mockedBadges[nome]}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                );
+            case "1":
                 break;
-            case '2':
+            case "2":
                 break;
             default:
                 return (
