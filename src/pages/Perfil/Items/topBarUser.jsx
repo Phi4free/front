@@ -117,7 +117,7 @@ export function TopBarUser(props) {
                                 className="md:block lg:flex"
                                 onClick={() => isShowBadgeToast(true)}
                             >
-                                <div className="badge cursor-pointer">
+                                <div className="badge py-1 px-2 cursor-pointer">
                                     <FontAwesomeIcon
                                         className="mx-1"
                                         icon={icon({
