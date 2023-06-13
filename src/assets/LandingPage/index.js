@@ -8,6 +8,7 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import lampada from "./lampada.png";
+import defaultIcon from "../profileicondefault.png"
 
 export {
   lampada,
@@ -19,5 +20,6 @@ export {
   star,
   menu,
   close,
-  arrowUp
+  arrowUp,
+  defaultIcon
 };

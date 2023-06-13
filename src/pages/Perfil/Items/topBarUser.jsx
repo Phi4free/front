@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
 import { useTranslation } from "react-i18next";
+import {defaultIcon} from "../../../assets/LandingPage";
 
 export function TopBarUser(props) {
     const {
@@ -90,7 +91,7 @@ export function TopBarUser(props) {
                 <div className="flex">
                     <img
                         // placeholder image
-                        src="https://images.pexels.com/photos/7828324/pexels-photo-7828324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        src={defaultIcon}
                         className={`${""} w-24 mx-4 rounded-full h-24 border-2 border-btnprimary`}
                         alt="Avatar"
                     ></img>

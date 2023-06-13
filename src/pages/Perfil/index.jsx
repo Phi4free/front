@@ -10,6 +10,7 @@ import Toast from "../../components/Toast";
 import { Logout } from "./SideMenuItems/fazerLogout";
 import { fetchUserData } from "./userConstructor";
 import { TopBarUser } from "./Items/topBarUser";
+import { Feed } from "./Items/feed";
 
 // MEU PERFIL - Exibe o perfil do usuário logado
 export function Perfil() {
@@ -80,12 +81,13 @@ export function Perfil() {
     };
 
     return (
-        <div className="bg-gradient-to-r from-transparent to-black  ">
+        <div className="bg-gradient-to-r from-transparent to-black  h-full flex-grow">
             <TopBarUser
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
                 showAdvancedMenu={showAdvancedMenu}
             />
+            <Feed/>
             <SideMenu
                 title="OPÇÕES AVANÇADAS"
                 options={opcoesAvancadas}
