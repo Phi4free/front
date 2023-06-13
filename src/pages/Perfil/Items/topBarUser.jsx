@@ -19,7 +19,7 @@ export function TopBarUser(props) {
     return (
         <>
             <div className="flex flex-1 justify-end items-center px-4 pt-4">
-                <div className={`${"sm:flex hidden"} mx-4`}>
+                <div className={`${"sm:flex hidden"} mx-4 z-1`}>
                     <button
                         type="button"
                         className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
@@ -46,7 +46,7 @@ export function TopBarUser(props) {
                 <div
                     className={`${
                         !toggle ? "hidden" : "flex"
-                    } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+                    } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-10`}
                 >
                     <ul className="list-none flex justify-end items-start flex-1 flex-col">
                         {!toggle ? null : (
@@ -100,7 +100,7 @@ export function TopBarUser(props) {
                             {localStorage.getItem("username") ||
                                 "Usuário não encontrado"}
                         </a>
-                            <p>
+                            <div>
                                 <strong>Interesses: </strong>
                                 {
                                     // deverá puxar um array e exibir as principais badges do usuário dinamicamente
@@ -109,7 +109,7 @@ export function TopBarUser(props) {
                                         {t("Physical")}, {t("Functional")}
                                     </a>
                                 }
-                            </p>
+                            </div>
 
                         {
                             // deverá puxar um array e exibir as 3 principais conquistas do usuário

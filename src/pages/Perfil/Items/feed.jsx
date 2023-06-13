@@ -29,7 +29,7 @@ export function Feed() {
                 return (
                     <div className="mx-8 py-4 grid grid-rows-2">
                         {Object.keys(mockedBadges).map((nome) => (
-                            <div keys={"key-div-" + nome} className="rounded mx-4 my-2 px-4 py-4 bg-btnhover border-4 border-transparent border-s-btnsecondary">
+                            <div keys={"key-div-" + nome} className="rounded mx-4 my-2 px-4 py-4 bg-btnhover/75 border-4 border-transparent border-s-btnsecondary">
                                 <div keys={"key-div2-" + nome} className="text-btnprimary">
                                     <FontAwesomeIcon
                                         className="mx-2"
