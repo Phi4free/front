@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
 import { useTranslation } from "react-i18next";
-import {defaultIcon} from "../../../assets/LandingPage";
+import { defaultIcon } from "../../../assets/LandingPage";
 
 export function TopBarUser(props) {
     const {
@@ -89,35 +89,57 @@ export function TopBarUser(props) {
             </div>
             <div>
                 <div className="block sm:flex">
-                    <img
-                        // placeholder image
-                        src={defaultIcon}
-                        className={`${""} w-24 mx-8 rounded-full h-24 border-2 border-btnprimary`}
-                        alt="Avatar"
-                    ></img>
-                    <div>
+                    <div className="flex justify-center">
+                        <img
+                            // placeholder image
+                            src={defaultIcon}
+                            className={`${""} w-24 mx-8 rounded-full h-24 border-2 border-btnprimary`}
+                            alt="Avatar"
+                        ></img>
+                    </div>
+                    <div className="text-center sm:text-left">
                         <a className="username">
                             {localStorage.getItem("username") ||
                                 "Usuário não encontrado"}
                         </a>
-                            <div>
-                                <strong>Interesses: </strong>
-                                {
-                                    // deverá puxar um array e exibir as principais badges do usuário dinamicamente
-                                    <a className="opacity-75">
-                                        {t("Financial")}, {t("Philosophical")},
-                                        {t("Physical")}, {t("Functional")}
-                                    </a>
-                                }
-                            </div>
+                        <div>
+                            <strong>Interesses: </strong>
+                            {
+                                // deverá puxar um array e exibir as principais badges do usuário dinamicamente
+                                <a className="opacity-75">
+                                    {t("Financial")}, {t("Philosophical")},
+                                    {t("Physical")}, {t("Functional")}
+                                </a>
+                            }
+                        </div>
 
                         {
                             // deverá puxar um array e exibir as 3 principais conquistas do usuário
                             <div
-                                className="md:block lg:flex"
+                                className="flex flex-wrap justify-center sm:justify-start mx-4 my-2 sm:mx-0"
                                 onClick={() => isShowBadgeToast(true)}
                             >
-                                <div className="badge py-1 px-2 cursor-pointer">
+                                <div className="w-fit badge py-1 px-2 cursor-pointer">
+                                    <FontAwesomeIcon
+                                        className="mx-1"
+                                        icon={icon({
+                                            name: "certificate",
+                                            style: "solid",
+                                        })}
+                                    />
+                                    <a>Pioneiros da Phi4Free</a>
+                                </div>
+                                <div className="w-fit badge py-1 px-2 cursor-pointer">
+                                    <FontAwesomeIcon
+                                        className="mx-1"
+                                        icon={icon({
+                                            name: "certificate",
+                                            style: "solid",
+                                        })}
+                                    />
+                                    <a>Pioneiros da Phi4Free</a>
+                                </div>
+                                <div className="w-fit badge py-1 px-2 cursor-pointer">
                                     <FontAwesomeIcon
                                         className="mx-1"
                                         icon={icon({
@@ -128,6 +150,7 @@ export function TopBarUser(props) {
                                     <a>Pioneiros da Phi4Free</a>
                                 </div>
                             </div>
+                            
                         }
                     </div>
                 </div>
