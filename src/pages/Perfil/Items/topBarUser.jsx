@@ -87,12 +87,12 @@ export function TopBarUser(props) {
                     </ul>
                 </div>
             </div>
-            <div className="md:block lg:flex">
-                <div className="flex">
+            <div>
+                <div className="block sm:flex">
                     <img
                         // placeholder image
                         src={defaultIcon}
-                        className={`${""} w-24 mx-4 rounded-full h-24 border-2 border-btnprimary`}
+                        className={`${""} w-24 mx-8 rounded-full h-24 border-2 border-btnprimary`}
                         alt="Avatar"
                     ></img>
                     <div>

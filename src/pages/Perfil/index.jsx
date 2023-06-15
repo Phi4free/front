@@ -11,6 +11,7 @@ import { Logout } from "./SideMenuItems/fazerLogout";
 import { fetchUserData } from "./userConstructor";
 import { TopBarUser } from "./Items/topBarUser";
 import { Feed } from "./Items/feed";
+import Footer from "../../components/LandingPage/Footer";
 
 // MEU PERFIL - Exibe o perfil do usuário logado
 export function Perfil() {
@@ -88,6 +89,7 @@ export function Perfil() {
                 showAdvancedMenu={showAdvancedMenu}
             />
             <Feed/>
+            {/* <Footer/> */}
             <SideMenu
                 title="OPÇÕES AVANÇADAS"
                 options={opcoesAvancadas}

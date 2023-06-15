@@ -79,14 +79,14 @@ export function Feed() {
                         key={id + "feedA"}
                         className={`${
                             selectedFeed == id
-                                ? "hover:text-white"
-                                : "opacity-50"
-                        } cursor-pointer hover:text-secondary hover:opacity-100`}
+                                ? "hover:text-white underline decoration-2"
+                                : "opacity-50 no-underline "
+                        } cursor-pointer hover:text-secondary hover:opacity-100 underline-offset-8 decoration-btnsecondary`}
                         onClick={() => {
                             setSelectedFeed(id);
                         }}
                     >
-                        {feeds[id]}
+                        {" "}{feeds[id]}{" "}
                     </a>
                 ))}
             </div>
