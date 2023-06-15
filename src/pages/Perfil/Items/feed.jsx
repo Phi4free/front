@@ -73,7 +73,7 @@ export function Feed() {
 
     return (
         <>
-            <div className="flex justify-evenly py-4 mt-2">
+            <div className="flex flex-[10] justify-evenly py-4 mt-2">
                 {Object.keys(feeds).map((id) => (
                     <a
                         key={id + "feedA"}
