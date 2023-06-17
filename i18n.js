@@ -28,6 +28,7 @@ i18n
                     orConnective: "or",
                     blankInput: "This field cannot be empty",
                     // error
+                    notFound: "Page not found",
                     errorAuth: "A validation error has occured",
                     sessionExpired: "Session expired",
                     sessionExpText: "Log in again to continue where you were",
@@ -145,6 +146,7 @@ i18n
                     orConnective: "ou",
                     blankInput: "Este campo não pode ficar vazio",
                     // error
+                    notFound: "Página não encontrada",
                     errorAuth: "Ocorreu um erro de validação",
                     sessionExpired: "Sessão expirada",
                     sessionExpText: "Faça login novamente para continuar de onde parou.",

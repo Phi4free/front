@@ -18,6 +18,7 @@ import { Home } from '../pages/Home';
 import { TermosDeUso } from '../pages/TermosDeUso';
 import { SessionExpired } from '../pages/SessionExpired';
 import { CadastroArtigo } from '../pages/CadastroArtigo';
+import { NotFound } from '../pages/NotFound';
 
 export function AppRoutes () {
   return (
@@ -34,6 +35,7 @@ export function AppRoutes () {
       <Route path='/termos-de-uso' element={<TermosDeUso />}></Route>
       <Route path='/cadastro-artigo' element={<CadastroArtigo />}></Route>
       <Route path='/session-expired' element={<SessionExpired/>}></Route>
+      <Route path="*" element={<NotFound />}></Route>
     </Routes>
   )
 }
