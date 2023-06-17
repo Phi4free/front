@@ -67,9 +67,7 @@ export function Home() {
             })}
           />
         </span>{" "}
-        pelo Phi4Free<br />
-        Direitos de imagem para Netflix<br />
-        Dados pegos do site Themoviedb.org
+        por Phi4Free
       </Footer>
     </Container>
   );

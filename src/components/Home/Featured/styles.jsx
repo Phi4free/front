@@ -58,15 +58,6 @@ export const Points = styled.div`
   margin-right: 15px;
 `;
 
-export const Year = styled.div`
-  display: inline-block;
-  margin-right: 15px;
-`;
-
-export const Seasons = styled.div`
-  display: inline-block;
-`;
-
 export const Description = styled.div`
   margin-top: 15px;
   font-size: 20px;
@@ -103,15 +94,5 @@ export const Button = styled.a`
 
   @media (max-width: 760px) {
     font-size: 16px;
-  }
-`;
-
-export const Genres = styled.div`
-  margin-top: 15px;
-  font-size: 18px;
-  color: #999;
-
-  @media (max-width: 760px) {
-    font-size: 14px;
   }
 `;

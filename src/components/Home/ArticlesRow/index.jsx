@@ -5,7 +5,12 @@ import {
   ListArea,
   List,
   Item,
-  ItemImg,
+  ItemInfo,
+  ItemHeader,
+  ItemTitle,
+  ItemAdd,
+  ItemAuthor,
+  ItemDescription,
 } from "./styles";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,7 +20,7 @@ export default function ArticlesRow({ title, items }) {
   const [scrollX, setScrollX] = useState(0);
 
   const handleLeftArrow = () => {
-    let x = scrollX + Math.round(window.innerWidth / 2);
+    let x = scrollX + Math.round(window.innerWidth / 1.5);
 
     if (x > 0) {
       x = 0;
@@ -25,14 +30,36 @@ export default function ArticlesRow({ title, items }) {
   };
 
   const handleRightArrow = () => {
-    let x = scrollX - Math.round(window.innerWidth / 2);
-    let listW = items.results.length * 150;
+    let x = scrollX - Math.round(window.innerWidth / 1.5);
+    let listW = items.results.length * 250;
 
     if (window.innerWidth - listW > x) {
       x = window.innerWidth - listW - 60;
     }
 
     setScrollX(x);
+  };
+
+  const name = (itemName) => {
+    if (!itemName) {
+      return "";
+    }
+    let name = itemName;
+    if (name.length > 15) {
+      name = name.substring(0, 15) + "...";
+    }
+    return name;
+  };
+
+  const description = (itemDescription) => {
+    if (!itemDescription) {
+      return "";
+    }
+    let description = itemDescription;
+    if (description.length > 75) {
+      description = description.substring(0, 75) + "...";
+    }
+    return description;
   };
 
   return (
@@ -74,15 +101,32 @@ export default function ArticlesRow({ title, items }) {
       </Button>
       <ListArea>
         <List
-          style={{ marginLeft: scrollX, width: items.results.length * 150 }}
+          style={{ marginLeft: scrollX, width: items.results.length * 250 }}
         >
           {items.results.length > 0 &&
             items.results.map((item, key) => (
-              <Item key={key}>
-                <ItemImg
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                  alt="item.original_title"
-                />
+              <Item key={key} img={item.poster_path}>
+                <ItemInfo>
+                  <ItemHeader>
+                    <ItemTitle>{name(item.name)}</ItemTitle>
+                    <ItemAdd>
+                      <FontAwesomeIcon
+                        icon={icon({
+                          name: "plus",
+                          style: "solid",
+                        })}
+                        style={{
+                          fontSize: "16px",
+                          color: "#FFC300",
+                        }}
+                      />
+                    </ItemAdd>
+                  </ItemHeader>
+                  <ItemAuthor>Autor: {name(item.name)}</ItemAuthor>
+                  <ItemDescription>
+                    {description(item.overview)}
+                  </ItemDescription>
+                </ItemInfo>
               </Item>
             ))}
         </List>
