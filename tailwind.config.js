@@ -4,7 +4,9 @@ export const mode = "jit";
 export const theme = {
   extend: {
     colors: {
-      btnprimary: "#C880B7",
+      btnprimary: "#FFC300",
+      btnsecondary: "#C880B7",
+      btnhover: "#000814",
       primary: "#ffc300",
       secondary: "#C880B7",
       dimWhite: "rgba(255, 255, 255, 0.7)",

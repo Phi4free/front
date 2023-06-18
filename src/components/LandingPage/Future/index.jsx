@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import styles, { layout } from "../../../styles/style";
 
 export default function Future() {
+  const { t } = useTranslation();
+
   const videoId = "tcLLTsP3wlo";
   const posterUrl = "https://i.ytimg.com/vi/tcLLTsP3wlo/hq720.jpg";
 
@@ -25,13 +28,9 @@ export default function Future() {
       </div>
 
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}>Prepare-se para o futuro</h2>
+        <h2 className={styles.heading2}>{t('futureTitle')}</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Nossos professores são especialistas em suas áreas de atuação e estão
-          sempre atualizados com as tendências e práticas mais recentes. E com a
-          curadoria de conteúdo da Phi4Free, você tem certeza de que está
-          recebendo informações confiáveis e precisas. Estude sem distrações,
-          sem sair de casa.
+          {t('futurePar')}
         </p>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export default function DinamicInput(props) {
-    const { label, type, id, onInput } = props;
+    const { value, label, type, id, onInput } = props;
     const [visivel, isVisivel] = useState(false);
     const [_type, setType] = useState(type);
 
@@ -25,29 +25,38 @@ export default function DinamicInput(props) {
                 id={id}
                 onInput={onInput}
                 placeholder=" "
+                value={value}
             />
-            <span className="input__label">{label}</span>
-                {type == "password" ? (
-                    visivel ? (
-                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
+            {label != null ? (
+                <span className="input__label">{label}</span>
+            ) : null}
+            {type == "password" ? (
+                visivel ? (
+                    <span
+                        className="alinha_fim"
+                        onClick={() => isVisivel(!visivel)}
+                    >
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye",
                                 style: "solid",
                             })}
                         />
-                        </span>
-                    ) : (
-                      <span className="alinha_fim" onClick={() => isVisivel(!visivel)}>
+                    </span>
+                ) : (
+                    <span
+                        className="alinha_fim"
+                        onClick={() => isVisivel(!visivel)}
+                    >
                         <FontAwesomeIcon
                             icon={icon({
                                 name: "eye-slash",
                                 style: "solid",
                             })}
                         />
-                        </span>
-                    )
-                ) : null}
+                    </span>
+                )
+            ) : null}
         </label>
     );
 }

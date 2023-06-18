@@ -1,7 +1,7 @@
 :root {
-    --color-light: #1A1A1A;
+    --color-light: #1a1a1a;
     --color-dark: aliceblue;
-    --color-signal: #C880B7;
+    --color-signal: #c880b7;
 
     --color-background: var(--color-light);
     --color-text: var(--color-dark);
@@ -127,19 +127,17 @@ button + button {
     display: none;
 }
 
-.alinha_fim{
+.alinha_fim {
     position: absolute;
-        right: 0;
-        top: 0;
-        padding: 1%;
-        margin: calc(var(--size-bezel) * 0.75 + 3px)
-            calc(var(--size-bezel) * 0.5);
-        background: pink;
-        white-space: nowrap;
-        transform: translate(0, 0);
-        transform-origin: 0 0;
-        background: var(--color-background);
-        transition: transform 120ms ease-in;
-        font-weight: bold;
-        line-height: 1.2;
+    right: 0;
+    top: 0;
+    padding: 1%;
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: transparent;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
 }

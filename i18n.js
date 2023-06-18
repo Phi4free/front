@@ -20,9 +20,18 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    back: "GO BACK",
+                    close: "CLOSE",
+                    langSigle: "en",
                     cancel: "CANCEL",
                     andConnective: "and",
                     orConnective: "or",
+                    blankInput: "This field cannot be empty",
+                    // error
+                    errorAuth: "A validation error has occured",
+                    sessionExpired: "Session expired",
+                    sessionExpText: "Log in again to continue where you were",
+                    goFrontPage: "Or go to the front page",
                     // Login
                     enter: "ENTER",
                     noAccount: "Don't have an account?",
@@ -42,7 +51,7 @@ i18n
                     // password recover
                     passRecover: "Password recover",
                     passRecover1:
-                        "Forgot password? Don't worry, we'll send you an email to help you regain access to your account!",
+                        "Forgot password? Don't worry, we'll send you an email to help you keep your account safe!",
                     passRecover2: "Enter the registered account email:",
                     passRecoverEmail: "registeredEmail@email.com",
                     sendEmail: "SEND EMAIL",
@@ -73,8 +82,13 @@ i18n
                     errorRegister2: "Validation error",
                     errorRegister3:
                         "An error occurred while registering. Please try again later",
+                    errorRegister4: "Enter your name to create an account",
                     byPhi4Free: "",
                     // Landing page
+                    //Navbar
+                    navWhat: "What are we",
+                    imStudent: "I'm a Student",
+                    imTeacher: "I'm a Teacher",
                     //Hero
                     heroTitle1: "Awaken your",
                     heroTitle2: "potential",
@@ -96,9 +110,18 @@ i18n
                     busItem3Title: "Share with friends",
                     busItem3Par:
                         "Share our content with your friends and evolve together in this trajectory of knowledge.",
-
+                    //future
+                    futureTitle: "Get ready for the future",
+                    futurePar: "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
+                    //pillars
+                    pillarsTitle: "Our pillars",
+                    pillarsPar: "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
+                    //cta
+                    ctaTitle: "So, shall we begin?",
+                    ctaPar: "Gain knowledge to build a solid foundation for a balanced, meaningful and authentic life.",
                     //footer
                     lang: "Language:",
+                    footerPar: "A new way to acquire knowledge in a practical, easy and reliable way.",
                     usefulLinks: "Useful links",
                     aboutUs: "About Us",
                     workUs: "Carrers",
@@ -114,9 +137,18 @@ i18n
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    close: "FECHAR",
+                    back: "VOLTAR",
+                    langSigle: "pt-BR",
                     cancel: "CANCELAR",
                     andConnective: "e",
                     orConnective: "ou",
+                    blankInput: "Este campo não pode ficar vazio",
+                    // error
+                    errorAuth: "Ocorreu um erro de validação",
+                    sessionExpired: "Sessão expirada",
+                    sessionExpText: "Faça login novamente para continuar de onde parou.",
+                    goFrontPage: "Ou vá para a página inicial",
                     // Login
                     enter: "ENTRAR",
                     noAccount: "Não tem uma conta?",
@@ -136,7 +168,7 @@ i18n
                     // password recover
                     passRecover: "Recuperação de senha",
                     passRecover1:
-                        "Esqueceu a senha? Não se preocupe, vamos te enviar um email para ajudar a recuperar o acesso da sua conta!",
+                        "Esqueceu a senha? Não se preocupe, vamos te enviar um email para ajudar a manter sua conta segura!",
                     passRecover2: "Digite o email da conta cadastrada:",
                     passRecoverEmail: "emailCadastrado@email.com",
                     sendEmail: "ENVIAR EMAIL",
@@ -166,8 +198,13 @@ i18n
                     errorRegister2: "Erro de validação",
                     errorRegister3:
                         "Ocorreu um erro ao efetuar o cadastro. Por favor, tente novamente mais tarde",
+                    errorRegister4: "Coloque seu nome para criar uma conta",
                     byPhi4Free: "da Phi4Free",
                     // Landing page
+                    //Navbar
+                    navWhat: "O que somos",
+                    imStudent: "Sou Estudante",
+                    imTeacher: "Sou Professor",
                     //Hero
                     heroTitle1: "Desperte seu",
                     heroTitle2: "potencial",
@@ -189,9 +226,18 @@ i18n
                     busItem3Title: "Compartilhe com os amigos",
                     busItem3Par:
                         "Compartilhe com os amigos nossos conteúdos e evoluam juntos nessa trajetória de conhecimento.",
-
+                    //future
+                    futureTitle: "Prepare-se para o futuro",
+                    futurePar: "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
+                    // pillars
+                    pillarsTitle: "Nossos pilares",
+                    pillarsPar: "Viver uma vida equilibrada e plena requer uma abordagem holística que abrange diferentes áreas do conhecimento e habilidades práticas. O Phi4free abrangendo educação financeira, física, filosófica e funcional oferece uma jornada única para auxiliar a desenvolver competências fundamentais para uma vida saudável, equilibrada e satisfatória.",
+                    //cta
+                    ctaTitle: "E aí? Vamos começar?",
+                    ctaPar: "Adquira conhecimento para construir uma base sólida para uma vida equilibrada, significativa e autêntica.",
                     //footer
                     lang: "Idioma:",
+                    footerPar: "Uma nova maneira de adquirir conhecimento de forma prática, fácil e confiável.",
                     usefulLinks: "Links Úteis",
                     aboutUs: "Quem Somos",
                     workUs: "Trabalhe Conosco",

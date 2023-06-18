@@ -14,10 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import logoAlt from "../../assets/logoalt.png";
 import PrimaryButton from "../../components/PrimaryButton";
 import ErroText from "../../components/ErroText";
-import { BASE_URL } from "../../services/api";
+import api, { BASE_URL } from "../../services/api";
 import { useTranslation } from "react-i18next";
 import { LangSwitcher } from "../../components/LangSwitcher";
 
@@ -28,24 +29,26 @@ export function Cadastro() {
     const [erros, setErros] = useState(null);
     const [loading, isLoading] = useState(false);
 
-    let [nome, setNome] = useState("");
-    let [email, setEmail] = useState("");
-    let [password, setPassword] = useState("");
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            nome: nome,
-            email: email,
-            senha: password,
-        }),
-    };
+    useEffect(() => {
+        if (password != confirmPassword && confirmPassword != "") {
+            setErros(t("errorRegister1"));
+        } else {
+            setErros(null);
+        }
+    }, [password, confirmPassword]);
 
     const handleNome = (e) => {
         e.preventDefault();
+        if (e.target.value == "") {
+            setErros(t("errorRegister4"));
+        } else {
+            setErros(null);
+        }
         setNome(e.target.value);
     };
 
@@ -61,28 +64,40 @@ export function Cadastro() {
 
     const handleConfirmPassword = (e) => {
         e.preventDefault();
-        if (e.target.value != password) {
-            setErros(t("errorRegister1"));
-        } else {
-            setErros(null);
+        setConfirmPassword(e.target.value);
+    };
+
+    const validateErros = () => {
+        if (nome == "") {
+            setErros(t("errorRegister4"));
+            return false;
         }
+        if (confirmPassword != password) return false;
+
+        return true;
     };
 
     const onSubmit = (e) => {
+        if (!validateErros()) return;
         e.preventDefault();
         isLoading(true);
         setErros(null);
-        fetch(BASE_URL + "criarPerfil", options)
+        api.post("criarPerfil", {
+            nome: nome,
+            email: email,
+            senha: password,
+        })
             .then((response) => {
                 response.json().then((data) => {
                     if (data.auth) {
+                        localStorage.setItem("username", data.username);
                         localStorage.setItem("token", data.token);
                         setErros(null);
                         isLoading(false);
                         navigate("/home");
                     } else {
                         isLoading(false);
-                        setErros(t("errorRegister2"));
+                        setErros(data.message);
                     }
                 });
             })
@@ -108,7 +123,9 @@ export function Cadastro() {
                     width="200px"
                     height="80px"
                 />
-                <LabelTitulo  className="font-bold text-2xl">{t("registerStudent")}</LabelTitulo>
+                <LabelTitulo className="font-bold text-2xl">
+                    {t("registerStudent")}
+                </LabelTitulo>
                 <ContainerInput>
                     <DinamicInput
                         type="text"

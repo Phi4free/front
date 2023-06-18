@@ -4,27 +4,36 @@ import { close, menu } from "../../../assets/LandingPage";
 import logo from "../../../assets/logo.png";
 import { ButtonLogin, ButtonRegister } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+/**
+ * PROBLEMA PARA VERIFICAR
+ *
+ * 1 - Botões do Navbar não estão realizando scroll para a porção da tela esperada, na vdd não estão fazendo scroll nenhum
+*/
 
 export default function Navbar() {
+  const { t } = useTranslation();
+
   const [active, setActive] = useState("O que somos");
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
   const navLinks = [
     {
       id: "home",
-      title: "O que somos",
+      title: t('navWhat'),
     },
     {
       id: "features",
-      title: "Estude com qualidade",
+      title:  t('businessTitle'),
     },
     {
       id: "product",
-      title: "Prepare-se para o futuro",
+      title:  t('futureTitle'),
     },
     {
       id: "pillars",
-      title: "Nossos pilares",
+      title:  t('pillarsTitle'),
     },
   ];
 
@@ -49,7 +58,7 @@ export default function Navbar() {
             type="button"
             onClick={() => navigate("/login-estudante")}
           >
-            Sou estudante
+            {t('imStudent')}
           </ButtonLogin>
         </li>
         <li className={`font-normal cursor-pointer text-[16px]`}>
@@ -57,7 +66,7 @@ export default function Navbar() {
             type="button"
             onClick={() => navigate("/login-professor")}
           >
-            Sou professor
+            {t('imTeacher')}
           </ButtonRegister>
         </li>
       </ul>
@@ -80,13 +89,13 @@ export default function Navbar() {
               className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
               onClick={() => navigate("/login-estudante")}
             >
-              Sou estudante
+              {t('imStudent')}
             </li>
             <li
               className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
               onClick={() => navigate("/login-professor")}
             >
-              Sou professor
+              {t('imTeacher')}
             </li>
             {navLinks.map((nav, index) => (
               <li

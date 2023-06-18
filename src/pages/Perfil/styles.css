@@ -1,0 +1,14 @@
+.username{
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.badge{
+    margin-top: 1vh;
+    margin-right: 0.5vw;
+    background: #f0f8ff;
+    padding: 0.25vh 1vh;
+    color: blueviolet;
+    border-radius: 2vw;
+    font-size: small;
+}
