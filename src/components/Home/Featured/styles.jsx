@@ -3,6 +3,7 @@ import Reader from "../../../assets/reader.png";
 
 export const Container = styled.section`
   height: 100vh;
+  min-height: 500px;
   background-image: url(${Reader});
   background-size: cover;
   background-position: center;
@@ -15,12 +16,14 @@ export const Container = styled.section`
 export const Vertical = styled.div`
   width: inherit;
   height: inherit;
+  min-height: 500px;
   background: linear-gradient(to top, #1a1a1a 10%, transparent 80%);
 `;
 
 export const Horizontal = styled.div`
   width: inherit;
   height: inherit;
+  min-height: 450px;
   background: linear-gradient(to right, #1a1a1a 30%, transparent 60%);
   display: flex;
   flex-direction: column;

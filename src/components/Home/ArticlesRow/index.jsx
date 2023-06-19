@@ -31,7 +31,7 @@ export default function ArticlesRow({ title, items }) {
 
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 1.5);
-    let listW = items.results.length * 250;
+    let listW = items.length * 250;
 
     if (window.innerWidth - listW > x) {
       x = window.innerWidth - listW - 60;
