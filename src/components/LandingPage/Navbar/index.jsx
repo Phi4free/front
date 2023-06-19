@@ -32,8 +32,8 @@ export default function Navbar() {
     ];
 
     const handleScroll = (e) => {
-      var scrollId = document.getElementById(e).offsetTop;
-      window.scrollTo({ top: scrollId, behavior: 'smooth'});
+        var scrollId = document.getElementById(e).offsetTop;
+        window.scrollTo({ top: scrollId, behavior: "smooth" });
     };
 
     return (
@@ -54,7 +54,7 @@ export default function Navbar() {
                         <button
                             className="hover:text-white focus:outline-0 hover:bg-transparent"
                             onClick={() => {
-                              handleScroll(nav.id)
+                                handleScroll(nav.id);
                             }}
                         >
                             {nav.title}
@@ -119,7 +119,14 @@ export default function Navbar() {
                                 }`}
                                 onClick={() => setActive(nav.title)}
                             >
-                                <a href={`${nav.id}`}>{nav.title}</a>
+                                <button
+                                    className="hover:text-white focus:outline-0 hover:bg-transparent"
+                                    onClick={() => {
+                                        handleScroll(nav.id);
+                                    }}
+                                >
+                                    {nav.title}
+                                </button>
                             </li>
                         ))}
                     </ul>
