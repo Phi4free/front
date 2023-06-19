@@ -91,7 +91,7 @@ export function Perfil() {
                 hideBar={hideTopBar}
                 isHideBar={isHideTopBar}
             />
-            <Feed hideBar={hideTopBar} isHideBar={isHideTopBar} />
+            <Feed hideBar={hideTopBar}/>
             {/* <Footer/> */}
             <SideMenu
                 title="OPÇÕES AVANÇADAS"

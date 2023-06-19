@@ -4,7 +4,7 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
 
 export function Feed(props) {
-    const { hideBar, isHideBar } = props;
+    const { hideBar } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
 
     useEffect(() => {
