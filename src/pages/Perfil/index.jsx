@@ -25,6 +25,7 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
+    const [hideTopBar, isHideTopBar] = useState(false);
     const [user, setUser] = useState(null);
 
     /**
@@ -87,8 +88,10 @@ export function Perfil() {
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
                 showAdvancedMenu={showAdvancedMenu}
+                hideBar={hideTopBar}
+                isHideBar={isHideTopBar}
             />
-            <Feed/>
+            <Feed hideBar={hideTopBar} isHideBar={isHideTopBar} />
             {/* <Footer/> */}
             <SideMenu
                 title="OPÇÕES AVANÇADAS"
