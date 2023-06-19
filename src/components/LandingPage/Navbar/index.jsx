@@ -7,10 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 /**
- * PROBLEMA PARA VERIFICAR
- *
- * 1 - Botões do Navbar não estão realizando scroll para a porção da tela esperada, na vdd não estão fazendo scroll nenhum
-*/
+ * To DO:
+ * Corrigir scroll daqui
+ * Traduzir meu perfil
+ * Arrumar design da lista do feed do meu perfil
+ */
 
 export default function Navbar() {
   const { t } = useTranslation();
