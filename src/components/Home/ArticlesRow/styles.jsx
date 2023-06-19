@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const MovieRow = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   &:hover .button {
     opacity: 1;
   }
 `;
 
 export const TitleList = styled.h2`
-  margin: 0px 0px 0px 30px;
+  margin: 0px 0px 10px 30px;
   text-align: left;
   font-size: 1.5em;
   font-weight: 700;
@@ -35,11 +35,13 @@ export const Button = styled.div`
 export const ListArea = styled.div`
   overflow: hidden;
   padding-left: 30px;
-  height: 450px;
+  height: 420px;
 `;
 
 export const List = styled.div`
   transition: all ease 0.5s;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Item = styled.div`
@@ -48,7 +50,7 @@ export const Item = styled.div`
   height: 400px;
   cursor: pointer;
   background-image: ${(props) =>
-    `url(https://image.tmdb.org/t/p/w300${props.img})`};
+    `url(${props.img})`};
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(0.9);
@@ -60,7 +62,7 @@ export const Item = styled.div`
 
 export const ItemInfo = styled.div`
   background: linear-gradient(to top, #1a1a1adc 95%, transparent 100%);
-  padding: 20px 10px;
+  padding: 20px 12px;
   height: 45%;
   margin-top: 90%;
 `;
@@ -72,15 +74,19 @@ export const ItemHeader = styled.div`
 
 export const ItemTitle = styled.h3`
   padding: 0px;
+  margin-top: 5px;
   text-align: left;
   font-weight: 700;
   font-size: 18px;
+  word-break: break-word;
+  width: 90%;
 `;
 
 export const ItemAdd = styled.button`
   border: 2px solid #ffc300;
   border-radius: 100%;
-  padding: 6px 7px;
+  height: 35px;
+  width: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +98,7 @@ export const ItemAdd = styled.button`
 
 export const ItemAuthor = styled.h6`
   text-align: left;
-  font-weight: 600;
+  margin-top: 10px;
 `;
 
 export const ItemDescription = styled.p`

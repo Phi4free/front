@@ -45,8 +45,8 @@ export default function ArticlesRow({ title, items }) {
       return "";
     }
     let name = itemName;
-    if (name.length > 15) {
-      name = name.substring(0, 15) + "...";
+    if (name.length > 35) {
+      name = name.substring(0, 35) + "...";
     }
     return name;
   };
@@ -100,15 +100,16 @@ export default function ArticlesRow({ title, items }) {
         />
       </Button>
       <ListArea>
-        <List
-          style={{ marginLeft: scrollX, width: items.results.length * 250 }}
-        >
-          {items.results.length > 0 &&
-            items.results.map((item, key) => (
-              <Item key={key} img={item.poster_path}>
+        <List style={{ marginLeft: scrollX, width: items.length * 250 }}>
+          {items.length > 0 &&
+            items.map((item, key) => (
+              <Item
+                key={key}
+                img="https://i.pinimg.com/236x/81/55/a5/8155a5862dc9bc67a3e553802ab6e94a.jpg"
+              >
                 <ItemInfo>
                   <ItemHeader>
-                    <ItemTitle>{name(item.name)}</ItemTitle>
+                    <ItemTitle>{name(item.titulo)}</ItemTitle>
                     <ItemAdd>
                       <FontAwesomeIcon
                         icon={icon({
@@ -122,10 +123,10 @@ export default function ArticlesRow({ title, items }) {
                       />
                     </ItemAdd>
                   </ItemHeader>
-                  <ItemAuthor>Autor: {name(item.name)}</ItemAuthor>
-                  <ItemDescription>
-                    {description(item.overview)}
-                  </ItemDescription>
+                  <ItemAuthor>Autor: {name(item.autorId)}</ItemAuthor>
+                  {/* <ItemDescription>
+                    {description(item.conteudo)}
+                  </ItemDescription> */}
                 </ItemInfo>
               </Item>
             ))}
