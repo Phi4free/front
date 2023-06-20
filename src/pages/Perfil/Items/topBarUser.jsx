@@ -116,7 +116,7 @@ export function TopBarUser(props) {
                                     {localStorage.getItem("username") ||
                                         t("user404")}
                                 </a>
-                                <div>
+                                <div className="px-4 sm:px-0">
                                     <strong>{t("interests")}: </strong>
                                     {
                                         // deverá puxar um array e exibir os interesses do usuário dinamicamente

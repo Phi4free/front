@@ -14,9 +14,9 @@ export function Feed(props) {
     }, [selectedFeed]);
 
     const feeds = {
-        0: t('archieve'),
-        1: t('studyList'),
-        2: t('certificates'),
+        0: t("archieve"),
+        1: t("studyList"),
+        2: t("certificates"),
     };
 
     // Deve ser substituido por chamada dinamica dos itens do BD
@@ -42,26 +42,64 @@ export function Feed(props) {
                         {Object.keys(mockedBadges).map((nome) => (
                             <div
                                 keys={"key-div-" + nome}
-                                className="rounded mx-4 my-2 px-4 py-4 bg-btnhover/75 h-32 border-4 border-transparent border-s-btnsecondary"
+                                className="rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer"
                             >
-                                <div
-                                    keys={"key-div2-" + nome}
-                                    className="text-btnprimary"
-                                >
-                                    <FontAwesomeIcon
-                                        className="mx-2"
-                                        icon={icon({
-                                            name: "certificate",
-                                            style: "solid",
-                                        })}
-                                    />
-                                    <a className="text-xl" key={nome}>
-                                        {nome}
-                                    </a>
+                                <div className="sm:flex block items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        data-name="Layer 1"
+                                        className="hidden sm:block"
+                                        width={"50px"}
+                                        height={"60px"}
+                                        id="achievement"
+                                    >
+                                        <circle
+                                            cx="32"
+                                            cy="25.5"
+                                            r="17"
+                                            fill="none"
+                                            stroke="#ffb90b"
+                                            strokeMiterLimit="10"
+                                            strokeWidth="2"
+                                        ></circle>
+                                        <path
+                                            fill="none"
+                                            stroke="#ffb90b"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M32,37A11.5,11.5,0,0,1,20.5,25.5"
+                                        ></path>
+                                        <polyline
+                                            fill="none"
+                                            stroke="#ffb90b"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            points="20 38 20 57 32 50 44 57 44 38"
+                                        ></polyline>
+                                    </svg>
+
+                                    <div className="block items-center text-center sm:text-left">
+                                        <div
+                                            keys={"key-div2-" + nome}
+                                            className="text-btnprimary mx-2"
+                                        >
+                                            <a
+                                                className="text-xl py-4 sm:py-0"
+                                                key={nome}
+                                            >
+                                                {nome}
+                                            </a>
+                                        </div>
+                                        <p
+                                            className="mx-2"
+                                            key={"paragrafo-" + nome}
+                                        >
+                                            {mockedBadges[nome]}
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="mx-8" key={"paragrafo-" + nome}>
-                                    {mockedBadges[nome]}
-                                </p>
                             </div>
                         ))}
                     </div>
@@ -73,7 +111,7 @@ export function Feed(props) {
             default:
                 return (
                     <div className="flex justify-center px-4 py-12">
-                        <h1>{t('feedError')}</h1>
+                        <h1>{t("feedError")}</h1>
                         <div>
                             <FontAwesomeIcon
                                 className="mx-1"
