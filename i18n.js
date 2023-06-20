@@ -20,6 +20,7 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    continue: "CONTINUE",
                     back: "GO BACK",
                     close: "CLOSE",
                     langSigle: "en",
@@ -113,16 +114,19 @@ i18n
                         "Share our content with your friends and evolve together in this trajectory of knowledge.",
                     //future
                     futureTitle: "Get ready for the future",
-                    futurePar: "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
+                    futurePar:
+                        "Our professors are experts in their fields and are always up to date with the latest trends and practices. And with Phi4Free's curated content, you can be sure you're getting reliable and accurate information. Study without distractions, without leaving your home.",
                     //pillars
                     pillarsTitle: "Our pillars",
-                    pillarsPar: "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
+                    pillarsPar:
+                        "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
                     //cta
                     ctaTitle: "So, shall we begin?",
                     ctaPar: "Gain knowledge to build a solid foundation for a balanced, meaningful and authentic life.",
                     //footer
                     lang: "Language:",
-                    footerPar: "A new way to acquire knowledge in a practical, easy and reliable way.",
+                    footerPar:
+                        "A new way to acquire knowledge in a practical, easy and reliable way.",
                     usefulLinks: "Useful links",
                     aboutUs: "About Us",
                     workUs: "Carrers",
@@ -133,11 +137,50 @@ i18n
                     Physical: "Physical Education",
                     Functional: "Functional Education",
                     contact: "Contact us",
+                    // my profile
+                    altEmail: "Change email",
+                    altPass: "Change password",
+                    accSecurity: "Security & Account",
+                    logout: "Logout",
+                    advancedOptions: "ADVANCED OPTIONS",
+                    unavailableOption:
+                        "Sorry! This option is still not available",
+                    //topbar my profile
+                    ranking: "RANKING",
+                    store: "PHISTORE",
+                    editProfile: "EDIT PROFILE",
+                    user404: "User not found",
+                    interests: "Interests",
+                    expand: "Expand",
+                    recoil: "Retract",
+                    //feed my profile
+                    archieve: "Archievements",
+                    studyList: "Study list",
+                    certificates: "Certificates",
+                    feedError:
+                        "An error has occured while searching for the feed",
+                    //change email
+                    differentEmail: "These emails are different",
+                    emptyEmail: "The new email cannot be empty",
+                    currentEmail: "Your current email is",
+                    insertNewEmail: "Insert a new email",
+                    confirmEmail: "Confirm email",
+                    updateEmail: "UPDATE EMAIL",
+                    //change password
+                    invalidPass: "Invalid password",
+                    currentPass: "Type your current password",
+                    newPass: "Type a new password",
+                    confirmNewPass: "Confirm your new password",
+                    updatePass: "UPDATE PASSWORD",
+                    // logout
+                    seeYouLater: "See you later! Sign in again when you're ready to continue",
+                    endSection: "END SESSION",
                 },
             },
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    continue: "CONTINUAR",
                     close: "FECHAR",
                     back: "VOLTAR",
                     langSigle: "pt-BR",
@@ -149,7 +192,8 @@ i18n
                     notFound: "Página não encontrada",
                     errorAuth: "Ocorreu um erro de validação",
                     sessionExpired: "Sessão expirada",
-                    sessionExpText: "Faça login novamente para continuar de onde parou.",
+                    sessionExpText:
+                        "Faça login novamente para continuar de onde parou.",
                     goFrontPage: "Ou vá para a página inicial",
                     // Login
                     enter: "ENTRAR",
@@ -230,16 +274,19 @@ i18n
                         "Compartilhe com os amigos nossos conteúdos e evoluam juntos nessa trajetória de conhecimento.",
                     //future
                     futureTitle: "Prepare-se para o futuro",
-                    futurePar: "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
+                    futurePar:
+                        "Nossos professores são especialistas em suas áreas de atuação e estão sempre atualizados com as tendências e práticas mais recentes. E com a curadoria de conteúdo da Phi4Free, você tem certeza de que está recebendo informações confiáveis e precisas. Estude sem distrações, sem sair de casa.",
                     // pillars
                     pillarsTitle: "Nossos pilares",
-                    pillarsPar: "Viver uma vida equilibrada e plena requer uma abordagem holística que abrange diferentes áreas do conhecimento e habilidades práticas. O Phi4free abrangendo educação financeira, física, filosófica e funcional oferece uma jornada única para auxiliar a desenvolver competências fundamentais para uma vida saudável, equilibrada e satisfatória.",
+                    pillarsPar:
+                        "Viver uma vida equilibrada e plena requer uma abordagem holística que abrange diferentes áreas do conhecimento e habilidades práticas. O Phi4free abrangendo educação financeira, física, filosófica e funcional oferece uma jornada única para auxiliar a desenvolver competências fundamentais para uma vida saudável, equilibrada e satisfatória.",
                     //cta
                     ctaTitle: "E aí? Vamos começar?",
                     ctaPar: "Adquira conhecimento para construir uma base sólida para uma vida equilibrada, significativa e autêntica.",
                     //footer
                     lang: "Idioma:",
-                    footerPar: "Uma nova maneira de adquirir conhecimento de forma prática, fácil e confiável.",
+                    footerPar:
+                        "Uma nova maneira de adquirir conhecimento de forma prática, fácil e confiável.",
                     usefulLinks: "Links Úteis",
                     aboutUs: "Quem Somos",
                     workUs: "Trabalhe Conosco",
@@ -250,6 +297,43 @@ i18n
                     Physical: "Educação Física",
                     Functional: "Educação Funcional",
                     contact: "Fale conosco",
+                    // my profile
+                    altEmail: "Alterar email",
+                    altPass: "Alterar senha",
+                    accSecurity: "Segurança & Conta",
+                    logout: "Logout",
+                    advancedOptions: "OPÇÕES AVANÇADAS",
+                    unavailableOption:
+                        "Desculpe! Esta opção ainda não está disponível",
+                    //topbar my profile
+                    ranking: "RANKING",
+                    store: "PHISTORE",
+                    editProfile: "EDITAR PERFIL",
+                    user404: "Usuário não encontrado",
+                    interests: "Interesses",
+                    expand: "Expandir",
+                    recoil: "Recolher",
+                    //feed my profile
+                    archieve: "Conquistas",
+                    studyList: "Lista de estudo",
+                    certificates: "Certificados",
+                    feedError: "Ocorreu um erro ao buscar o feed",
+                    //change email
+                    differentEmail: "Os emails são diferentes",
+                    emptyEmail: "O novo email não pode ficar vazio",
+                    currentEmail: "Seu email atual é",
+                    insertNewEmail: "Insira um novo email",
+                    confirmEmail: "Confirme o email",
+                    updateEmail: "ATUALIZAR EMAIL",
+                    //change password
+                    invalidPass: "Senha inválida",
+                    currentPass: "Digite sua senha atual",
+                    newPass: "Digite uma nova senha",
+                    confirmNewPass: "Confirme a nova senha",
+                    updatePass: "ATUALIZAR SENHA",
+                    //logout
+                    seeYouLater: "Até mais tarde! Faça login novamente quando estiver pronto para continuar",
+                    endSection: "ENCERRAR SESSÃO",
                 },
             },
         },

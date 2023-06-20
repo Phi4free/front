@@ -31,7 +31,7 @@ export function TopBarUser(props) {
                                     isShowUnderConstructionToast(true)
                                 }
                             >
-                                RANKING
+                                {t("ranking")}
                             </button>
                             <button
                                 type="button"
@@ -40,7 +40,7 @@ export function TopBarUser(props) {
                                     isShowUnderConstructionToast(true)
                                 }
                             >
-                                PHISTORE
+                                {t("store")}
                             </button>
                         </div>
                         <img
@@ -67,7 +67,7 @@ export function TopBarUser(props) {
                                                 )
                                             }
                                         >
-                                            PHISTORE
+                                            {t("store")}
                                         </li>
                                         <li
                                             className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
@@ -77,7 +77,7 @@ export function TopBarUser(props) {
                                                 )
                                             }
                                         >
-                                            RANKING
+                                            {t("ranking")}
                                         </li>
                                     </div>
                                 )}
@@ -87,7 +87,7 @@ export function TopBarUser(props) {
                                         isShowUnderConstructionToast(true)
                                     }
                                 >
-                                    EDITAR PERFIL
+                                    {t("editProfile")}
                                 </li>
                                 <li
                                     className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
@@ -96,7 +96,7 @@ export function TopBarUser(props) {
                                         setToggle(false);
                                     }}
                                 >
-                                    OPÇÕES AVANÇADAS
+                                    {t("advancedOptions")}
                                 </li>
                             </ul>
                         </div>
@@ -114,22 +114,22 @@ export function TopBarUser(props) {
                             <div className="text-center sm:text-left">
                                 <a className="username">
                                     {localStorage.getItem("username") ||
-                                        "Usuário não encontrado"}
+                                        t("user404")}
                                 </a>
                                 <div>
-                                    <strong>Interesses: </strong>
+                                    <strong>{t("interests")}: </strong>
                                     {
-                                        // deverá puxar um array e exibir as principais badges do usuário dinamicamente
+                                        // deverá puxar um array e exibir os interesses do usuário dinamicamente
                                         <a className="opacity-75">
                                             {t("Financial")},{" "}
-                                            {t("Philosophical")},{t("Physical")}
-                                            , {t("Functional")}
+                                            {t("Philosophical")},{" "}
+                                            {t("Physical")}, {t("Functional")}
                                         </a>
                                     }
                                 </div>
 
                                 {
-                                    // deverá puxar um array e exibir as 3 principais conquistas do usuário
+                                    // deverá puxar um array do BD e exibir as conquistas do usuário dinamicamente
                                     <div
                                         className="flex flex-wrap justify-center sm:justify-start mx-4 my-2 sm:mx-0"
                                         onClick={() => isShowBadgeToast(true)}
@@ -152,7 +152,7 @@ export function TopBarUser(props) {
                                                     style: "solid",
                                                 })}
                                             />
-                                            <a>Pioneiros da Phi4Free</a>
+                                            <a>Philantropia I</a>
                                         </div>
                                         <div className="w-fit badge cursor-pointer">
                                             <FontAwesomeIcon
@@ -162,7 +162,7 @@ export function TopBarUser(props) {
                                                     style: "solid",
                                                 })}
                                             />
-                                            <a>Pioneiros da Phi4Free</a>
+                                            <a>Que comecem os estudos</a>
                                         </div>
                                     </div>
                                 }
@@ -180,29 +180,32 @@ export function TopBarUser(props) {
                 >
                     {hideBar ? (
                         <>
-                        <FontAwesomeIcon
-                            className="mx-1"
-                            icon={icon({
-                                name: "arrow-down",
-                                style: "solid",
-                            })}
-                        />
-                        <a>Expandir</a>
+                            <FontAwesomeIcon
+                                className="mx-1"
+                                icon={icon({
+                                    name: "arrow-down",
+                                    style: "solid",
+                                })}
+                            />
+                            <a>{t('expand')}</a>
                         </>
                     ) : (
                         <>
-                        <FontAwesomeIcon
-                            className="mx-1"
-                            icon={icon({
-                                name: "arrow-up",
-                                style: "solid",
-                            })}
-                        />
-                        <a>Recolher</a>
+                            <FontAwesomeIcon
+                                className="mx-1"
+                                icon={icon({
+                                    name: "arrow-up",
+                                    style: "solid",
+                                })}
+                            />
+                            <a>{t('recoil')}</a>
                         </>
                     )}
                 </button>
             </div>
+            {/**
+             * This Toast is mocked and must shoutout the badge dinamically
+             */}
             <Toast
                 open={showBadgeToast}
                 setOpen={isShowBadgeToast}

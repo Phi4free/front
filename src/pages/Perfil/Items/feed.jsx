@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { useTranslation } from "react-i18next";
 import Toast from "../../../components/Toast";
 
 export function Feed(props) {
     const { hideBar } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
+    const { t } = useTranslation();
 
     useEffect(() => {
         renderMockedItems();
     }, [selectedFeed]);
 
     const feeds = {
-        0: "Conquistas",
-        1: "Lista de estudo",
-        2: "Certificados",
+        0: t('archieve'),
+        1: t('studyList'),
+        2: t('certificates'),
     };
 
+    // Deve ser substituido por chamada dinamica dos itens do BD
     function renderMockedItems() {
         const mockedBadges = {
             "Philantropia I": "Faça uma doação para apoiar a plataforma",
@@ -70,7 +73,7 @@ export function Feed(props) {
             default:
                 return (
                     <div className="flex justify-center px-4 py-12">
-                        <h1>Ocorreu um erro ao buscar o feed</h1>
+                        <h1>{t('feedError')}</h1>
                         <div>
                             <FontAwesomeIcon
                                 className="mx-1"

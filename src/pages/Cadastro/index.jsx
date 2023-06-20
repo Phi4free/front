@@ -72,7 +72,10 @@ export function Cadastro() {
             setErros(t("errorRegister4"));
             return false;
         }
-        if (confirmPassword != password) return false;
+        if (confirmPassword != password) {
+            setErros(t("errorRegister1"));
+            return false;
+        }
 
         return true;
     };
