@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import Toast from "../../../components/Toast";
 
 /**
- * 
+ *
  * TO DO:
  * Arrumar cores aleatórias dos badges
  * Colocar cores diferenciadas para Toasts
@@ -53,75 +53,137 @@ export function Feed(props) {
                             (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
                         }
                     >
-                        {Object.keys(mockedBadges).map((nome) => (
-                            <div
-                                keys={"key-div-" + nome}
-                                className="rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer"
-                            >
-                                <div className="sm:flex block items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        data-name="Layer 1"
-                                        className="hidden sm:block"
-                                        width={"50px"}
-                                        height={"60px"}
-                                        id="achievement"
-                                    >
-                                        <circle
-                                            cx="32"
-                                            cy="25.5"
-                                            r="17"
-                                            fill="none"
-                                            stroke={colors[getRandomColor()]}
-                                            strokeMiterLimit="10"
-                                            strokeWidth="2"
-                                        ></circle>
-                                        <path
-                                            fill="none"
-                                            stroke={colors[getRandomColor()]}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M32,37A11.5,11.5,0,0,1,20.5,25.5"
-                                        ></path>
-                                        <polyline
-                                            fill="none"
-                                            stroke={colors[getRandomColor()]}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            points="20 38 20 57 32 50 44 57 44 38"
-                                        ></polyline>
-                                    </svg>
+                        {Object.keys(mockedBadges).map((nome) => {
+                            let color = colors[getRandomColor()];
+                            return (
+                                <div
+                                    keys={"key-div-" + nome}
+                                    className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer"
+                                >
+                                    <div className="sm:flex block items-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            data-name="Layer 1"
+                                            className="hidden sm:block"
+                                            width={"50px"}
+                                            height={"60px"}
+                                            id="achievement"
+                                        >
+                                            <circle
+                                                cx="32"
+                                                cy="25.5"
+                                                r="17"
+                                                fill="none"
+                                                stroke={color}
+                                                strokeMiterLimit="10"
+                                                strokeWidth="2"
+                                            ></circle>
+                                            <path
+                                                fill="none"
+                                                stroke={color}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M32,37A11.5,11.5,0,0,1,20.5,25.5"
+                                            ></path>
+                                            <polyline
+                                                fill="none"
+                                                stroke={color}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                points="20 38 20 57 32 50 44 57 44 38"
+                                            ></polyline>
+                                        </svg>
 
-                                    <div className="block items-center text-center sm:text-left">
-                                        <div
-                                            keys={"key-div2-" + nome}
-                                            className="text-btnprimary mx-2"
-                                        >
-                                            <a
-                                                className="text-xl py-4 sm:py-0"
-                                                key={nome}
+                                        <div className="block items-center text-center sm:text-left">
+                                            <div
+                                                keys={"key-div2-" + nome}
+                                                className="text-btnprimary mx-2"
                                             >
-                                                {nome}
-                                            </a>
+                                                <a
+                                                    className="text-xl py-4 sm:py-0"
+                                                    key={nome}
+                                                >
+                                                    {nome}
+                                                </a>
+                                            </div>
+                                            <p
+                                                className="mx-2"
+                                                key={"paragrafo-" + nome}
+                                            >
+                                                {mockedBadges[nome]}
+                                            </p>
                                         </div>
-                                        <p
-                                            className="mx-2"
-                                            key={"paragrafo-" + nome}
-                                        >
-                                            {mockedBadges[nome]}
-                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 );
             case "1":
                 break;
             case "2":
-                break;
+                let color = colors[getRandomColor()];
+                return (
+                    <div
+                        className={
+                            "mx-4 py-2 overflow-y-auto " +
+                            (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
+                        }
+                    >
+                        <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer">
+                            <div className="sm:flex block items-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    data-name="Layer 1"
+                                    className="hidden sm:block"
+                                    width={"50px"}
+                                    height={"60px"}
+                                    id="achievement"
+                                >
+                                    <circle
+                                        cx="32"
+                                        cy="25.5"
+                                        r="17"
+                                        fill="none"
+                                        stroke={color}
+                                        strokeMiterLimit="10"
+                                        strokeWidth="2"
+                                    ></circle>
+                                    <path
+                                        fill="none"
+                                        stroke={color}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M32,37A11.5,11.5,0,0,1,20.5,25.5"
+                                    ></path>
+                                    <polyline
+                                        fill="none"
+                                        stroke={color}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        points="20 38 20 57 32 50 44 57 44 38"
+                                    ></polyline>
+                                </svg>
+
+                                <div className="block items-center text-center sm:text-left">
+                                    <div className="text-btnprimary mx-2">
+                                        <a className="text-xl py-4 sm:py-0">
+                                            Criação de textos mocados com
+                                            chatGPT
+                                        </a>
+                                    </div>
+                                    <p className="mx-2">
+                                        Prof. OpenAI, ChatGPT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
             default:
                 return (
                     <div className="flex justify-center px-4 py-12">
