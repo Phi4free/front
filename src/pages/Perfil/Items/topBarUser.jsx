@@ -210,7 +210,7 @@ export function TopBarUser(props) {
                 open={showBadgeToast}
                 setOpen={isShowBadgeToast}
                 iconName="certificate"
-                message="Este usuário é um dos primeiros a ter uma conta na Phi4Free!"
+                message="Deve exibir detalhes da badge do usuário"
             />
         </>
     );

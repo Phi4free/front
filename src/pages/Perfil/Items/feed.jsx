@@ -4,13 +4,6 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import Toast from "../../../components/Toast";
 
-/**
- *
- * TO DO:
- * Arrumar cores aleatórias dos badges
- * Colocar cores diferenciadas para Toasts
- */
-
 export function Feed(props) {
     const { hideBar } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
