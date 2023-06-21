@@ -122,7 +122,18 @@ export function Feed(props) {
                     </div>
                 );
             case "1":
-                break;
+                return (
+                    <div
+                        className={
+                            "mx-4 py-2 overflow-y-auto " +
+                            (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
+                        }
+                    >
+                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                            {t("feedEmpty")}
+                        </div>
+                    </div>
+                );
             case "2":
                 let color = colors[getRandomColor()];
                 return (

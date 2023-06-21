@@ -159,6 +159,7 @@ i18n
                     certificates: "Certificates",
                     feedError:
                         "An error has occured while searching for the feed",
+                    feedEmpty: "Nothing to show",
                     //change email
                     differentEmail: "These emails are different",
                     emptyEmail: "The new email cannot be empty",
@@ -318,6 +319,7 @@ i18n
                     studyList: "Lista de estudo",
                     certificates: "Certificados",
                     feedError: "Ocorreu um erro ao buscar o feed",
+                    feedEmpty: "Nada para mostrar",
                     //change email
                     differentEmail: "Os emails são diferentes",
                     emptyEmail: "O novo email não pode ficar vazio",
