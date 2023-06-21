@@ -4,31 +4,45 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useEffect, useState } from "react";
 
 export default function Toast(props) {
-    const {open, setOpen, message, iconName} = props;
+    const { open, setOpen, message, iconName, background, accent, color } = props;
+    const _background = background ? background.toLowerCase() : "gray-800";
+    const _accent = accent ? accent.toLowerCase() : "blue-800";
+    const _color = color ? color.toLowerCase() : "gray-400";
     const { t } = useTranslation();
 
     const icons = {
         "circle-exclamation": solid("circle-exclamation"),
-        "certificate": solid("certificate"),
-        "wrench": solid("wrench"),
+        certificate: solid("certificate"),
+        wrench: solid("wrench"),
     };
 
     return (
         <div>
+            {/* Background + text*/}
             <div
                 id="toast-default"
-                className={(open ? "flex" : "hidden") + " absolute right-0 bottom-0 mx-8 my-8 items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"}
+                className={
+                    (open ? "flex" : "hidden") +
+                    ` absolute right-0 bottom-0 mx-8 my-8 items-center w-full max-w-xs p-4 rounded-lg shadow text-${color} bg-${_background}`
+                }
                 role="alert"
             >
-                <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200">
-                {iconName == null ? <FontAwesomeIcon icon={icons["circle-exclamation"]} /> : <FontAwesomeIcon icon={icons[iconName]} />}
+                {/* Toast icon */}
+                <div
+                    className={`inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg bg-${_accent} text-blue-200`}
+                >
+                    {iconName == null ? (
+                        <FontAwesomeIcon icon={icons["circle-exclamation"]} />
+                    ) : (
+                        <FontAwesomeIcon icon={icons[iconName]} />
+                    )}
                     <span className="sr-only">Fire icon</span>
                 </div>
                 <div className="ml-3 text-sm font-normal">{message}</div>
+                {/* Close button */}
                 <button
                     type="button"
-                    className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                    // data-dismiss-target="#toast-default"
+                    className={`ml-auto -mx-1.5 -my-1.5 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 inline-flex h-8 w-8 text-gray-500 hover:text-white bg-${_background} hover:bg-${_accent}/50`}
                     aria-label="Close"
                     onClick={() => setOpen(false)}
                 >

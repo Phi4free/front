@@ -9,8 +9,16 @@ export const theme = {
       btnhover: "#000814",
       primary: "#ffc300",
       secondary: "#C880B7",
-      dimWhite: "rgba(255, 255, 255, 0.7)",
-      dimYellow: "rgba(255, 195, 0, 0.1)",
+
+      dimwhite: "rgba(255, 255, 255, 0.7)",
+      dimyellow: "rgba(255, 195, 0, 0.1)",
+
+      errorred: "#AA3939",
+      erroraccent: "#801515",
+      warningyellow: "#37331f",
+      warningaccent: "#afa31e",
+
+      teste: "#FFF"
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -25,4 +33,9 @@ export const theme = {
     xl: "1700px",
   },
 };
+export const safelist = [
+  {
+    pattern: /bg-(warningyellow|warningaccent|errorred|erroraccent)/
+  }
+];
 export const plugins = [];

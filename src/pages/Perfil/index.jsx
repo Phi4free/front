@@ -114,6 +114,9 @@ export function Perfil() {
                 setOpen={isShowUnderConstructionToast}
                 iconName="wrench"
                 message={t('unavailableOption')}
+                background="warningyellow"
+                accent="warningaccent"
+                color="white"
             />
         </div>
     );
