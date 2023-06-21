@@ -4,6 +4,13 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import Toast from "../../../components/Toast";
 
+/**
+ * 
+ * TO DO:
+ * Arrumar cores aleatórias dos badges
+ * Colocar cores diferenciadas para Toasts
+ */
+
 export function Feed(props) {
     const { hideBar } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
@@ -18,6 +25,13 @@ export function Feed(props) {
         1: t("studyList"),
         2: t("certificates"),
     };
+
+    // deverá ser substituido pela cor referência da badge do usuário - pega dinamicamente do BD
+    const colors = ["#ffb90b", "#d1abad", "#8783d1", "#d2f898", "#cf5c36"];
+    function getRandomColor() {
+        const random = Math.floor(Math.random() * colors.length);
+        return random;
+    }
 
     // Deve ser substituido por chamada dinamica dos itens do BD
     function renderMockedItems() {
@@ -58,13 +72,13 @@ export function Feed(props) {
                                             cy="25.5"
                                             r="17"
                                             fill="none"
-                                            stroke="#ffb90b"
+                                            stroke={colors[getRandomColor()]}
                                             strokeMiterLimit="10"
                                             strokeWidth="2"
                                         ></circle>
                                         <path
                                             fill="none"
-                                            stroke="#ffb90b"
+                                            stroke={colors[getRandomColor()]}
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
@@ -72,7 +86,7 @@ export function Feed(props) {
                                         ></path>
                                         <polyline
                                             fill="none"
-                                            stroke="#ffb90b"
+                                            stroke={colors[getRandomColor()]}
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
@@ -130,7 +144,7 @@ export function Feed(props) {
         <>
             <div
                 className={
-                    "flex justify-evenly py-4 mt-2 " +
+                    "flex justify-evenly py-2 mt-2 " +
                     (hideBar ? "" : "flex-[10]")
                 }
             >
