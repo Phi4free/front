@@ -143,7 +143,7 @@ export function Feed(props) {
                                         r="17"
                                         fill="none"
                                         stroke={color}
-                                        strokeMiterLimit="10"
+                                        strokeMiterlimit="10"
                                         strokeWidth="2"
                                     ></circle>
                                     <path
