@@ -44,16 +44,16 @@ export const QuillEditor = styled(ReactQuill)`
   .ql-container {
     background-color: #fff;
     color: #000;
-    height: 300px; /* Altura personalizada */
-    margin-bottom: 0; /* Remova a margem inferior */
-    border-radius: 5px; /* Adicione as bordas arredondadas */
-    overflow: hidden; /* Esconda os cantos arredondados que ultrapassam a altura */
+    height: 300px; 
+    margin-bottom: 0;
+    border-radius: 5px; 
+    overflow: hidden; 
   }
 
   .ql-toolbar {
-    border-top-left-radius: 5px; /* Adicione as bordas arredondadas ao canto superior esquerdo */
-    border-top-right-radius: 5px; /* Adicione as bordas arredondadas ao canto superior direito */
-    background-color: #fff; /* Defina a cor de fundo da barra de ferramentas */
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    background-color: #fff; 
   }
 
   .ql-editor {
