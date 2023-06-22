@@ -16,7 +16,7 @@ export const Title = styled.h1`
 
 export const Field = styled.div`
   margin-bottom: 20px;
-`;
+  `;
 
 export const Label = styled.label`
   display: block;
@@ -29,7 +29,8 @@ export const Input = styled.input`
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: #000; /* Adicione a cor preta */
+  color: #000; 
+  background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
 `;
 
 export const Select = styled.select`
@@ -38,22 +39,24 @@ export const Select = styled.select`
   border-radius: 5px;
   border: none;
   color: #000; /* Adicione a cor preta */
+  background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
 `;
 
 export const QuillEditor = styled(ReactQuill)`
   .ql-container {
     background-color: #fff;
     color: #000;
-    height: 300px; /* Altura personalizada */
-    margin-bottom: 0; /* Remova a margem inferior */
-    border-radius: 5px; /* Adicione as bordas arredondadas */
-    overflow: hidden; /* Esconda os cantos arredondados que ultrapassam a altura */
+    height: 300px; 
+    margin-bottom: 0;
+    border-radius: 5px; 
+    overflow: hidden; 
+    background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
   }
 
   .ql-toolbar {
-    border-top-left-radius: 5px; /* Adicione as bordas arredondadas ao canto superior esquerdo */
-    border-top-right-radius: 5px; /* Adicione as bordas arredondadas ao canto superior direito */
-    background-color: #fff; /* Defina a cor de fundo da barra de ferramentas */
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    background-color: #fff; 
   }
 
   .ql-editor {
@@ -64,7 +67,7 @@ export const QuillEditor = styled(ReactQuill)`
 export const ImageField = styled.div`
   width: 100%;
   height: 300px;
-  background-color: #fff;
+  background-color: #f2f2f2;  /* Linha para definir o fundo cinza claro */
   border-radius: 5px;
   border: 2px dashed #000;
   display: flex;
