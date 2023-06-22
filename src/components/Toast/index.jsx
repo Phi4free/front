@@ -4,15 +4,12 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useEffect, useState } from "react";
 
 export default function Toast(props) {
-    /**
-     * TO DO:
-     * Corrigir default style do toast - n está funcionando
-     * Colocar timeout para o toast desaparecer sozinho
-     */
-    const { open, setOpen, message, iconName, background, accent, color } = props;
-    const _background = "bg-" + (background ? background.toLowerCase() : "gray-800");
-    const _accent = "bg-" + (accent ? accent.toLowerCase() : "blue-800");
-    const _color = color ? color.toLowerCase() : "gray-400";
+    const { open, setOpen, message, iconName, background, accent, color } =
+        props;
+    const _background =
+        "bg-" + (background ? background.toLowerCase() : "successblue");
+    const _accent = "bg-" + (accent ? accent.toLowerCase() : "successaccent");
+    const _color = color ? color.toLowerCase() : "gray400";
     const { t } = useTranslation();
 
     const icons = {
@@ -21,13 +18,25 @@ export default function Toast(props) {
         wrench: solid("wrench"),
     };
 
+    useEffect(() => {
+        let temporizador;
+        if (open == true) {
+            temporizador = setTimeout(() => {
+                setOpen(false);
+            }, 5000);
+        }
+        return () => {
+            clearTimeout(temporizador);
+        };
+    }, [open]);
+
     return (
         <div>
             {/* Background + text*/}
             <div
                 id="toast-default"
                 className={
-                    (open ? "flex" : "hidden") +
+                    (open ? "flex animate-fade" : "hidden") +
                     ` absolute right-0 bottom-0 mx-8 my-8 items-center w-full max-w-xs p-4 rounded-lg shadow text-${_color} ${_background}`
                 }
                 role="alert"

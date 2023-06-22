@@ -46,11 +46,11 @@ export function Feed(props) {
                             (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
                         }
                     >
-                        {Object.keys(mockedBadges).map((nome) => {
+                        {Object.keys(mockedBadges).map((nome, index) => {
                             let color = colors[getRandomColor()];
                             return (
                                 <div
-                                    keys={"key-div-" + nome}
+                                    key={"key-div-" + nome + "-" + index}
                                     className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer"
                                 >
                                     <div className="sm:flex block items-center">
@@ -68,7 +68,7 @@ export function Feed(props) {
                                                 r="17"
                                                 fill="none"
                                                 stroke={color}
-                                                strokeMiterLimit="10"
+                                                strokeMiterlimit="10"
                                                 strokeWidth="2"
                                             ></circle>
                                             <path
@@ -90,21 +90,12 @@ export function Feed(props) {
                                         </svg>
 
                                         <div className="block items-center text-center sm:text-left">
-                                            <div
-                                                keys={"key-div2-" + nome}
-                                                className="text-btnprimary mx-2"
-                                            >
-                                                <a
-                                                    className="text-xl py-4 sm:py-0"
-                                                    key={nome}
-                                                >
+                                            <div className="text-btnprimary mx-2">
+                                                <a className="text-xl py-4 sm:py-0">
                                                     {nome}
                                                 </a>
                                             </div>
-                                            <p
-                                                className="mx-2"
-                                                key={"paragrafo-" + nome}
-                                            >
+                                            <p className="mx-2">
                                                 {mockedBadges[nome]}
                                             </p>
                                         </div>
@@ -214,9 +205,9 @@ export function Feed(props) {
                     (hideBar ? "" : "flex-[10]")
                 }
             >
-                {Object.keys(feeds).map((id) => (
+                {Object.keys(feeds).map((id, index) => (
                     <a
-                        key={id + "feedA"}
+                        key={id + "feedA - " + index}
                         className={`${
                             selectedFeed == id
                                 ? "hover:text-white underline decoration-2"
