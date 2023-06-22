@@ -16,7 +16,7 @@ export const Title = styled.h1`
 
 export const Field = styled.div`
   margin-bottom: 20px;
-`;
+  `;
 
 export const Label = styled.label`
   display: block;
@@ -29,7 +29,8 @@ export const Input = styled.input`
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: #000; /* Adicione a cor preta */
+  color: #000; 
+  background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
 `;
 
 export const Select = styled.select`
@@ -38,6 +39,7 @@ export const Select = styled.select`
   border-radius: 5px;
   border: none;
   color: #000; /* Adicione a cor preta */
+  background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
 `;
 
 export const QuillEditor = styled(ReactQuill)`
@@ -48,6 +50,7 @@ export const QuillEditor = styled(ReactQuill)`
     margin-bottom: 0;
     border-radius: 5px; 
     overflow: hidden; 
+    background-color: #f2f2f2; /* Linha para definir o fundo cinza claro */
   }
 
   .ql-toolbar {
@@ -64,7 +67,7 @@ export const QuillEditor = styled(ReactQuill)`
 export const ImageField = styled.div`
   width: 100%;
   height: 300px;
-  background-color: #fff;
+  background-color: #f2f2f2;  /* Linha para definir o fundo cinza claro */
   border-radius: 5px;
   border: 2px dashed #000;
   display: flex;
