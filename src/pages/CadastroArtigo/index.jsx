@@ -50,14 +50,22 @@ export function CadastroArtigo() {
         <Label>Artigo:</Label>
         <QuillEditor value={artigo} onChange={handleArtigoChange} />
       </Field>
-      <Field>
+
+      {/*<Field>
         <Label>Inserir Imagem:</Label>
         <ImageField onClick={() => document.getElementById('imagem-input').click()}>
           {imagem && <img src={imagem} alt="Imagem do Artigo" />}
           {!imagem && <ImageDescription>Clique aqui para buscar a imagem de capa do artigo</ImageDescription>}
           <input id="imagem-input" type="file" accept="image/*" style={{ display: 'none' }} onChange={handleImagemChange} />
         </ImageField>
+      </Field> */}
+
+
+      <Field>
+        <Label>Link da Imagem de Capa do Artigo:</Label>
+        <Input type="text" value={imagem} onChange={handleImagemChange} />
       </Field>
+
       <ButtonContainer>
         <Button type="button">Cancelar</Button>
         <Button type="submit" onClick={handleSubmit}>Avançar</Button>

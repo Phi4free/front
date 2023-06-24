@@ -9,9 +9,11 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 28px;
+  font-size: 32px; /* Aumenta o tamanho da fonte para 32px */
   text-align: ${({ alignLeft }) => (alignLeft ? 'left' : 'right')};
   margin-bottom: 20px;
+  color: #ffc300; /* Altera a cor do texto para um amarelo brilhante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra no texto */
 `;
 
 export const Field = styled.div`
