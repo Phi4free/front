@@ -69,7 +69,7 @@ export function Login() {
                         localStorage.setItem("token", data.token);
                         setErros(null);
                         isLoading(false);
-                        navigate("/");
+                        navigate("/home");
                     } else {
                         isLoading(false);
                         setErros(data.message);
