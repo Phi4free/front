@@ -19,7 +19,7 @@ export function AlterarEmail(props) {
 
     useEffect(() => {
         if (newEmail != confirmNewEmail && confirmNewEmail != "") {
-            setErros("Os emails são diferentes");
+            setErros(t('differentEmail'));
         } else {
             setErros(null);
         }
@@ -55,7 +55,7 @@ export function AlterarEmail(props) {
                     console.log(error.message);
                 });
         } else {
-            setErros("O novo email não pode ficar vazio");
+            setErros(t('emptyEmail'));
         }
     }
 
@@ -69,24 +69,24 @@ export function AlterarEmail(props) {
             />
 
             <SideMenu
-                title="ALTERAR EMAIL"
+                title={t('altEmail')}
                 options={null}
                 open={open}
                 setOpen={setOpen}
             >
                 <div className="text-gray-500 mx-4">
                     <p className="text-center">
-                        Seu email atual é: {currentEmail}
+                        {t('currentEmail')}{": "}{currentEmail}
                     </p>
                     <br />
-                    <a>Insira um novo email:</a>
+                    <a>{t('insertNewEmail')}:</a>
                     <BasicInput
                         type="email"
                         id="email-change"
                         onInput={handleEmail}
                     />
                     <br />
-                    <a>Confirme o email:</a>
+                    <a>{t('confirmEmail')}:</a>
                     <BasicInput
                         type="email"
                         id="email-change-confirm"
@@ -101,7 +101,7 @@ export function AlterarEmail(props) {
                     className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
                     onClick={() => updateEmail()}
                 >
-                    ATUALIZAR EMAIL
+                    {t('updateEmail')}
                 </button>
             </SideMenu>
         </>

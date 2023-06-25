@@ -47,7 +47,7 @@ export function AlterarSenha(props) {
                         setCurrentPassword("");
                         setErros(null);
                     } else {
-                        setErros("Senha inválida");
+                        setErros(t('invalidPass'));
                         console.log(data.message)
                     }
                 });
@@ -61,13 +61,13 @@ export function AlterarSenha(props) {
     return (
         <>
         <SideMenu
-            title="ALTERAR SENHA"
+            title={t('altPass')}
             options={null}
             open={open}
             setOpen={setOpen}
         >
             <div className="text-gray-500">
-                <a className="text-center">Digite sua senha atual:</a>
+                <a className="text-center">{t('currentPass')}:</a>
                 <br /><br/>
                 <ContainerInput>
                     <DinamicInput
@@ -89,7 +89,7 @@ export function AlterarSenha(props) {
                 className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
                 onClick={() => verifyCurrentPassword()}
             >
-                CONTINUAR
+                {t('continue')}
             </button>
         </SideMenu>
         <Popup

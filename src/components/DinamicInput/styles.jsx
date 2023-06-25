@@ -9,7 +9,7 @@ position: relative;
 box-sizing: border-box;
 display: block;
 width: 100%;
-border: 3px solid aliceblue;
+border: 1px solid aliceblue;
 padding: 3%;
 width: 87%;
 color: aliceblue;
@@ -21,7 +21,7 @@ export const InputLabel = styled.span`
     box-sizing: border-box;
     display: block;
     width: 100%;
-    border: 3px solid currentColor;
+    border: 1px solid currentColor;
     padding: 2%;
     color: currentColor;
     background: transparent;

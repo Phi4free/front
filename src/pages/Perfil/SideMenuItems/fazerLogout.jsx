@@ -14,20 +14,20 @@ export function Logout(props) {
     }
     
     return (<SideMenu
-        title="LOGOUT"
+        title={t('logout')}
         options={null}
         open={open}
         setOpen={setOpen}
     >
-        <div className="text-center text-gray-500">
-            <p>Até mais tarde! Faça login novamente quando estiver pronto para continuar</p>
+        <div className="text-center text-gray-500 px-2">
+            <p>{t('seeYouLater')}</p>
             <br />
         </div>
         <button
             className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
             onClick={() => handleLogout()}
         >
-            ENCERRAR SESSÃO
+            {t('endSection')}
         </button>
     </SideMenu>);
 }

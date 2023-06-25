@@ -35,7 +35,7 @@ export function AlterarSenhaStep2(props) {
 
     function checkPasswordFields() {
         if (newPassword != confirmNewPassword && confirmNewPassword != "") {
-            setErros("As senhas são diferentes");
+            setErros(t('errorRegister1'));
             return false;
         }
         setErros(null);
@@ -73,13 +73,13 @@ export function AlterarSenhaStep2(props) {
     return (
         <>
             <SideMenu
-                title="ALTERAR SENHA"
+                title={t('altPass')}
                 options={null}
                 open={open}
                 setOpen={setOpen}
             >
                 <div className="text-gray-500">
-                    <a>Digite uma nova senha:</a>
+                    <a>{t('newPass')}:</a>
                     <br />
                     <ContainerInput>
                         <DinamicInput
@@ -91,7 +91,7 @@ export function AlterarSenhaStep2(props) {
                         />
                     </ContainerInput>
                     <br />
-                    <a>Confirme a nova senha:</a>
+                    <a>{t('confirmNewPass')}:</a>
                     <br />
                     <ContainerInput>
                         <DinamicInput
@@ -111,7 +111,7 @@ export function AlterarSenhaStep2(props) {
                     className="w-9/12 inline-flex justify-center rounded-md py-2 text-sm shadow-sm sm:w-9/12 text-btnhover bg-btnprimary"
                     onClick={() => handleUpdatePassword()}
                 >
-                    ATUALIZAR SENHA
+                    {t('updatePass')}
                 </button>
             </SideMenu>
             <Toast

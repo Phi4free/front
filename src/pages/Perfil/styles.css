@@ -6,9 +6,10 @@
 .badge{
     margin-top: 1vh;
     margin-right: 0.5vw;
-    background: #f0f8ff;
-    padding: 0.25vh 1vh;
-    color: blueviolet;
+    padding: 1vh 1vw;
+    background-image: linear-gradient(transparent, black);
+    color: #FFC300;
     border-radius: 2vw;
     font-size: small;
+    width: fit-content;
 }

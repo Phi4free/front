@@ -15,7 +15,6 @@ export default function Pillars() {
       case "en":
         <img src={cardENG} alt="billing" className="w-[100%] max-w-[500px] h-[100%]" />
       default:
-        console.log("ESCOLHI: " + t( 'langSigle'))
         return <img src={cardENG} alt="billing" className="w-[100%] max-w-[500px] h-[100%]" />
     }
   }
