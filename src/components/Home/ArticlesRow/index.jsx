@@ -15,8 +15,10 @@ import {
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { useNavigate } from "react-router-dom";
 
 export default function ArticlesRow({ title, items }) {
+  const navigate = useNavigate();
   const [scrollX, setScrollX] = useState(0);
 
   const handleLeftArrow = () => {
@@ -62,6 +64,10 @@ export default function ArticlesRow({ title, items }) {
     return description;
   };
 
+  const readArticle = (id) => {
+    navigate(`/read-article/${id}`)
+  }
+
   return (
     <MovieRow>
       <TitleList>{title}</TitleList>
@@ -106,6 +112,7 @@ export default function ArticlesRow({ title, items }) {
               <Item
                 key={key}
                 img="https://i.pinimg.com/236x/81/55/a5/8155a5862dc9bc67a3e553802ab6e94a.jpg"
+                onClick={() => readArticle(item._id)}
               >
                 <ItemInfo>
                   <ItemHeader>

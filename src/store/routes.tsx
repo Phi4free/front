@@ -32,7 +32,7 @@ export function AppRoutes() {
       <Route path="/login-professor" element={<LoginProfessor />}></Route>
       <Route path="/meu-perfil" element={<Perfil />}></Route>
       <Route path="/home" element={<Home />}></Route>
-      <Route path="/read-article" element={<ReadArticle />}></Route>
+      <Route path="/read-article/:id" element={<ReadArticle />}></Route>
       <Route path="/termos-de-uso" element={<TermosDeUso />}></Route>
       <Route path="/cadastro-artigo" element={<CadastroArtigo />}></Route>
       <Route path="/session-expired" element={<SessionExpired />}></Route>
