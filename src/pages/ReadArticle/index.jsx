@@ -24,7 +24,7 @@ export function ReadArticle() {
     fetchArticle(id).then((data) => {
       switch (data.status) {
         case 200:
-          setArticle(data.body.data);
+          setArticle(data.body.data[0]);
           break;
         case 401:
           navigate("/session-expired");
@@ -61,7 +61,7 @@ export function ReadArticle() {
             <Title>{article.titulo}</Title>
             <div>
               <Author>
-                <b>Autor:</b> {article.autorId}
+                <b>Autor:</b> {article.autor}
               </Author>
               <PublicationDate>
                 <b>Data de publicação:</b> {article.dataPub}
