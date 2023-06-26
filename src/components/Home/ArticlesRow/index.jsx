@@ -130,7 +130,7 @@ export default function ArticlesRow({ title, items }) {
                       />
                     </ItemAdd>
                   </ItemHeader>
-                  <ItemAuthor>Autor: {name(item.autorId)}</ItemAuthor>
+                  <ItemAuthor>Autor: {name(item.autor)}</ItemAuthor>
                   {/* <ItemDescription>
                     {description(item.conteudo)}
                   </ItemDescription> */}
