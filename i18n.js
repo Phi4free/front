@@ -20,6 +20,8 @@ i18n
             en: {
                 translation: {
                     // miscelanous
+                    madeWith: "Made with",
+                    byPhi: "by Phi4Free",
                     continue: "CONTINUE",
                     back: "GO BACK",
                     close: "CLOSE",
@@ -181,11 +183,16 @@ i18n
                     philosophyTitle: "Philosophical",
                     physicalTitle: "Physical",
                     featureTitle: "Functional",
+                    author: "Author:",
+                    pubDate: "Publication date:",
+                    discipline: "Discipline:",
                 },
             },
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    madeWith: "Feito com",
+                    byPhi: "por Phi4Free",
                     continue: "CONTINUAR",
                     close: "FECHAR",
                     back: "VOLTAR",
@@ -346,6 +353,9 @@ i18n
                     philosophyTitle: "Filosofia",
                     physicalTitle: "Física",
                     featureTitle: "Funcional",
+                    author: "Autor:",
+                    pubDate: "Data de publicação:",
+                    discipline: "Disciplina:",
                 },
             },
         },

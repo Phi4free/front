@@ -97,7 +97,7 @@ export function ReadArticle() {
         return t(`${disciplina}Title`)
       }
     }
-    
+
     return (
         <Container>
             <Header black={blackHeader} />
@@ -107,13 +107,13 @@ export function ReadArticle() {
                         <Title>{article.titulo}</Title>
                         <div>
                             <Author>
-                                <b>Autor:</b> {article.autor}
+                                <b>{t('author')}</b> {article.autor}
                             </Author>
                             <PublicationDate>
-                                <b>Data de publicação:</b> {article.dataPub}
+                                <b>{t('pubDate')}</b> {article.dataPub}
                             </PublicationDate>
                             <Subject>
-                                <b>Disciplina:</b> {article.disciplina}
+                                <b>{t('discipline')}</b> {article.disciplina}
                             </Subject>
                         </div>
                     </InfoData>

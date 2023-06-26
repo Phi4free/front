@@ -16,9 +16,11 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function ArticlesRow({ title, items }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [scrollX, setScrollX] = useState(0);
 
   const handleLeftArrow = () => {
@@ -130,7 +132,7 @@ export default function ArticlesRow({ title, items }) {
                       />
                     </ItemAdd>
                   </ItemHeader>
-                  <ItemAuthor>Autor: {name(item.autor)}</ItemAuthor>
+                  <ItemAuthor>{t('author')} {name(item.autor)}</ItemAuthor>
                   {/* <ItemDescription>
                     {description(item.conteudo)}
                   </ItemDescription> */}
