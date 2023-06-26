@@ -102,7 +102,7 @@ i18n
                     businessPar1:
                         "Phi4Free has highly qualified professors and impeccable content curation. You will have access to a unique and inspiring learning community, with articles, quizzes, challenges and forums to share your doubts and discoveries with other students and professors.",
                     businessPar2:
-                        "You will be able to learn about subjects that really matter, such as how to take care of your physical and mental health, how to manage your personal finances, how to maintain a functional and healthy routine and even how to develop your critical and philosophical thinking about the deeper issues of life. And best of all: All of this completely free!",
+                        "You will be able to learn about subjects that really matter, such as how to take care of your physicalTitle and mental health, how to manage your personal finances, how to maintain a functional and healthy routine and even how to develop your critical and philosophical thinking about the deeper issues of life. And best of all: All of this completely free!",
                     busItem1Title: "Qualified Teachers",
                     busItem1Par:
                         "We select only proven expert professionals to create high quality content.",
@@ -119,7 +119,7 @@ i18n
                     //pillars
                     pillarsTitle: "Our pillars",
                     pillarsPar:
-                        "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physical, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
+                        "Living a balanced and fulfilling life requires a holistic approach that embraces different areas of knowledge and practical skills. Phi4free, covering financial, physicalTitle, philosophical and functional education, offers a unique journey to help develop fundamental skills for a healthy, balanced and satisfying life.",
                     //cta
                     ctaTitle: "So, shall we begin?",
                     ctaPar: "Gain knowledge to build a solid foundation for a balanced, meaningful and authentic life.",
@@ -134,7 +134,7 @@ i18n
                     courses: "Our courses",
                     Financial: "Financial Education",
                     Philosophical: "Philosophical Education",
-                    Physical: "Physical Education",
+                    physicalTitle: "physicalTitle Education",
                     Functional: "Functional Education",
                     contact: "Contact us",
                     // my profile
@@ -176,6 +176,11 @@ i18n
                     // logout
                     seeYouLater: "See you later! Sign in again when you're ready to continue",
                     endSection: "END SESSION",
+                    // home
+                    financeTitle: "Financial",
+                    philosophyTitle: "Philosophical",
+                    physicalTitle: "Physical",
+                    featureTitle: "Functional",
                 },
             },
             "pt-BR": {
@@ -295,7 +300,7 @@ i18n
                     courses: "Nossos cursos",
                     Financial: "Educação Financeira",
                     Philosophical: "Educação Filosófica",
-                    Physical: "Educação Física",
+                    physicalTitle: "Educação Física",
                     Functional: "Educação Funcional",
                     contact: "Fale conosco",
                     // my profile
@@ -336,6 +341,11 @@ i18n
                     //logout
                     seeYouLater: "Até mais tarde! Faça login novamente quando estiver pronto para continuar",
                     endSection: "ENCERRAR SESSÃO",
+                    // home
+                    financeTitle: "Finanças",
+                    philosophyTitle: "Filosofia",
+                    physicalTitle: "Física",
+                    featureTitle: "Funcional",
                 },
             },
         },
