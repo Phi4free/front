@@ -3,9 +3,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 export const Container = styled.div`
-  background-color: #000;
   color: #fff;
-  padding: 20px;
+  padding: 2%;
 `;
 
 export const Title = styled.h1`
