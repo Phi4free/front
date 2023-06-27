@@ -63,10 +63,11 @@ export function LoginProfessor() {
             .then((response) => {
                 response.json().then((data) => {
                     if (data.auth) {
+                        localStorage.setItem("username", data.username);
                         localStorage.setItem("token", data.token);
                         setErros(null);
                         isLoading(false);
-                        navigate("/");
+                        navigate("/home");
                     } else {
                         isLoading(false);
                         setErros(data.message);
