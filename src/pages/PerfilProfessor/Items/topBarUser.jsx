@@ -33,11 +33,24 @@ export function TopBarUser(props) {
                                 alt="Avatar"
                             ></img>
                         </div>
-                        <div className="text-center sm:text-left">
-                            <a className="username">
-                                {localStorage.getItem("username") ||
-                                    t("user404")}
-                            </a>
+                        <div className="flex flex-col text-center sm:text-left">
+                            <div className="flex items-center flex-col sm:flex-row">
+                                <a className="username">
+                                    {localStorage.getItem("username") ||
+                                        t("user404")}
+                                </a>
+                                <strong className="mx-4 px-2 rounded-full bg-black text-yellow w-fit">
+                                    <FontAwesomeIcon
+                                        className="mx-1"
+                                        icon={icon({
+                                            name: "graduation-cap",
+                                            style: "solid",
+                                        })}
+                                    />
+                                    {t("teacher")}
+                                </strong>
+                            </div>
+
                             <div className="px-4 sm:px-0">
                                 <strong>{t("interests")}: </strong>
                                 {
@@ -74,16 +87,6 @@ export function TopBarUser(props) {
                                             })}
                                         />
                                         <a>Philantropia I</a>
-                                    </div>
-                                    <div className="w-fit badge cursor-pointer">
-                                        <FontAwesomeIcon
-                                            className="mx-1"
-                                            icon={icon({
-                                                name: "certificate",
-                                                style: "solid",
-                                            })}
-                                        />
-                                        <a>Que comecem os estudos</a>
                                     </div>
                                 </div>
                             }

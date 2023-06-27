@@ -154,6 +154,7 @@ i18n
                     editProfile: "EDIT PROFILE",
                     user404: "User not found",
                     interests: "Interests",
+                    teacher: "Professor",
                     expand: "Expand",
                     recoil: "Retract",
                     //feed my profile
@@ -334,6 +335,7 @@ i18n
                     editProfile: "EDITAR PERFIL",
                     user404: "Usuário não encontrado",
                     interests: "Interesses",
+                    teacher: "Professor(a)",
                     expand: "Expandir",
                     recoil: "Recolher",
                     //feed my profile
