@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import ArticlesRow from "../../components/Home/ArticlesRow";
 import Featured from "../../components/Home/Featured";
 import Header from "../../components/Home/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { fetchArticlesList } from "./articleConstructor";
 import { useTranslation } from "react-i18next";
-//import Footer from "../../components/LandingPage/Footer"
+import MFooter from "./Footer";
 
 export function Home() {
     const { t } = useTranslation();
@@ -112,19 +110,7 @@ export function Home() {
                     items={featureArticles}
                 />
             </Lists>
-
-            <Footer>
-                {t('madeWith')}{" "}
-                <span role="img" aria-label="coração">
-                    <FontAwesomeIcon
-                        icon={icon({
-                            name: "heart",
-                            style: "solid",
-                        })}
-                    />
-                </span>{" "}
-                {t('byPhi')}
-            </Footer>
+            <MFooter/>
         </Container>
     );
 }

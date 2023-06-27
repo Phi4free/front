@@ -136,7 +136,7 @@ i18n
                     courses: "Our courses",
                     Financial: "Financial Education",
                     Philosophical: "Philosophical Education",
-                    physicalTitle: "physicalTitle Education",
+                    Physical: "Physical Education",
                     Functional: "Functional Education",
                     contact: "Contact us",
                     // my profile
@@ -307,7 +307,7 @@ i18n
                     courses: "Nossos cursos",
                     Financial: "Educação Financeira",
                     Philosophical: "Educação Filosófica",
-                    physicalTitle: "Educação Física",
+                    Physical: "Educação Física",
                     Functional: "Educação Funcional",
                     contact: "Fale conosco",
                     // my profile
