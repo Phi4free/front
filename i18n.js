@@ -159,6 +159,8 @@ i18n
                     archieve: "Archievements",
                     studyList: "Study list",
                     certificates: "Certificates",
+                    published: "Published Articles",
+                    drafts: "Drafts",
                     feedError:
                         "An error has occured while searching for the feed",
                     feedEmpty: "Nothing to show",
@@ -336,6 +338,8 @@ i18n
                     archieve: "Conquistas",
                     studyList: "Lista de estudo",
                     certificates: "Certificados",
+                    published: "Artigos Publicados",
+                    drafts: "Rascunhos",
                     feedError: "Ocorreu um erro ao buscar o feed",
                     feedEmpty: "Nada para mostrar",
                     //change email
