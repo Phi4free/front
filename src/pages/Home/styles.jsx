@@ -10,5 +10,4 @@ export const Lists = styled.section `
 export const Footer = styled.footer `
   margin: 50px 0;
   text-align: center;
-  padding-bottom: 30px;
 `

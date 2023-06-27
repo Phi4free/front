@@ -9,19 +9,21 @@ import {
   Buttons,
   Button,
 } from "./styles";
+import { useTranslation } from "react-i18next";
 
 export default function Featured() {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Vertical>
         <Horizontal>
-          <Name>Explore, aprenda, evolua.</Name>
+          <Name>{t('explore')}</Name>
           <Info>
-            <Points>Seja bem-vindo(a)</Points>
+            <Points>{t('welcome')}</Points>
           </Info>
           <Description>
-            A busca pelo conhecimento é como abrir as janelas da mente para um
-            mundo de possibilidades - Carl Sagan
+            {t('carlsagan')}
           </Description>
           <Buttons>
             <Button
@@ -31,7 +33,7 @@ export default function Featured() {
                 color: "#fff",
               }}
             >
-              Minha lista
+              {t("myList")}
             </Button>
           </Buttons>
         </Horizontal>
