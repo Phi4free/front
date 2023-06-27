@@ -5,6 +5,7 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
 import { useTranslation } from "react-i18next";
 import { defaultIcon } from "../../../assets/LandingPage";
+import Header from "../Header";
 
 export function TopBarUser(props) {
     const {
@@ -22,6 +23,7 @@ export function TopBarUser(props) {
         <>
             {!hideBar ? (
                 <>
+                <Header/>
                     <div className="flex flex-1 justify-end items-center px-4 pt-4">
                         <div className={`${"sm:flex hidden"} mx-4 z-1`}>
                             <button

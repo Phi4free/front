@@ -26,13 +26,7 @@ export function Perfil() {
         useState(false);
     const [hideTopBar, isHideTopBar] = useState(false);
     const [user, setUser] = useState(null);
-
-    /**
-     * Faz o fetch das informações do perfil do usuário 1x quando inicializado;
-     * Após isso, vai refazer o fetch sempre que ele abrir e fechar os menus de configuração, para garantir
-     * que caso alguma informação foi alterada, ela será atualizada imediatamente após concluir as edições
-     */
-
+    
     useEffect(() => {
         fetchUserData().then((data) => {
             switch (data.status) {
