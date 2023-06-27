@@ -14,6 +14,7 @@ import {
 } from "./styles";
 import "./globalStyle.css"
 import { useNavigate } from "react-router-dom";
+import api from "../../services/api";
 
 export function CadastroArtigo() {
     const [categoria, setCategoria] = useState("");
@@ -115,6 +116,10 @@ export function CadastroArtigo() {
                     <Button type="submit" onClick={handleSubmit}>
                         Salvar Rascunho
                     </Button>
+                    {/**
+                     * Futuramente o botão avançar levará para uma tela para completar as informações
+                     * do artigo / quiz / revisão de informações gerais / preview / confirmar pub
+                     */}
                     <Button type="submit" onClick={handleSubmit}>
                         Avançar
                     </Button>
