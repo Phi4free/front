@@ -4,8 +4,7 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import ArticlesRow from "../ArticlesRow";
 
-export function Feed(props) {
-    const { hideBar } = props;
+export function Feed() {
     const [selectedFeed, setSelectedFeed] = useState("0");
     const { t } = useTranslation();
 
@@ -40,12 +39,7 @@ export function Feed(props) {
         switch (selectedFeed) {
             case "0":
                 return (
-                    <div
-                        className={
-                            "mx-4 py-2 " +
-                            (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
-                        }
-                    >
+                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
                         {Object.keys(mockedBadges).map((nome, index) => {
                             let color = colors[getRandomColor()];
                             return (
@@ -115,12 +109,7 @@ export function Feed(props) {
                     autor: "John Doe V",
                 };
                 return (
-                    <div
-                        className={
-                            "mx-4 py-2 " +
-                            (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
-                        }
-                    >
+                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
                         <div>
                             {
                                 // Deverá ser substituido pela lista real do usuário, do BD
@@ -137,10 +126,7 @@ export function Feed(props) {
                             />
                             <ArticlesRow
                                 title={"Disciplina 2"}
-                                items={[
-                                    mockedArticle,
-                                    mockedArticle,
-                                ]}
+                                items={[mockedArticle, mockedArticle]}
                             />
                             <ArticlesRow
                                 title={"Disciplina 3"}
@@ -163,12 +149,7 @@ export function Feed(props) {
             case "2":
                 let color = colors[getRandomColor()];
                 return (
-                    <div
-                        className={
-                            "mx-4 py-2 " +
-                            (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
-                        }
-                    >
+                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
                         <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer">
                             <div className="sm:flex block items-center">
                                 <svg
@@ -241,12 +222,7 @@ export function Feed(props) {
 
     return (
         <>
-            <div
-                className={
-                    "flex justify-evenly py-2 mt-2 " +
-                    (hideBar ? "" : "flex-[10]")
-                }
-            >
+            <div className={"flex justify-evenly py-2 mt-2 "}>
                 {Object.keys(feeds).map((id, index) => (
                     <a
                         key={id + "feedA - " + index}

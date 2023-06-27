@@ -24,9 +24,8 @@ export function Perfil() {
     const [showLogout, isShowLogout] = useState(false);
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
-    const [hideTopBar, isHideTopBar] = useState(false);
     const [user, setUser] = useState(null);
-    
+
     useEffect(() => {
         fetchUserData().then((data) => {
             switch (data.status) {
@@ -50,25 +49,25 @@ export function Perfil() {
 
     const opcoesAvancadas = {
         email: {
-            label: t('altEmail'),
+            label: t("altEmail"),
             acao: () => {
                 isShowChangeEmail(true);
             },
         },
         senha: {
-            label: t('altPass'),
+            label: t("altPass"),
             acao: () => {
                 isShowChangePassword(true);
             },
         },
         segConta: {
-            label: t('accSecurity'),
+            label: t("accSecurity"),
             acao: () => {
                 isShowUnderConstructionToast(true);
             },
         },
         logout: {
-            label: t('logout'),
+            label: t("logout"),
             acao: () => {
                 isShowLogout(true);
             },
@@ -81,13 +80,11 @@ export function Perfil() {
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
                 showAdvancedMenu={showAdvancedMenu}
-                hideBar={hideTopBar}
-                isHideBar={isHideTopBar}
             />
-            <Feed hideBar={hideTopBar}/>
+            <Feed />
             {/* <Footer/> */}
             <SideMenu
-                title={t('advancedOptions')}
+                title={t("advancedOptions")}
                 options={opcoesAvancadas}
                 open={showAdvancedMenu}
                 setOpen={isShowAdvancedMenu}
@@ -107,7 +104,7 @@ export function Perfil() {
                 open={showUnderConstructionToast}
                 setOpen={isShowUnderConstructionToast}
                 iconName="wrench"
-                message={t('unavailableOption')}
+                message={t("unavailableOption")}
                 background="warningyellow"
                 accent="warningaccent"
                 color="white"
