@@ -35,13 +35,53 @@ export function CadastroArtigo() {
     };
 
     const handleImagemChange = (event) => {
-        const file = event.target.files[0];
-        setImagem(URL.createObjectURL(file));
+        const file = event.target.value;
+        if(file != null && file != ""){
+          setImagem(file);
+          // Não podemos salvar uma imagem no BD, só sua referência.
+          // Essa formação provavelmente será utilizada só para exibição do artigo.
+          //setImagem(URL.createObjectURL(file));
+        }
     };
+
+    function checkArticle(){
+      if(categoria == "") return false;
+      if(titulo == "") return false;
+      if(artigo == "") return false;
+
+      return true;
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Lógica para enviar os dados do artigo ao backend
+        if(checkArticle()){
+          api.post("criarArtigo", {
+            titulo: titulo,
+            conteudo: artigo,
+            disciplina: categoria,
+        })
+            .then((response) => {
+                response.json().then((data) => {
+                    switch (data.status) {
+                      case 200:
+                        //OK
+                        break;
+                      case 403:
+                        // no token / forbidden
+                        break;
+                      case 500:
+                        // server error
+                        break;
+                      default:
+                        break;
+                    }
+                });
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+    };
+
     };
 
     const navigate = useNavigate();
@@ -62,14 +102,14 @@ export function CadastroArtigo() {
                         onChange={handleCategoriaChange}
                     >
                         <option value="">Selecione uma opção</option>
-                        <option value="educacao-fisica">Educação Física</option>
-                        <option value="educacao-financeira">
+                        <option value="physical">Educação Física</option>
+                        <option value="finance">
                             Educação Financeira
                         </option>
-                        <option value="educacao-funcional">
+                        <option value="feature">
                             Educação Funcional
                         </option>
-                        <option value="educacao-filosofica">
+                        <option value="philosophy">
                             Educação Filosófica
                         </option>
                     </Select>
