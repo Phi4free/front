@@ -6,7 +6,7 @@ export default function SideMenu(props) {
 
     return (
         
-        <div className={"transition-all fixed top-0 " + (open ? "left-0" : "-left-72")}>
+        <div className={"z-[100] transition-all fixed top-0 " + (open ? "left-0" : "-left-72")}>
             <aside className="w-72 bg-[#1c212c] min-h-full h-screen flex flex-col items-center pt-5 pb-2 space-y-7">
                 <div className="w-full pr-3 flex flex-col gap-y-1 text-gray-500 fill-gray-500 text-sm">
                     <div className="pl-4 text-white">
