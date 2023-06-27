@@ -37,7 +37,7 @@ export default function Toast(props) {
                 id="toast-default"
                 className={
                     (open ? "flex animate-fade" : "hidden") +
-                    ` absolute right-0 bottom-0 mx-8 my-8 items-center w-full max-w-xs p-4 rounded-lg shadow text-${_color} ${_background}`
+                    ` z-[99] fixed right-0 bottom-0 mx-8 my-8 items-center w-full max-w-xs p-4 rounded-lg shadow text-${_color} ${_background}`
                 }
                 role="alert"
             >
