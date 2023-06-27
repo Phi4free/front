@@ -17,6 +17,7 @@ import { TermosDeUso } from "../pages/TermosDeUso";
 import { SessionExpired } from "../pages/SessionExpired";
 import { CadastroArtigo } from "../pages/CadastroArtigo";
 import { NotFound } from '../pages/NotFound';
+import { PerfilProfessor } from '../pages/PerfilProfessor'
 
 export function AppRoutes() {
   return (
@@ -35,6 +36,7 @@ export function AppRoutes() {
       <Route path='/cadastro-artigo' element={<CadastroArtigo />}></Route>
       <Route path='/session-expired' element={<SessionExpired/>}></Route>
       <Route path="*" element={<NotFound />}></Route>
+      <Route path='/meu-perfil-professor' element={<PerfilProfessor/>}></Route>
     </Routes>
   );
 }

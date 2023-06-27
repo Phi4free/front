@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Title, Field, Label, Input, Select, QuillEditor, ImageField, ImageDescription, ButtonContainer, Button } from './styles';
+import { useNavigate } from "react-router-dom";
 
 export function CadastroArtigo() {
   const [categoria, setCategoria] = useState('');
@@ -28,6 +29,11 @@ export function CadastroArtigo() {
     event.preventDefault();
     // Lógica para enviar os dados do artigo ao backend
   };
+
+  const navigate = useNavigate();
+
+  
+  
 
   return (
     <Container>
@@ -67,7 +73,11 @@ export function CadastroArtigo() {
       </Field>
 
       <ButtonContainer>
-        <Button type="button">Cancelar</Button>
+      <Button type="button" onClick={() => navigate("/meu-perfil-professor")}>
+  Cancelar
+</Button>
+
+        <Button type="submit" onClick={handleSubmit}>Salvar Rascunho</Button>
         <Button type="submit" onClick={handleSubmit}>Avançar</Button>
       </ButtonContainer>
     </Container>
