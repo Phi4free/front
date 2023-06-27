@@ -39,14 +39,16 @@ export function TopBarUser(props) {
                                     {localStorage.getItem("username") ||
                                         t("user404")}
                                 </a>
-                                <strong className="mx-4 px-2 rounded-full bg-black text-yellow w-fit">
-                                    <FontAwesomeIcon
-                                        className="mx-1"
-                                        icon={icon({
-                                            name: "graduation-cap",
-                                            style: "solid",
-                                        })}
-                                    />
+                                <strong className="mx-4 px-2 rounded-full bg-black w-fit">
+                                    <a className="text-primary">
+                                        <FontAwesomeIcon
+                                            className="mx-1"
+                                            icon={icon({
+                                                name: "graduation-cap",
+                                                style: "solid",
+                                            })}
+                                        />
+                                    </a>
                                     {t("teacher")}
                                 </strong>
                             </div>
