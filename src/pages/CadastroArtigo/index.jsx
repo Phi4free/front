@@ -12,13 +12,14 @@ import {
     ButtonContainer,
     Button,
 } from "./styles";
+import "./globalStyle.css"
 import { useNavigate } from "react-router-dom";
 
 export function CadastroArtigo() {
     const [categoria, setCategoria] = useState("");
     const [titulo, setTitulo] = useState("");
     const [artigo, setArtigo] = useState("");
-    const [imagem, setImagem] = useState(null);
+    const [imagem, setImagem] = useState("");
 
     const handleCategoriaChange = (event) => {
         setCategoria(event.target.value);
