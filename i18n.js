@@ -149,6 +149,7 @@ i18n
                         "Sorry! This option is still not available",
                     //topbar my profile
                     ranking: "RANKING",
+                    writeArticle: "WRITE ARTICLE",
                     store: "PHISTORE",
                     editProfile: "EDIT PROFILE",
                     user404: "User not found",
@@ -328,6 +329,7 @@ i18n
                         "Desculpe! Esta opção ainda não está disponível",
                     //topbar my profile
                     ranking: "RANKING",
+                    writeArticle: "ESCREVER ARTIGO",
                     store: "PHISTORE",
                     editProfile: "EDITAR PERFIL",
                     user404: "Usuário não encontrado",

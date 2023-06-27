@@ -31,9 +31,9 @@ export default function Header(props) {
                     <button
                         type="button"
                         className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
-                        onClick={() => underConstruction(true)}
+                        onClick={() => navigate('/cadastro-artigo')}
                     >
-                        {t("ranking")}
+                        {t("writeArticle")}
                     </button>
                     <button
                         type="button"
@@ -67,9 +67,9 @@ export default function Header(props) {
                                 </li>
                                 <li
                                     className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                    onClick={() => underConstruction(true)}
+                                    onClick={() => navigate("/cadastro-artigo")}
                                 >
-                                    {t("ranking")}
+                                    {t("writeArticle")}
                                 </li>
                             </div>
                         )}
