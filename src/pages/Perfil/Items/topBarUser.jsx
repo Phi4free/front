@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { close, menu } from "../../../assets/LandingPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import Toast from "../../../components/Toast";
@@ -16,95 +15,19 @@ export function TopBarUser(props) {
         isHideBar,
     } = props;
     const { t } = useTranslation();
-    const [toggle, setToggle] = useState(false);
     const [showBadgeToast, isShowBadgeToast] = useState(false);
 
     return (
         <>
+            <Header
+                underConstruction={isShowUnderConstructionToast}
+                isAdvancedMenu={isShowAdvancedMenu}
+                advancedMenu={showAdvancedMenu}
+            />
             {!hideBar ? (
                 <>
-                <Header/>
-                    <div className="flex flex-1 justify-end items-center px-4 pt-4">
-                        <div className={`${"sm:flex hidden"} mx-4 z-1`}>
-                            <button
-                                type="button"
-                                className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
-                                onClick={() =>
-                                    isShowUnderConstructionToast(true)
-                                }
-                            >
-                                {t("ranking")}
-                            </button>
-                            <button
-                                type="button"
-                                className="inline-flex w-full justify-center rounded-md text-btnhover px-5 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
-                                onClick={() =>
-                                    isShowUnderConstructionToast(true)
-                                }
-                            >
-                                {t("store")}
-                            </button>
-                        </div>
-                        <img
-                            src={toggle ? close : menu}
-                            alt="menu"
-                            className="w-[28px] h-[28px] object-contain cursor-pointer"
-                            onClick={() => setToggle(!toggle)}
-                        />
-                    </div>
-                    <div className="py-2">
-                        <div
-                            className={`${
-                                !toggle ? "hidden" : "flex"
-                            } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar z-10`}
-                        >
-                            <ul className="list-none flex justify-end items-start flex-1 flex-col">
-                                {!toggle ? null : (
-                                    <div className="sm:hidden">
-                                        <li
-                                            className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                            onClick={() =>
-                                                isShowUnderConstructionToast(
-                                                    true
-                                                )
-                                            }
-                                        >
-                                            {t("store")}
-                                        </li>
-                                        <li
-                                            className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                            onClick={() =>
-                                                isShowUnderConstructionToast(
-                                                    true
-                                                )
-                                            }
-                                        >
-                                            {t("ranking")}
-                                        </li>
-                                    </div>
-                                )}
-                                <li
-                                    className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                    onClick={() =>
-                                        isShowUnderConstructionToast(true)
-                                    }
-                                >
-                                    {t("editProfile")}
-                                </li>
-                                <li
-                                    className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                    onClick={() => {
-                                        isShowAdvancedMenu(!showAdvancedMenu);
-                                        setToggle(false);
-                                    }}
-                                >
-                                    {t("advancedOptions")}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     <div>
-                        <div className="block sm:flex">
+                        <div className="mt-16 block sm:flex">
                             <div className="flex justify-center">
                                 <img
                                     // placeholder image
@@ -181,7 +104,7 @@ export function TopBarUser(props) {
                     }}
                 >
                     {hideBar ? (
-                        <>
+                        <div className="mt-14 px-4 py-2">
                             <FontAwesomeIcon
                                 className="mx-1"
                                 icon={icon({
@@ -189,8 +112,8 @@ export function TopBarUser(props) {
                                     style: "solid",
                                 })}
                             />
-                            <a>{t('expand')}</a>
-                        </>
+                            <a>{t("expand")}</a>
+                        </div>
                     ) : (
                         <>
                             <FontAwesomeIcon
@@ -200,7 +123,7 @@ export function TopBarUser(props) {
                                     style: "solid",
                                 })}
                             />
-                            <a>{t('recoil')}</a>
+                            <a>{t("recoil")}</a>
                         </>
                     )}
                 </button>
