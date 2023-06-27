@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 
-export default function Header(props, { black }) {
+export default function Header(props) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const { advancedMenu, isAdvancedMenu, underConstruction } = props;
@@ -19,7 +19,7 @@ export default function Header(props, { black }) {
     return (
         <Container
             className="mb-8"
-            theme={black ? background.black : background.transparent}
+            theme={background.black}
         >
             <Logo>
                 <a href="/#/home">

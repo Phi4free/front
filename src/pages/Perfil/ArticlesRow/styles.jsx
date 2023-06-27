@@ -18,7 +18,7 @@ export const Button = styled.div`
   position: absolute;
   width: 40px;
   height: 400px;
-  z-index: 99;
+  z-index: 98;
   display: flex;
   align-items: center;
   justify-content: center;

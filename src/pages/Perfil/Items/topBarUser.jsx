@@ -24,7 +24,7 @@ export function TopBarUser(props) {
             />
             <>
                 <div>
-                    <div className="mt-16 block sm:flex">
+                    <div className="mt-20 block sm:flex">
                         <div className="flex justify-center">
                             <img
                                 // placeholder image
