@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
-import Toast from "../../../components/Toast";
+import ArticlesRow from "../ArticlesRow";
 
 export function Feed(props) {
     const { hideBar } = props;
@@ -42,7 +42,7 @@ export function Feed(props) {
                 return (
                     <div
                         className={
-                            "mx-4 py-2 overflow-y-auto " +
+                            "mx-4 py-2 " +
                             (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
                         }
                     >
@@ -106,15 +106,57 @@ export function Feed(props) {
                     </div>
                 );
             case "1":
+                let mockedArticle = {
+                    _id: "mocked",
+                    disciplina: "physical",
+                    titulo: "Mocked article",
+                    conteudo: "Lorem ipsum dolor sit amet",
+                    dataPub: "2023-05-19T03:05:25.617Z",
+                    autor: "John Doe V",
+                };
                 return (
                     <div
                         className={
-                            "mx-4 py-2 overflow-y-auto " +
+                            "mx-4 py-2 " +
                             (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
                         }
                     >
+                        <div>
+                            {
+                                // Deverá ser substituido pela lista real do usuário, do BD
+                            }
+                            <ArticlesRow
+                                title={"Disciplina 1"}
+                                items={[
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                ]}
+                            />
+                            <ArticlesRow
+                                title={"Disciplina 2"}
+                                items={[
+                                    mockedArticle,
+                                    mockedArticle,
+                                ]}
+                            />
+                            <ArticlesRow
+                                title={"Disciplina 3"}
+                                items={[
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                    mockedArticle,
+                                ]}
+                            />
+                        </div>
                         <div className="text-xl text-white/50 flex text-center justify-center items-center">
-                            {t("feedEmpty")}
+                            {/*t("feedEmpty")*/}
                         </div>
                     </div>
                 );
@@ -123,7 +165,7 @@ export function Feed(props) {
                 return (
                     <div
                         className={
-                            "mx-4 py-2 overflow-y-auto " +
+                            "mx-4 py-2 " +
                             (hideBar ? "sm:h-3/4 h-auto" : "sm:h-96 h-80")
                         }
                     >

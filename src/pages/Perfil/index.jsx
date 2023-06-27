@@ -76,7 +76,7 @@ export function Perfil() {
     };
 
     return (
-        <div className="flex flex-col bg-gradient-to-r from-transparent to-black/75  h-full flex-grow">
+        <div className="flex flex-col to-black/75  h-full flex-grow">
             <TopBarUser
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
