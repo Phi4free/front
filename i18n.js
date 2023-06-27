@@ -176,7 +176,8 @@ i18n
                     confirmNewPass: "Confirm your new password",
                     updatePass: "UPDATE PASSWORD",
                     // logout
-                    seeYouLater: "See you later! Sign in again when you're ready to continue",
+                    seeYouLater:
+                        "See you later! Sign in again when you're ready to continue",
                     endSection: "END SESSION",
                     // home
                     financeTitle: "Financial",
@@ -186,6 +187,11 @@ i18n
                     author: "Author:",
                     pubDate: "Publication date:",
                     discipline: "Discipline:",
+                    explore: "Explore, learn, evolve.",
+                    welcome: "Welcome",
+                    carlsagan:
+                        "The pursuit of knowledge is like opening the windows of the mind to a world of possibilities - Carl Sagan",
+                    myList: "My list",
                 },
             },
             "pt-BR": {
@@ -346,7 +352,8 @@ i18n
                     confirmNewPass: "Confirme a nova senha",
                     updatePass: "ATUALIZAR SENHA",
                     //logout
-                    seeYouLater: "Até mais tarde! Faça login novamente quando estiver pronto para continuar",
+                    seeYouLater:
+                        "Até mais tarde! Faça login novamente quando estiver pronto para continuar",
                     endSection: "ENCERRAR SESSÃO",
                     // home
                     financeTitle: "Finanças",
@@ -356,6 +363,11 @@ i18n
                     author: "Autor:",
                     pubDate: "Data de publicação:",
                     discipline: "Disciplina:",
+                    explore: "Explore, aprenda, evolua.",
+                    welcome: "Seja bem-vindo(a)",
+                    carlsagan:
+                        "A busca pelo conhecimento é como abrir as janelas da mente para um mundo de possibilidades - Carl Sagan",
+                    myList: "Minha lista",
                 },
             },
         },
