@@ -30,6 +30,9 @@ export function Perfil() {
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:
+                    // if (data.role != "student") {
+                    //     navigate("/meu-perfil-professor");
+                    // }
                     setUser(data.body.data);
                     break;
                 case 401:
