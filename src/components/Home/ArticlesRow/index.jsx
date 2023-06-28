@@ -17,8 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import api from "../../../services/api";
-import { updateUserToReadList } from "./utils";
+import {fetchUserData, updateUserToReadList} from "../../../services/utils";
 
 export default function ArticlesRow({ title, items }) {
   const navigate = useNavigate();

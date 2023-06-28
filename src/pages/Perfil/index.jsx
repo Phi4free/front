@@ -8,7 +8,7 @@ import { AlterarEmail } from "./SideMenuItems/alterarEmail";
 import { AlterarSenha } from "./SideMenuItems/alterarSenha";
 import Toast from "../../components/Toast";
 import { Logout } from "./SideMenuItems/fazerLogout";
-import { fetchUserData } from "./userConstructor";
+import { fetchUserData } from "../../services/utils";
 import { TopBarUser } from "./Items/topBarUser";
 import { Feed } from "./Items/feed";
 import Footer from "../../components/LandingPage/Footer";
