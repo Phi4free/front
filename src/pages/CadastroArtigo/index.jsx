@@ -165,20 +165,23 @@ export function CadastroArtigo() {
 
                         <Button
                             type="button"
-                            onClick={() => navigate("/meu-perfil-professor")}
+                            onClick={() => navigate("/meu-perfil")}
                         >
                             Cancelar
                         </Button>
+                        
 
+                        {/**
                         <Button type="submit" onClick={handleSubmit}>
                             Salvar Rascunho
                         </Button>
+                        */}
                         {/**
                          * Futuramente o botão avançar levará para uma tela para completar as informações
                          * do artigo / quiz / revisão de informações gerais / preview / confirmar pub
                          */}
                         <Button type="submit" onClick={handleSubmit}>
-                            Avançar
+                            Salvar
                         </Button>
                     </ButtonContainer>
                 </div>
