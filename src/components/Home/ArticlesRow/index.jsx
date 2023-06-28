@@ -108,7 +108,6 @@ export default function ArticlesRow({ title, items }) {
         }
 
         setUser(cloneUser);
-        console.log(cloneUser);
     };
 
     function checkUpdateList(id) {

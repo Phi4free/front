@@ -86,7 +86,7 @@ export function Perfil() {
                 isShowAdvancedMenu={isShowAdvancedMenu}
                 showAdvancedMenu={showAdvancedMenu}
             />
-            <Feed isStudent={isStudent()}/>
+            <Feed listaLeitura={user?.listaLeitura} isStudent={isStudent()}/>
             <div className="left-0 bottom-0 px-8 py-4">
                 <Footer/>
             </div>

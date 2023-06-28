@@ -2,15 +2,33 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
-import ArticlesRow from "../ArticlesRow";
+import { fetchArticlesList } from "../../Home/articleConstructor";
+import { getStudyList } from "./studyListConstructor";
 
 export function Feed(props) {
-    const { isStudent } = props;
+    const { isStudent, listaLeitura } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
+    const [articlesList, setArticlesList] = useState([]);
     const { t } = useTranslation();
 
     useEffect(() => {
-        renderMockedItems();
+        fetchArticlesList().then((data) => {
+            switch (data.status) {
+                case 200:
+                    setArticlesList(data.body.data);
+                    break;
+                case 401:
+                    navigate("/session-expired");
+                    break;
+                default:
+                    console.log(data.status);
+                    break;
+            }
+        });
+    }, []);
+
+    useEffect(() => {
+        renderItems();
     }, [selectedFeed]);
 
     const feeds = {
@@ -27,7 +45,7 @@ export function Feed(props) {
     }
 
     // Deve ser substituido por chamada dinamica dos itens do BD
-    function renderMockedItems() {
+    function renderItems() {
         const mockedBadges = {
             "Philantropia I": "Faça uma doação para apoiar a plataforma",
             "Para ler depois": "Salve um artigo na sua lista de leitura",
@@ -38,7 +56,7 @@ export function Feed(props) {
         };
 
         switch (selectedFeed) {
-            case "0":
+            case "0": //MOCKED
                 return (
                     <div className={"mx-4 py-2"}>
                         {Object.keys(mockedBadges).map((nome, index) => {
@@ -101,51 +119,8 @@ export function Feed(props) {
                     </div>
                 );
             case "1":
-                let mockedArticle = {
-                    _id: "mocked",
-                    disciplina: "physical",
-                    titulo: "Mocked article",
-                    conteudo: "Lorem ipsum dolor sit amet",
-                    dataPub: "2023-05-19T03:05:25.617Z",
-                    autor: "John Doe V",
-                };
                 return isStudent ? (
-                    <div className={"mx-4 py-2"}>
-                        <div>
-                            {
-                                // Deverá ser substituido pela lista real do usuário, do BD
-                            }
-                            <ArticlesRow
-                                title={"Disciplina 1"}
-                                items={[
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                ]}
-                            />
-                            <ArticlesRow
-                                title={"Disciplina 2"}
-                                items={[mockedArticle, mockedArticle]}
-                            />
-                            <ArticlesRow
-                                title={"Disciplina 3"}
-                                items={[
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                    mockedArticle,
-                                ]}
-                            />
-                        </div>
-                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
-                            {/*t("feedEmpty")*/}
-                        </div>
-                    </div>
+                    getStudyList(t, articlesList, listaLeitura)
                 ) : (
                     <div className={"mx-4 py-2"}>
                         <div>
@@ -164,7 +139,7 @@ export function Feed(props) {
                         </div>
                     </div>
                 );
-            case "2":
+            case "2": //MOCKED
                 let color = colors[getRandomColor()];
                 return isStudent ? (
                     <div className={"mx-4 py-2 sm:h-96 h-80"}>
@@ -275,7 +250,7 @@ export function Feed(props) {
                     </a>
                 ))}
             </div>
-            {renderMockedItems()}
+            {renderItems()}
         </>
     );
 }
