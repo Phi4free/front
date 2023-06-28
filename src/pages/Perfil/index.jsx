@@ -30,9 +30,6 @@ export function Perfil() {
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:
-                    // if (data.role != "student") {
-                    //     navigate("/meu-perfil-professor");
-                    // }
                     setUser(data.body.data);
                     break;
                 case 401:
@@ -49,6 +46,10 @@ export function Perfil() {
         !showChangeEmail,
         !showChangeEmail,
     ]);
+
+    function isStudent(){
+        return user?.role == "student";
+    }
 
     const opcoesAvancadas = {
         email: {
@@ -80,11 +81,12 @@ export function Perfil() {
     return (
         <div className="flex flex-col to-black/75  h-full flex-grow">
             <TopBarUser
+                isStudent={isStudent()}
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
                 isShowAdvancedMenu={isShowAdvancedMenu}
                 showAdvancedMenu={showAdvancedMenu}
             />
-            <Feed />
+            <Feed isStudent={isStudent()}/>
             {/* <Footer/> */}
             <SideMenu
                 title={t("advancedOptions")}

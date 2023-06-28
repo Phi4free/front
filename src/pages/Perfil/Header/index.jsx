@@ -10,17 +10,15 @@ import { useNavigate } from "react-router-dom";
 export default function Header(props) {
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const { advancedMenu, isAdvancedMenu, underConstruction } = props;
+    const { isStudent, advancedMenu, isAdvancedMenu, underConstruction } =
+        props;
     const [toggle, setToggle] = useState(false);
     const background = {
         transparent: "transparent",
         black: "#1A1A1A",
     };
     return (
-        <Container
-            className="mb-8"
-            theme={background.black}
-        >
+        <Container className="mb-8" theme={background.black}>
             <Logo>
                 <a href="/#/home">
                     <LogoImg src={logo} alt="Phi4free" />
@@ -28,13 +26,23 @@ export default function Header(props) {
             </Logo>
             <div className="flex flex-1 justify-end items-center px-4 pt-4">
                 <div className={`${"sm:flex hidden"} mx-4 z-1`}>
-                    <button
-                        type="button"
-                        className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
-                        onClick={() => underConstruction(true)}
-                    >
-                        {t("ranking")}
-                    </button>
+                    {isStudent ? (
+                        <button
+                            type="button"
+                            className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
+                            onClick={() => underConstruction(true)}
+                        >
+                            {t("ranking")}
+                        </button>
+                    ) : (
+                        <button
+                            type="button"
+                            className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
+                            onClick={() => navigate("/cadastro-artigo")}
+                        >
+                            {t("writeArticle")}
+                        </button>
+                    )}
                     <button
                         type="button"
                         className="inline-flex w-full justify-center rounded-md text-btnhover px-5 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
@@ -65,12 +73,23 @@ export default function Header(props) {
                                 >
                                     {t("store")}
                                 </li>
-                                <li
-                                    className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
-                                    onClick={() => underConstruction(true)}
-                                >
-                                    {t("ranking")}
-                                </li>
+                                {isStudent ? (
+                                    <li
+                                        className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
+                                        onClick={() => underConstruction(true)}
+                                    >
+                                        {t("ranking")}
+                                    </li>
+                                ) : (
+                                    <li
+                                        className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
+                                        onClick={() =>
+                                            navigate("/cadastro-artigo")
+                                        }
+                                    >
+                                        {t("writeArticle")}
+                                    </li>
+                                )}
                             </div>
                         )}
                         <li
@@ -91,20 +110,6 @@ export default function Header(props) {
                     </ul>
                 </div>
             </div>
-            {/* <User>
-        <UserImg onClick={() => navigate("/meu-perfil")}>
-          <FontAwesomeIcon
-            icon={icon({
-              name: "user",
-              style: "solid",
-            })}
-            style={{
-              fontSize: "18px",
-              color: "#FFC300"
-            }}
-          />
-        </UserImg>
-      </User> */}
         </Container>
     );
 }

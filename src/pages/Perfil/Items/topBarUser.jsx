@@ -8,6 +8,7 @@ import Header from "../Header";
 
 export function TopBarUser(props) {
     const {
+        isStudent,
         isShowUnderConstructionToast,
         isShowAdvancedMenu,
         showAdvancedMenu,
@@ -18,6 +19,7 @@ export function TopBarUser(props) {
     return (
         <>
             <Header
+                isStudent={isStudent}
                 underConstruction={isShowUnderConstructionToast}
                 isAdvancedMenu={isShowAdvancedMenu}
                 advancedMenu={showAdvancedMenu}
@@ -33,13 +35,28 @@ export function TopBarUser(props) {
                                 alt="Avatar"
                             ></img>
                         </div>
-                        <div className="text-center sm:text-left">
-                            <a className="username">
-                                {localStorage.getItem("username") ||
-                                    t("user404")}
-                            </a>
+                        <div className="flex flex-col text-center sm:text-left">
+                            <div className="flex items-center flex-col sm:flex-row">
+                                <a className="username">
+                                    {localStorage.getItem("username") ||
+                                        t("user404")}
+                                </a>
+                                {isStudent ? null : (
+                                    <strong className="mx-4 px-2 rounded-full bg-black w-fit">
+                                        <a className="text-primary">
+                                            <FontAwesomeIcon
+                                                className="mx-1"
+                                                icon={icon({
+                                                    name: "graduation-cap",
+                                                    style: "solid",
+                                                })}
+                                            />
+                                        </a>
+                                        {t("teacher")}
+                                    </strong>
+                                )}
+                            </div>
                             <div className="px-4 sm:px-0">
-                                <strong>{t("interests")}: </strong>
                                 {
                                     // deverá puxar um array e exibir os interesses do usuário dinamicamente
                                     <a className="opacity-75">
