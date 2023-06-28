@@ -40,7 +40,7 @@ export function Feed(props) {
         switch (selectedFeed) {
             case "0":
                 return (
-                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                    <div className={"mx-4 py-2"}>
                         {Object.keys(mockedBadges).map((nome, index) => {
                             let color = colors[getRandomColor()];
                             return (
@@ -110,7 +110,7 @@ export function Feed(props) {
                     autor: "John Doe V",
                 };
                 return isStudent ? (
-                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                    <div className={"mx-4 py-2"}>
                         <div>
                             {
                                 // Deverá ser substituido pela lista real do usuário, do BD
@@ -147,7 +147,7 @@ export function Feed(props) {
                         </div>
                     </div>
                 ) : (
-                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                    <div className={"mx-4 py-2"}>
                         <div>
                             {
                                 // Deverá ser substituido pela lista real de artigos do professor, do BD

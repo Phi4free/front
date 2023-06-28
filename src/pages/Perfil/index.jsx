@@ -79,7 +79,7 @@ export function Perfil() {
     };
 
     return (
-        <div className="flex flex-col to-black/75  h-full flex-grow">
+        <div className="flex flex-col">
             <TopBarUser
                 isStudent={isStudent()}
                 isShowUnderConstructionToast={isShowUnderConstructionToast}
@@ -87,7 +87,9 @@ export function Perfil() {
                 showAdvancedMenu={showAdvancedMenu}
             />
             <Feed isStudent={isStudent()}/>
-            {/* <Footer/> */}
+            <div className="left-0 bottom-0 px-8 py-4">
+                <Footer/>
+            </div>
             <SideMenu
                 title={t("advancedOptions")}
                 options={opcoesAvancadas}
