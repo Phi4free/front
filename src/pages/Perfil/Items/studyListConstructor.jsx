@@ -33,7 +33,7 @@ export function getStudyList(t, listaCompleta, listaEsperada) {
     return (
         <div className={"mx-4 py-2"}>
             {newList.length == 0 ? (
-                <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                <div className="text-xl pb-52 text-white/50 flex text-center justify-center items-center">
                     {t("feedEmpty")}
                 </div>
             ) : (
