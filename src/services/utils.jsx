@@ -10,25 +10,33 @@ export async function fetchUserData() {
     try {
         let response = await api.get(`verMeuPerfil`);
         let body = await response.json();
-        return {status: response.status, body};
+        return { status: response.status, body };
     } catch (error) {
         console.log(error.message);
     }
 }
 
-export async function updateUserToReadList(id) {
-    await api
-        .put("atualizarLista", {
+export async function addUserToReadList(id) {
+    try {
+        let response = await api.put("adicionarNaLista", {
             _id: id,
-        })
-        .then((response) => {
-            response.json().then(() => {
-                if (response.status == 200) return true;
-                return false;
-            });
-        })
-        .catch((error) => {
-            console.log(error.message);
-            return false;
         });
+        return response.status;
+    } catch (error) {
+        console.log(error.message);
+        return false;
+    }
+}
+
+export async function removeUserToReadList(id) {
+
+    try {
+        let response = await api.put("removerDaLista", {
+            _id: id,
+        });
+        return response.status;
+    } catch (error) {
+        console.log(error.message);
+        return false;
+    }
 }
