@@ -92,10 +92,10 @@ export function ReadArticle() {
         }
     }
 
-    function formatDisciplina(disciplina){
-      if(disciplina != null){
-        return t(`${disciplina}Title`)
-      }
+    function formatDisciplina(disciplina) {
+        if (disciplina != null) {
+            return t(`${disciplina}Title`);
+        }
     }
 
     return (
@@ -105,15 +105,15 @@ export function ReadArticle() {
                 <Info>
                     <InfoData>
                         <Title>{article.titulo}</Title>
-                        <div>
+                        <div className="py-4">
                             <Author>
-                                <b>{t('author')}</b> {article.autor}
+                                <b>{t("author")}</b> {article.autor}
                             </Author>
                             <PublicationDate>
-                                <b>{t('pubDate')}</b> {article.dataPub}
+                                <b>{t("pubDate")}</b> {article.dataPub}
                             </PublicationDate>
                             <Subject>
-                                <b>{t('discipline')}</b> {article.disciplina}
+                                <b>{t("discipline")}</b> {article.disciplina}
                             </Subject>
                         </div>
                     </InfoData>
