@@ -48,7 +48,7 @@ export function Perfil() {
     ]);
 
     function isStudent(){
-        return user?.role == "student";
+        return user?.role == "Student";
     }
 
     const opcoesAvancadas = {

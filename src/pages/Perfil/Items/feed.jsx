@@ -4,7 +4,8 @@ import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import ArticlesRow from "../ArticlesRow";
 
-export function Feed() {
+export function Feed(props) {
+    const { isStudent } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
     const { t } = useTranslation();
 
@@ -14,8 +15,8 @@ export function Feed() {
 
     const feeds = {
         0: t("archieve"),
-        1: t("studyList"),
-        2: t("certificates"),
+        1: isStudent ? t("studyList") : t("published"),
+        2: isStudent ? t("certificates") : t("drafts"),
     };
 
     // deverá ser substituido pela cor referência da badge do usuário - pega dinamicamente do BD
@@ -108,7 +109,7 @@ export function Feed() {
                     dataPub: "2023-05-19T03:05:25.617Z",
                     autor: "John Doe V",
                 };
-                return (
+                return isStudent ? (
                     <div className={"mx-4 py-2 sm:h-96 h-80"}>
                         <div>
                             {
@@ -145,10 +146,27 @@ export function Feed() {
                             {/*t("feedEmpty")*/}
                         </div>
                     </div>
+                ) : (
+                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                        <div>
+                            {
+                                // Deverá ser substituido pela lista real de artigos do professor, do BD
+                            }
+                            {/* <ArticlesRow
+                                title={"Disciplina 1"}
+                                items={[
+                                    mockedArticle
+                                ]}
+                            /> */}
+                        </div>
+                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                            {t("feedEmpty")}
+                        </div>
+                    </div>
                 );
             case "2":
                 let color = colors[getRandomColor()];
-                return (
+                return isStudent ? (
                     <div className={"mx-4 py-2 sm:h-96 h-80"}>
                         <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer">
                             <div className="sm:flex block items-center">
@@ -199,6 +217,23 @@ export function Feed() {
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                        <div>
+                            {
+                                // Deverá ser substituido pela lista real de artigos do professor, do BD
+                            }
+                            {/* <ArticlesRow
+                                title={"Disciplina 1"}
+                                items={[
+                                    mockedArticle
+                                ]}
+                            /> */}
+                        </div>
+                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                            {t("feedEmpty")}
                         </div>
                     </div>
                 );
