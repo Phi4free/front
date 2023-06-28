@@ -40,6 +40,7 @@ export function getStudyList(t, listaCompleta, listaEsperada) {
                 <div>
                     {financial.length != 0 ? (
                         <ArticlesRow
+                            modo="profile"
                             title={t("financeTitle")}
                             items={financial}
                         />

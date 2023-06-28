@@ -22,6 +22,7 @@ export function Perfil() {
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
     const [showLogout, isShowLogout] = useState(false);
+    const [selectedFeed, setSelectedFeed] = useState("0");
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
     const [user, setUser] = useState(null);
