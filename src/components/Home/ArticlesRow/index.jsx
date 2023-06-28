@@ -17,6 +17,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import api from "../../../services/api";
+import { updateUserToReadList } from "./utils";
 
 export default function ArticlesRow({ title, items }) {
   const navigate = useNavigate();
@@ -70,6 +72,15 @@ export default function ArticlesRow({ title, items }) {
     navigate(`/read-article/${id}`)
   }
 
+  const addToList = async (e, id) =>{
+    if(updateUserToReadList(id)){
+      console.log("Artigo adicionado a lista")
+    } else {
+      console.log("Artigo não adicionado a lista [Erro]")
+    }
+    e.stopPropagation();
+  }
+
   return (
     <MovieRow>
       <TitleList>{title}</TitleList>
@@ -119,7 +130,9 @@ export default function ArticlesRow({ title, items }) {
                 <ItemInfo>
                   <ItemHeader>
                     <ItemTitle>{name(item.titulo)}</ItemTitle>
-                    <ItemAdd>
+                    <ItemAdd
+                      onClick={(e) => addToList(e, item._id)}
+                    >
                       <FontAwesomeIcon
                         icon={icon({
                           name: "plus",
