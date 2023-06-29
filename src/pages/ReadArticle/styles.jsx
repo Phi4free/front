@@ -19,25 +19,28 @@ export const Info = styled.div`
     padding: 20px;
     border-radius: 10px;
     align-items: center;
+    min-height: 500px;
 
     @media only screen and (min-width: 768px) {
         flex-direction: row;
-        align-items: start;
     }
 `;
 
 export const InfoData = styled.div`
     display: flex;
     flex-direction: column;
+    max-width: 70%;
 `;
 
 export const Title = styled.h1`
     font-size: 40px;
     font-weight: bold;
     color: rgb(255, 195, 0);
-    margin: 4% 0;
     @media only screen and (min-width: 768px) {
-        margin: 20% 0;
+        margin: 10% 0;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size: 25px;
     }
 `;
 
