@@ -186,7 +186,7 @@ i18n
                     // home
                     financeTitle: "Financial",
                     philosophyTitle: "Philosophical",
-                    physicalTitle: "Physical",
+                    physicalTitle: "Fitness",
                     featureTitle: "Functional",
                     author: "Author:",
                     pubDate: "Publication date:",
@@ -366,7 +366,7 @@ i18n
                     // home
                     financeTitle: "Finanças",
                     philosophyTitle: "Filosofia",
-                    physicalTitle: "Física",
+                    physicalTitle: "Fitness",
                     featureTitle: "Funcional",
                     author: "Autor:",
                     pubDate: "Data de publicação:",
