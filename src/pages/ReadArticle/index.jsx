@@ -119,7 +119,7 @@ export function ReadArticle() {
                             </Subject>
                         </div>
                     </InfoData>
-                    <Banner img="https://i.pinimg.com/236x/81/55/a5/8155a5862dc9bc67a3e553802ab6e94a.jpg"></Banner>
+                    <Banner img="https://i.pinimg.com/236x/53/44/7d/53447dacdc58df8211e6906e8628b1c6.jpg"></Banner>
                 </Info>
                 <Content>{parse(article.conteudo)}</Content>
             </Item>
