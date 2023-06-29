@@ -60,10 +60,12 @@ export default function ArticlesRow({ title, items }) {
         let x = scrollX - Math.round(window.innerWidth / 1.5);
         let listW = items.length * 250;
 
-        if (window.innerWidth - listW > x) {
-            x = window.innerWidth - listW - 60;
+        if (window.innerWidth - (listW + 60) > 0) {
+          x = 0;
+        } else if (window.innerWidth - listW > x) {
+          x =(window.innerWidth - listW) - 80;
         }
-
+        
         setScrollX(x);
     };
 

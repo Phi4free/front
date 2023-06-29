@@ -15,6 +15,7 @@ import { fetchArticle } from "./articleConstructor";
 import Header from "../../components/Home/Header";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import parse from "html-react-parser";
 
 export function ReadArticle() {
     const [article, setArticle] = useState({
@@ -34,6 +35,7 @@ export function ReadArticle() {
             switch (response.status) {
                 case 200:
                     setFormatArticle(response.body.data);
+                    console.log(response.body.data)
                     break;
                 case 401:
                     navigate("/session-expired");
@@ -119,7 +121,7 @@ export function ReadArticle() {
                     </InfoData>
                     <Banner img="https://i.pinimg.com/236x/81/55/a5/8155a5862dc9bc67a3e553802ab6e94a.jpg"></Banner>
                 </Info>
-                <Content>{article.conteudo}</Content>
+                <Content>{parse(article.conteudo)}</Content>
             </Item>
         </Container>
     );
