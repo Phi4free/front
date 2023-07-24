@@ -11,7 +11,7 @@ export function LangSwitcher() {
         <div className="flex">
             <p>{t('lang')}</p>
             <select 
-            className="mx-4"
+            className="mx-4 bg-zinc-800"
             onInput={(e) => i18n.changeLanguage(e.target.value)}
             >
                 {Object.keys(lngs).map((lng) => (
