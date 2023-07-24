@@ -32,8 +32,8 @@ export function Feed(props) {
     }, [selectedFeed]);
 
     const feeds = {
-        0: t("archieve"),
-        1: isStudent ? t("studyList") : t("published"),
+        0: isStudent ? t("studyList") : t("published"),
+        1: isStudent ? t("archieve") : null,
         2: isStudent ? t("certificates") : t("drafts"),
     };
 
@@ -56,8 +56,30 @@ export function Feed(props) {
         };
 
         switch (selectedFeed) {
-            case "0": //MOCKED
+            case "0":
+                return isStudent ? (
+                    getStudyList(t, articlesList, listaLeitura)
+                ) : (
+                    <div className={"mx-4 py-2"}>
+                        <div>
+                            {
+                                // Deverá ser substituido pela lista real de artigos do professor, do BD
+                            }
+                            {/* <ArticlesRow
+                                title={"Disciplina 1"}
+                                items={[
+                                    mockedArticle
+                                ]}
+                            /> */}
+                        </div>
+                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                            {t("feedEmpty")}
+                        </div>
+                    </div>
+                );
+            case "1":
                 return (
+                    isStudent ?
                     <div className={"mx-4 py-2"}>
                         {Object.keys(mockedBadges).map((nome, index) => {
                             let color = colors[getRandomColor()];
@@ -117,28 +139,9 @@ export function Feed(props) {
                             );
                         })}
                     </div>
+                    : null
                 );
-            case "1":
-                return isStudent ? (
-                    getStudyList(t, articlesList, listaLeitura)
-                ) : (
-                    <div className={"mx-4 py-2"}>
-                        <div>
-                            {
-                                // Deverá ser substituido pela lista real de artigos do professor, do BD
-                            }
-                            {/* <ArticlesRow
-                                title={"Disciplina 1"}
-                                items={[
-                                    mockedArticle
-                                ]}
-                            /> */}
-                        </div>
-                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
-                            {t("feedEmpty")}
-                        </div>
-                    </div>
-                );
+
             case "2": //MOCKED
                 let color = colors[getRandomColor()];
                 return isStudent ? (
@@ -194,24 +197,7 @@ export function Feed(props) {
                             </div>
                         </div>
                     </div>
-                ) : (
-                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
-                        <div>
-                            {
-                                // Deverá ser substituido pela lista real de artigos do professor, do BD
-                            }
-                            {/* <ArticlesRow
-                                title={"Disciplina 1"}
-                                items={[
-                                    mockedArticle
-                                ]}
-                            /> */}
-                        </div>
-                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
-                            {t("feedEmpty")}
-                        </div>
-                    </div>
-                );
+                ) : null // deverá ser substituido pela lista de rascunhos do professor
             default:
                 return (
                     <div className="flex justify-center px-4 py-12">

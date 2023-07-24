@@ -10,9 +10,11 @@ import {
   Button,
 } from "./styles";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export default function Featured() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -27,10 +29,11 @@ export default function Featured() {
           </Description>
           <Buttons>
             <Button
-              href="/#/home"
+              onClick={() => navigate("/meu-perfil")}
               style={{
                 backgroundColor: "#333",
                 color: "#fff",
+                cursor: "pointer",
               }}
             >
               {t("myList")}
