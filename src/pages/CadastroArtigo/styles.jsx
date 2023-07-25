@@ -25,6 +25,16 @@ export const Label = styled.label`
   margin-bottom: 5px;
 `;
 
+export const Loading = styled.div `
+  margin-top: 2%;
+  border: 4px solid #000814;
+  border-top: 4px solid #6B00AD;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+`
+
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
@@ -86,9 +96,9 @@ export const ImageDescription = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  padding: 2%;
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
 `;
 
 export const Button = styled.button`

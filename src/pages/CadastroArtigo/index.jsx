@@ -11,6 +11,7 @@ import {
     ImageDescription,
     ButtonContainer,
     Button,
+    Loading,
 } from "./styles";
 import "./globalStyle.css";
 import { useNavigate } from "react-router-dom";
@@ -61,8 +62,9 @@ export function CadastroArtigo() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setError(null);
         setLoading(true);
-        await wait(2000);
+        await wait(1000);
         if (checkArticle()) {
             api.post("criarArtigo", {
                 titulo: titulo,
@@ -76,14 +78,15 @@ export function CadastroArtigo() {
                                 setError(null);
                                 navigate(`/home`);
                                 break;
-                            case 403:
-                                setError(data.message);
-                                break;
-                            case 500:
-                                setError(data.message);
-                                break;
+                            // case 403:
+                            //     setError(data.message);
+                            //     break;
+                            // case 500:
+                            //     setError(data.message);
+                            //     break;
                             default:
-                                setError(data.message);
+                                console.log(data.message);
+                                setError(t('errorSubmitArt'));
                                 break;
                         }
                         setLoading(false);
@@ -91,56 +94,66 @@ export function CadastroArtigo() {
                 })
                 .catch((error) => {
                     console.log(error.message);
-                    setError(error.message);
+                    setError(t('errorSubmitArt'));
                     setLoading(false);
                 });
+        } else {
+            setLoading(false);
+            setError(t("emptyArticle"));
         }
     };
 
     const navigate = useNavigate();
 
     return (
-        <Container>
-            <Title alignLeft>{t("createArticle")}</Title>
-            <fieldset disabled={loading}>
-                <div className="px-2 rounded py-4 bg-white/[.15]">
-                    <Field>
-                        <Label>{t("category")}</Label>
-                        {/*
+        <div>
+            <Container>
+                <Title alignLeft>{t("createArticle")}</Title>
+                <fieldset disabled={loading}>
+                    <div className="px-2 rounded py-4 bg-white/[.15]">
+                        <Field>
+                            <Label>{t("category")}</Label>
+                            {/*
                       Deverá ser substituido por uma validação que só permite que o professor publique na
                       disciplina que ele possui acesso
                       */}
-                        <Select
-                            className="rounded border-1 border-white"
-                            value={categoria}
-                            onChange={handleCategoriaChange}
-                        >
-                            <option value="">{t('selectOp')}</option>
-                            <option value="physical">{t("Physical")}</option>
-                            <option value="finance">{t("Financial")}</option>
-                            <option value="feature">{t("Functional")}</option>
-                            <option value="philosophy">
-                                {t("Philosophical")}
-                            </option>
-                        </Select>
-                    </Field>
-                    <Field>
-                        <Label>{t('artTitle')}</Label>
-                        <Input
-                            type="text"
-                            value={titulo}
-                            onChange={handleTituloChange}
-                        />
-                    </Field>
-                    <Field>
-                        <Label>{t('article')}</Label>
-                        <QuillEditor
-                            value={artigo}
-                            onChange={handleArtigoChange}
-                        />
-                    </Field>
+                            <Select
+                                className="rounded border-1 border-white"
+                                value={categoria}
+                                onChange={handleCategoriaChange}
+                            >
+                                <option value="">{t("selectOp")}</option>
+                                <option value="physical">
+                                    {t("Physical")}
+                                </option>
+                                <option value="finance">
+                                    {t("Financial")}
+                                </option>
+                                <option value="feature">
+                                    {t("Functional")}
+                                </option>
+                                <option value="philosophy">
+                                    {t("Philosophical")}
+                                </option>
+                            </Select>
+                        </Field>
+                        <Field>
+                            <Label>{t("artTitle")}</Label>
+                            <Input
+                                type="text"
+                                value={titulo}
+                                onChange={handleTituloChange}
+                            />
+                        </Field>
+                        <Field>
+                            <Label>{t("article")}</Label>
+                            <QuillEditor
+                                value={artigo}
+                                onChange={handleArtigoChange}
+                            />
+                        </Field>
 
-                    {/*<Field>
+                        {/*<Field>
         <Label>Inserir Imagem:</Label>
         <ImageField onClick={() => document.getElementById('imagem-input').click()}>
           {imagem && <img src={imagem} alt="Imagem do Artigo" />}
@@ -149,45 +162,44 @@ export function CadastroArtigo() {
         </ImageField>
       </Field> */}
 
-                    <Field>
-                        <Label>{t('linkArtCover')}</Label>
-                        <Input
-                            type="text"
-                            value={imagem}
-                            onChange={handleImagemChange}
-                        />
-                    </Field>
-
-                    <ButtonContainer>
-                        {error != null ? (
-                            <ErroText
-                                iconname="circle-exclamation"
-                                label={error}
+                        <Field>
+                            <Label>{t("linkArtCover")}</Label>
+                            <Input
+                                type="text"
+                                value={imagem}
+                                onChange={handleImagemChange}
                             />
-                        ) : null}
+                        </Field>
+                    </div>
+                </fieldset>
+            </Container>
+            <ButtonContainer>
+                {error != null ? (
+                    <ErroText iconname="circle-exclamation" label={error} />
+                ) : null}
+                {loading ? (
+                    <div className="px-8 py-2">
+                        <Loading />
+                    </div>
+                ) : null}
 
-                        <Button
-                            type="button"
-                            onClick={() => navigate("/meu-perfil")}
-                        >
-                            {t('cancel')}
-                        </Button>
+                <Button type="button" onClick={() => navigate("/meu-perfil")}>
+                    {t("cancel")}
+                </Button>
 
-                        {/**
-                        <Button type="submit" onClick={handleSubmit}>
-                            Salvar Rascunho
-                        </Button>
-                        */}
-                        {/**
-                         * Futuramente o botão avançar levará para uma tela para completar as informações
-                         * do artigo / quiz / revisão de informações gerais / preview / confirmar pub
-                         */}
-                        <Button type="submit" onClick={handleSubmit}>
-                            {t('save')}
-                        </Button>
-                    </ButtonContainer>
-                </div>
-            </fieldset>
-        </Container>
+                {/**
+        <Button type="submit" onClick={handleSubmit}>
+            Salvar Rascunho
+        </Button>
+        */}
+                {/**
+                 * Futuramente o botão avançar levará para uma tela para completar as informações
+                 * do artigo / quiz / revisão de informações gerais / preview / confirmar pub
+                 */}
+                <Button type="submit" onClick={handleSubmit}>
+                    {t("save")}
+                </Button>
+            </ButtonContainer>
+        </div>
     );
 }

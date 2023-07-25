@@ -207,6 +207,8 @@ i18n
                     artTitle: "Article title:",
                     article: "Article:",
                     linkArtCover: "Link to the Article's Banner Image:",
+                    emptyArticle: "Fill the title and content fields to publish the article",
+                    errorSubmitArt: "An error has occured while trying to publish the article. Please try again later",
                 },
             },
             "pt-BR": {
@@ -398,6 +400,8 @@ i18n
                     artTitle: "Título do Artigo:",
                     article: "Artigo:",
                     linkArtCover: "Link da Imagem de Capa do Artigo:",
+                    emptyArticle: "Preencha o artigo com um título e conteúdo para publicá-lo",
+                    errorSubmitArt: "Ocorreu um erro ao publicar o artigo. Por favor, tente novamente mais tarde",
                 },
             },
         },
