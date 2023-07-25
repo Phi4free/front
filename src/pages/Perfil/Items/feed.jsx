@@ -72,7 +72,7 @@ export function Feed(props) {
                                 ]}
                             /> */}
                         </div>
-                        <div className="text-xl text-white/50 flex text-center justify-center items-center">
+                        <div className="py-20 text-xl text-white/50 flex text-center justify-center items-center">
                             {t("feedEmpty")}
                         </div>
                     </div>
@@ -197,7 +197,9 @@ export function Feed(props) {
                             </div>
                         </div>
                     </div>
-                ) : null // deverá ser substituido pela lista de rascunhos do professor
+                ) : <div className="py-20 text-xl text-white/50 flex text-center justify-center items-center">
+                {t("feedEmpty")}
+            </div> // deverá ser substituido pela lista de rascunhos do professor
             default:
                 return (
                     <div className="flex justify-center px-4 py-12">
