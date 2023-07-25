@@ -37,7 +37,6 @@ export function ReadArticle() {
             switch (response.status) {
                 case 200:
                     setFormatArticle(response.body.data);
-                    console.log(response.body.data);
                     break;
                 case 401:
                     navigate("/session-expired");
