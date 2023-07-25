@@ -18,3 +18,16 @@ export const CentralizedContainer = styled.div`
     flex-direction: column;
     justify-content: center;
 `;
+
+export const LoaderContainer = styled.div`
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 50vw;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+`;

@@ -12,6 +12,8 @@ import { fetchUserData } from "../../services/utils";
 import { TopBarUser } from "./Items/topBarUser";
 import { Feed } from "./Items/feed";
 import Footer from "../../components/LandingPage/Footer";
+import { Loading } from "../ReadArticle/styles";
+import { LoaderContainer } from "./style";
 
 // MEU PERFIL - Exibe o perfil do usuário logado
 export function Perfil() {
@@ -22,7 +24,6 @@ export function Perfil() {
     const [showChangeEmail, isShowChangeEmail] = useState(false);
     const [showChangePassword, isShowChangePassword] = useState(false);
     const [showLogout, isShowLogout] = useState(false);
-    const [selectedFeed, setSelectedFeed] = useState("0");
     const [showUnderConstructionToast, isShowUnderConstructionToast] =
         useState(false);
     const [user, setUser] = useState(null);
@@ -48,7 +49,7 @@ export function Perfil() {
         !showChangeEmail,
     ]);
 
-    function isStudent(){
+    function isStudent() {
         return user?.role == "Student";
     }
 
@@ -81,42 +82,57 @@ export function Perfil() {
 
     return (
         <div className="flex flex-col">
-            <TopBarUser
-                isStudent={isStudent()}
-                isShowUnderConstructionToast={isShowUnderConstructionToast}
-                isShowAdvancedMenu={isShowAdvancedMenu}
-                showAdvancedMenu={showAdvancedMenu}
-            />
-            <Feed listaLeitura={user?.listaLeitura} isStudent={isStudent()}/>
-            <div className="left-0 bottom-0 px-8 py-4">
-                <Footer/>
-            </div>
-            <SideMenu
-                title={t("advancedOptions")}
-                options={opcoesAvancadas}
-                open={showAdvancedMenu}
-                setOpen={isShowAdvancedMenu}
-            />
-            <AlterarEmail
-                currentEmail={user != null ? user.email : null}
-                open={showChangeEmail}
-                setOpen={isShowChangeEmail}
-            />
-            <AlterarSenha
-                currentEmail={user != null ? user.email : null}
-                open={showChangePassword}
-                setOpen={isShowChangePassword}
-            />
-            <Logout open={showLogout} setOpen={isShowLogout} />
-            <Toast
-                open={showUnderConstructionToast}
-                setOpen={isShowUnderConstructionToast}
-                iconName="wrench"
-                message={t("unavailableOption")}
-                background="warningyellow"
-                accent="warningaccent"
-                color="white"
-            />
+            {user == null ? (
+                <LoaderContainer>
+                    <Loading />
+                    <h1>{t('loadingProfile')}</h1>
+                </LoaderContainer>
+                
+            ) : (
+                <>
+                    <TopBarUser
+                        isStudent={isStudent()}
+                        isShowUnderConstructionToast={
+                            isShowUnderConstructionToast
+                        }
+                        isShowAdvancedMenu={isShowAdvancedMenu}
+                        showAdvancedMenu={showAdvancedMenu}
+                    />
+                    <Feed
+                        listaLeitura={user?.listaLeitura}
+                        isStudent={isStudent()}
+                    />
+                    <div className="left-0 bottom-0 px-8 py-4">
+                        <Footer />
+                    </div>
+                    <SideMenu
+                        title={t("advancedOptions")}
+                        options={opcoesAvancadas}
+                        open={showAdvancedMenu}
+                        setOpen={isShowAdvancedMenu}
+                    />
+                    <AlterarEmail
+                        currentEmail={user != null ? user.email : null}
+                        open={showChangeEmail}
+                        setOpen={isShowChangeEmail}
+                    />
+                    <AlterarSenha
+                        currentEmail={user != null ? user.email : null}
+                        open={showChangePassword}
+                        setOpen={isShowChangePassword}
+                    />
+                    <Logout open={showLogout} setOpen={isShowLogout} />
+                    <Toast
+                        open={showUnderConstructionToast}
+                        setOpen={isShowUnderConstructionToast}
+                        iconName="wrench"
+                        message={t("unavailableOption")}
+                        background="warningyellow"
+                        accent="warningaccent"
+                        color="white"
+                    />
+                </>
+            )}
         </div>
     );
 }

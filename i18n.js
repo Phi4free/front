@@ -140,6 +140,7 @@ i18n
                     Functional: "Functional Education",
                     contact: "Contact us",
                     // my profile
+                    loadingProfile: "Loading profile...",
                     altEmail: "Change email",
                     altPass: "Change password",
                     accSecurity: "Security & Account",
@@ -323,6 +324,7 @@ i18n
                     Functional: "Educação Funcional",
                     contact: "Fale conosco",
                     // my profile
+                    loadingProfile: "Carregando perfil...",
                     altEmail: "Alterar email",
                     altPass: "Alterar senha",
                     accSecurity: "Segurança & Conta",
