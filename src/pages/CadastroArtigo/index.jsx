@@ -16,9 +16,12 @@ import "./globalStyle.css";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { wait } from "../../services/utils";
-import ErroText  from "../../components/ErroText";
+import ErroText from "../../components/ErroText";
+import { useTranslation } from "react-i18next";
 
 export function CadastroArtigo() {
+    const { t } = useTranslation();
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
     const [categoria, setCategoria] = useState("");
@@ -77,10 +80,10 @@ export function CadastroArtigo() {
                                 setError(data.message);
                                 break;
                             case 500:
-                              setError(data.message);
+                                setError(data.message);
                                 break;
                             default:
-                              setError(data.message);
+                                setError(data.message);
                                 break;
                         }
                         setLoading(false);
@@ -98,11 +101,11 @@ export function CadastroArtigo() {
 
     return (
         <Container>
-            <Title alignLeft>Criar Artigo</Title>
+            <Title alignLeft>{t("createArticle")}</Title>
             <fieldset disabled={loading}>
                 <div className="px-2 rounded py-4 bg-white/[.15]">
                     <Field>
-                        <Label>Categoria:</Label>
+                        <Label>{t("category")}</Label>
                         {/*
                       Deverá ser substituido por uma validação que só permite que o professor publique na
                       disciplina que ele possui acesso
@@ -112,17 +115,17 @@ export function CadastroArtigo() {
                             value={categoria}
                             onChange={handleCategoriaChange}
                         >
-                            <option value="">Selecione uma opção</option>
-                            <option value="physical">Educação Física</option>
-                            <option value="finance">Educação Financeira</option>
-                            <option value="feature">Educação Funcional</option>
+                            <option value="">{t('selectOp')}</option>
+                            <option value="physical">{t("Physical")}</option>
+                            <option value="finance">{t("Financial")}</option>
+                            <option value="feature">{t("Functional")}</option>
                             <option value="philosophy">
-                                Educação Filosófica
+                                {t("Philosophical")}
                             </option>
                         </Select>
                     </Field>
                     <Field>
-                        <Label>Título do Artigo:</Label>
+                        <Label>{t('artTitle')}</Label>
                         <Input
                             type="text"
                             value={titulo}
@@ -130,7 +133,7 @@ export function CadastroArtigo() {
                         />
                     </Field>
                     <Field>
-                        <Label>Artigo:</Label>
+                        <Label>{t('article')}</Label>
                         <QuillEditor
                             value={artigo}
                             onChange={handleArtigoChange}
@@ -147,7 +150,7 @@ export function CadastroArtigo() {
       </Field> */}
 
                     <Field>
-                        <Label>Link da Imagem de Capa do Artigo:</Label>
+                        <Label>{t('linkArtCover')}</Label>
                         <Input
                             type="text"
                             value={imagem}
@@ -167,9 +170,8 @@ export function CadastroArtigo() {
                             type="button"
                             onClick={() => navigate("/meu-perfil")}
                         >
-                            Cancelar
+                            {t('cancel')}
                         </Button>
-                        
 
                         {/**
                         <Button type="submit" onClick={handleSubmit}>
@@ -181,7 +183,7 @@ export function CadastroArtigo() {
                          * do artigo / quiz / revisão de informações gerais / preview / confirmar pub
                          */}
                         <Button type="submit" onClick={handleSubmit}>
-                            Salvar
+                            {t('save')}
                         </Button>
                     </ButtonContainer>
                 </div>

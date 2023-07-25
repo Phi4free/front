@@ -30,6 +30,7 @@ i18n
                     andConnective: "and",
                     orConnective: "or",
                     blankInput: "This field cannot be empty",
+                    save: "SAVE",
                     // error
                     notFound: "Page not found",
                     errorAuth: "A validation error has occured",
@@ -198,12 +199,20 @@ i18n
                         "The pursuit of knowledge is like opening the windows of the mind to a world of possibilities - Carl Sagan",
                     myList: "My list",
                     //lerArtigo
-                    loadingArt: "Loading article..."
+                    loadingArt: "Loading article...",
+                    // criarArtigo
+                    createArticle: "Create Article",
+                    category: "Category:",
+                    selectOp: "Select an option",
+                    artTitle: "Article title:",
+                    article: "Article:",
+                    linkArtCover: "Link to the Article's Banner Image:",
                 },
             },
             "pt-BR": {
                 translation: {
                     //miscelanous
+                    save: "SALVAR",
                     madeWith: "Feito com",
                     byPhi: "por Phi4Free",
                     continue: "CONTINUAR",
@@ -382,6 +391,13 @@ i18n
                     myList: "Minha lista",
                     // ler artigo
                     loadingArt: "Carregando artigo...",
+                    // criar artigo
+                    createArticle: "Criar Artigo",
+                    category: "Categoria:",
+                    selectOp: "Selecione uma opção",
+                    artTitle: "Título do Artigo:",
+                    article: "Artigo:",
+                    linkArtCover: "Link da Imagem de Capa do Artigo:",
                 },
             },
         },
