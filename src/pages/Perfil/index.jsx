@@ -29,6 +29,11 @@ export function Perfil() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
+        // Previne que o perfil abra no bottom ou no meio da tela
+        window.scrollTo({ top: 0, left: 0})
+    }, [])
+
+    useEffect(() => {
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:

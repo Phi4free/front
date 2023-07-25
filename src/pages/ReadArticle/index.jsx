@@ -33,6 +33,7 @@ export function ReadArticle() {
     const { id } = useParams();
 
     useEffect(() => {
+        window. scrollTo({ top: 0, left: 0})
         fetchArticle(id).then((response) => {
             switch (response.status) {
                 case 200:
