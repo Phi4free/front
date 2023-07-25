@@ -92,22 +92,26 @@ export function Home() {
         <Container>
             <Header black={blackHeader} />
             <Featured />
+            {
+                // O comando .reverse() trás o array de trás pra frente.
+                // Trazendo o item mais recente primeiro (Interessante mover ordenação para o Backend)
+            }
             <Lists>
                 <ArticlesRow
                     title={t("financeTitle")}
-                    items={financeArticles}
+                    items={financeArticles.reverse()}
                 />
                 <ArticlesRow
                     title={t("philosophyTitle")}
-                    items={philosophyArticles}
+                    items={philosophyArticles.reverse()}
                 />
                 <ArticlesRow
                     title={t("physicalTitle")}
-                    items={physicalArticles}
+                    items={physicalArticles.reverse()}
                 />
                 <ArticlesRow
                     title={t("featureTitle")}
-                    items={featureArticles}
+                    items={featureArticles.reverse()}
                 />
             </Lists>
             <MFooter/>
