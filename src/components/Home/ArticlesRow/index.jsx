@@ -11,6 +11,7 @@ import {
     ItemAdd,
     ItemAuthor,
     ItemDescription,
+    Loading,
 } from "./styles";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,8 +30,10 @@ export default function ArticlesRow({ title, items }) {
     const { t } = useTranslation();
     const [user, setUser] = useState(null);
     const [scrollX, setScrollX] = useState(0);
+    const [finishedFetching, hasFinishedFetching] = useState(false);
 
     useEffect(() => {
+        hasFinishedFetching(false);
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:
@@ -43,6 +46,7 @@ export default function ArticlesRow({ title, items }) {
                     console.log(data.status);
                     break;
             }
+            hasFinishedFetching(true);
         });
     }, []);
 
@@ -61,11 +65,11 @@ export default function ArticlesRow({ title, items }) {
         let listW = items.length * 250;
 
         if (window.innerWidth - (listW + 60) > 0) {
-          x = 0;
+            x = 0;
         } else if (window.innerWidth - listW > x) {
-          x =(window.innerWidth - listW) - 80;
+            x = window.innerWidth - listW - 80;
         }
-        
+
         setScrollX(x);
     };
 
@@ -157,6 +161,12 @@ export default function ArticlesRow({ title, items }) {
                 <List
                     style={{ marginLeft: scrollX, width: items.length * 250 }}
                 >
+                    {!hasFinishedFetching ? (
+                        <div className="flex">
+                            <Loading />
+                        </div>
+                    ) : null}
+
                     {items.length > 0 &&
                         items.map((item, key) => (
                             <Item

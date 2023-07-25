@@ -1,5 +1,23 @@
 import styled from "styled-components";
 
+export const Loading = styled.div `
+  margin-top: 8vw;
+  margin-left: 8vw;
+  border: 4px solid #000814;
+  border-top: 4px solid #6B00AD;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+
+  @media (max-width: 760px) {
+    width: 80px;
+    height: 80px;
+    margin-top: 30vw;
+    margin-left: 30vw;
+  }
+`
+
 export const MovieRow = styled.div`
   margin-bottom: 10px;
   &:hover .button {
