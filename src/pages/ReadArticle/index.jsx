@@ -9,6 +9,8 @@ import {
     PublicationDate,
     Content,
     Subject,
+    LoaderContainer,
+    Loading,
 } from "./styles";
 import { useEffect, useState } from "react";
 import { fetchArticle } from "./articleConstructor";
@@ -35,7 +37,7 @@ export function ReadArticle() {
             switch (response.status) {
                 case 200:
                     setFormatArticle(response.body.data);
-                    console.log(response.body.data)
+                    console.log(response.body.data);
                     break;
                 case 401:
                     navigate("/session-expired");
@@ -103,26 +105,41 @@ export function ReadArticle() {
     return (
         <Container>
             <Header black={blackHeader} />
-            <Item>
-                <Info>
-                    <InfoData>
-                        <Title>{article.titulo}</Title>
-                        <div className="py-4">
-                            <Author>
-                                <b>{t("author")}</b> {article.autor}
-                            </Author>
-                            <PublicationDate>
-                                <b>{t("pubDate")}</b> {article.dataPub}
-                            </PublicationDate>
-                            <Subject>
-                                <b>{t("discipline")}</b> {article.disciplina}
-                            </Subject>
-                        </div>
-                    </InfoData>
-                    <Banner img="https://i.pinimg.com/236x/53/44/7d/53447dacdc58df8211e6906e8628b1c6.jpg"></Banner>
-                </Info>
-                <Content>{parse(article.conteudo)}</Content>
-            </Item>
+            {
+            /** Precisamos de um parâmetro do artigo para ter certeza de que ele teve fetch
+             * o parâmetro escolhido aqui foi o título, mas poderia ser qualquer um outro.
+             */
+            article.titulo == "" ? (
+                <LoaderContainer>
+                    <Loading />
+                    <br/>
+                    <h1>{t('loadingArt')}</h1>
+                </LoaderContainer>
+            ) : (
+                <>
+                    <Item>
+                        <Info>
+                            <InfoData>
+                                <Title>{article.titulo}</Title>
+                                <div className="py-4">
+                                    <Author>
+                                        <b>{t("author")}</b> {article.autor}
+                                    </Author>
+                                    <PublicationDate>
+                                        <b>{t("pubDate")}</b> {article.dataPub}
+                                    </PublicationDate>
+                                    <Subject>
+                                        <b>{t("discipline")}</b>{" "}
+                                        {article.disciplina}
+                                    </Subject>
+                                </div>
+                            </InfoData>
+                            <Banner img="https://i.pinimg.com/236x/53/44/7d/53447dacdc58df8211e6906e8628b1c6.jpg"></Banner>
+                        </Info>
+                        <Content>{parse(article.conteudo)}</Content>
+                    </Item>
+                </>
+            )}
         </Container>
     );
 }

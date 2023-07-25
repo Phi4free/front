@@ -196,6 +196,8 @@ i18n
                     carlsagan:
                         "The pursuit of knowledge is like opening the windows of the mind to a world of possibilities - Carl Sagan",
                     myList: "My list",
+                    //lerArtigo
+                    loadingArt: "Loading article..."
                 },
             },
             "pt-BR": {
@@ -376,6 +378,8 @@ i18n
                     carlsagan:
                         "A busca pelo conhecimento é como abrir as janelas da mente para um mundo de possibilidades - Carl Sagan",
                     myList: "Minha lista",
+                    // ler artigo
+                    loadingArt: "Carregando artigo...",
                 },
             },
         },
