@@ -24,7 +24,7 @@ export const LoaderContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: auto;
-    height: 50vw;
+    height: 40vw;
     width: 100%;
     overflow: hidden;
     display: flex;
