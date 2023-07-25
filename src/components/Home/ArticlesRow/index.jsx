@@ -30,10 +30,8 @@ export default function ArticlesRow({ title, items }) {
     const { t } = useTranslation();
     const [user, setUser] = useState(null);
     const [scrollX, setScrollX] = useState(0);
-    const [finishedFetching, hasFinishedFetching] = useState(false);
 
     useEffect(() => {
-        hasFinishedFetching(false);
         fetchUserData().then((data) => {
             switch (data.status) {
                 case 200:
@@ -46,7 +44,6 @@ export default function ArticlesRow({ title, items }) {
                     console.log(data.status);
                     break;
             }
-            hasFinishedFetching(true);
         });
     }, []);
 
@@ -161,7 +158,10 @@ export default function ArticlesRow({ title, items }) {
                 <List
                     style={{ marginLeft: scrollX, width: items.length * 250 }}
                 >
-                    {!hasFinishedFetching ? (
+                    {items.length == 0 ? (
+                        /** É suposto que todas as categorias possuam ao menos 1 artigo. 
+                         * Então caso ela esteja vazia significa que não foi carregado ainda, 
+                         * ou teve algum erro durante o carregamento */
                         <div className="flex">
                             <Loading />
                         </div>
