@@ -113,6 +113,11 @@ export default function ArticlesRow({ title, items }) {
         setUser(cloneUser);
     };
 
+    const handleEditarArtigo = async (e) => {
+        e.stopPropagation();
+        console.log("Deve levar para a tela de editar artigo");
+    };
+
     function isUserTypeTeacher() {
         return user?.role == "Teacher";
     }
@@ -122,7 +127,6 @@ export default function ArticlesRow({ title, items }) {
     }
 
     function isAuthorArticle(autorId) {
-        // editar -- Onde vamos pegar o id?
         return user?._id == autorId;
     }
 
@@ -168,8 +172,8 @@ export default function ArticlesRow({ title, items }) {
                     style={{ marginLeft: scrollX, width: items.length * 250 }}
                 >
                     {items.length == 0 ? (
-                        /** É suposto que todas as categorias possuam ao menos 1 artigo. 
-                         * Então caso ela esteja vazia significa que não foi carregado ainda, 
+                        /** É suposto que todas as categorias possuam ao menos 1 artigo.
+                         * Então caso ela esteja vazia significa que não foi carregado ainda,
                          * ou teve algum erro durante o carregamento */
                         <div className="flex">
                             <Loading />
@@ -188,56 +192,62 @@ export default function ArticlesRow({ title, items }) {
                                         <ItemTitle>
                                             {name(item.titulo)}
                                         </ItemTitle>
-                                        <ItemAdd
-                                            onClick={(e) =>
-                                                toggleArticleStatusOnList(
-                                                    e,
-                                                    item._id
-                                                )
-                                            }
-                                        >
-                                            {isUserTypeTeacher() ?
+
+                                        {isUserTypeTeacher() ? (
                                             // Faz trataiva do icone do caso professor
-                                                isAuthorArticle(item.autorId) ? (
-                                                    // Coloca icone e comportamento de edição
+                                            isAuthorArticle(item.autorId) ? (
+                                                <ItemAdd
+                                                    onClick={(e) =>
+                                                        handleEditarArtigo(e)
+                                                    }
+                                                >
                                                     <FontAwesomeIcon
-                                                    icon={icon({
-                                                        name: "pen",
-                                                        style: "solid",
-                                                    })}
-                                                    style={{
-                                                        fontSize: "16px",
-                                                        color: "#FFC300",
-                                                    }}
-                                                />
-                                                ) :
-                                                null // Coloca icone e comportamento de interação (Pensar)
-                                            :
-                                            // Faz tratativa caso estudante (Futuramente precisa de else p/ curador e moderador)
-                                            checkUpdateList(item._id) ? (
-                                                <FontAwesomeIcon
-                                                    icon={icon({
-                                                        name: "check",
-                                                        style: "solid",
-                                                    })}
-                                                    style={{
-                                                        fontSize: "16px",
-                                                        color: "#FFC300",
-                                                    }}
-                                                />
-                                            ) : (
-                                                <FontAwesomeIcon
-                                                    icon={icon({
-                                                        name: "plus",
-                                                        style: "solid",
-                                                    })}
-                                                    style={{
-                                                        fontSize: "16px",
-                                                        color: "#FFC300",
-                                                    }}
-                                                />
-                                            )}
-                                        </ItemAdd>
+                                                        icon={icon({
+                                                            name: "pen",
+                                                            style: "solid",
+                                                        })}
+                                                        style={{
+                                                            fontSize: "16px",
+                                                            color: "#FFC300",
+                                                        }}
+                                                    />
+                                                </ItemAdd>
+                                            ) : null
+                                        ) : (
+                                            // tratativa caso aluno (Incluir mais ifs se necessário p/ cada caso)
+                                            <ItemAdd
+                                                onClick={(e) =>
+                                                    toggleArticleStatusOnList(
+                                                        e,
+                                                        item._id
+                                                    )
+                                                }
+                                            >
+                                                {checkUpdateList(item._id) ? (
+                                                    <FontAwesomeIcon
+                                                        icon={icon({
+                                                            name: "check",
+                                                            style: "solid",
+                                                        })}
+                                                        style={{
+                                                            fontSize: "16px",
+                                                            color: "#FFC300",
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <FontAwesomeIcon
+                                                        icon={icon({
+                                                            name: "plus",
+                                                            style: "solid",
+                                                        })}
+                                                        style={{
+                                                            fontSize: "16px",
+                                                            color: "#FFC300",
+                                                        }}
+                                                    />
+                                                )}
+                                            </ItemAdd>
+                                        )}
                                     </ItemHeader>
                                     <ItemAuthor>
                                         {t("author")} {name(item.autor)}
