@@ -113,8 +113,17 @@ export default function ArticlesRow({ title, items }) {
         setUser(cloneUser);
     };
 
+    function isUserTypeTeacher() {
+        return user?.role == "Teacher";
+    }
+
     function checkUpdateList(id) {
         return user?.listaLeitura.includes(id);
+    }
+
+    function isAuthorArticle(autorId) {
+        // editar -- Onde vamos pegar o id?
+        return user?._id == autorId;
     }
 
     return (
@@ -187,7 +196,25 @@ export default function ArticlesRow({ title, items }) {
                                                 )
                                             }
                                         >
-                                            {checkUpdateList(item._id) ? (
+                                            {isUserTypeTeacher() ?
+                                            // Faz trataiva do icone do caso professor
+                                                isAuthorArticle(item.autorId) ? (
+                                                    // Coloca icone e comportamento de edição
+                                                    <FontAwesomeIcon
+                                                    icon={icon({
+                                                        name: "pen",
+                                                        style: "solid",
+                                                    })}
+                                                    style={{
+                                                        fontSize: "16px",
+                                                        color: "#FFC300",
+                                                    }}
+                                                />
+                                                ) :
+                                                null // Coloca icone e comportamento de interação (Pensar)
+                                            :
+                                            // Faz tratativa caso estudante (Futuramente precisa de else p/ curador e moderador)
+                                            checkUpdateList(item._id) ? (
                                                 <FontAwesomeIcon
                                                     icon={icon({
                                                         name: "check",
