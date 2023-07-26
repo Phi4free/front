@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import { fetchArticlesList } from "../../Home/articleConstructor";
-import { getStudyList } from "./studyListConstructor";
+import { getAuthorsList, getStudyList } from "./studyListConstructor";
 
 export function Feed(props) {
-    const { isStudent, listaLeitura } = props;
+    const { id, isStudent, listaLeitura } = props;
     const [selectedFeed, setSelectedFeed] = useState("0");
     const [articlesList, setArticlesList] = useState([]);
     const { t } = useTranslation();
@@ -60,22 +60,8 @@ export function Feed(props) {
                 return isStudent ? (
                     getStudyList(t, articlesList, listaLeitura)
                 ) : (
-                    <div className={"mx-4 py-2"}>
-                        <div>
-                            {
-                                // Deverá ser substituido pela lista real de artigos do professor, do BD
-                            }
-                            {/* <ArticlesRow
-                                title={"Disciplina 1"}
-                                items={[
-                                    mockedArticle
-                                ]}
-                            /> */}
-                        </div>
-                        <div className="py-20 text-xl text-white/50 flex text-center justify-center items-center">
-                            {t("feedEmpty")}
-                        </div>
-                    </div>
+                    // Caso professor
+                    getAuthorsList(t, articlesList, id)
                 );
             case "1":
                 return (

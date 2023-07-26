@@ -104,6 +104,7 @@ export function Perfil() {
                         showAdvancedMenu={showAdvancedMenu}
                     />
                     <Feed
+                        id={user?._id}
                         listaLeitura={user?.listaLeitura}
                         isStudent={isStudent()}
                     />
