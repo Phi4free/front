@@ -1,4 +1,5 @@
 import ArticlesRow from "../../../components/Home/ArticlesRow";
+import { Loading } from "../../../components/Home/ArticlesRow/styles";
 
 export function getStudyList(t, listaCompleta, listaEsperada) {
     let newList = [];
@@ -33,9 +34,14 @@ export function getStudyList(t, listaCompleta, listaEsperada) {
     return (
         <div className={"mx-4 py-2"}>
             {newList.length == 0 ? (
-                <div className="text-xl pb-52 text-white/50 flex text-center justify-center items-center">
-                    {t("feedEmpty")}
-                </div>
+                <>
+                    {/* <div className="flex">
+                        <Loading />
+                    </div> */}
+                    <div className="text-xl pb-52 text-white/50 flex text-center justify-center items-center">
+                        {t("feedEmpty")}
+                    </div>
+                </>
             ) : (
                 <div>
                     {financial.length != 0 ? (
@@ -80,7 +86,7 @@ export function getAuthorsList(t, listaCompleta, id) {
         if (item.autorId == id) {
             newList.push(item);
         }
-    }); 
+    });
 
     newList.forEach((item) => {
         switch (item.disciplina) {
