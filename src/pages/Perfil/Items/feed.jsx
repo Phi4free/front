@@ -66,7 +66,7 @@ export function Feed(props) {
             case "1":
                 return (
                     isStudent ?
-                    <div className={"mx-4 py-2"}>
+                    <div className={"mx-4 py-2 max-h-12 overflow-auto"}>
                         {Object.keys(mockedBadges).map((nome, index) => {
                             let color = colors[getRandomColor()];
                             return (
@@ -131,7 +131,7 @@ export function Feed(props) {
             case "2": //MOCKED
                 let color = colors[getRandomColor()];
                 return isStudent ? (
-                    <div className={"mx-4 py-2 sm:h-96 h-80"}>
+                    <div className={"mx-4 py-2 sm:h-96 h-80 max-h-12 overflow-auto"}>
                         <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-black/75 hover:bg-white/10 cursor-pointer">
                             <div className="sm:flex block items-center">
                                 <svg
