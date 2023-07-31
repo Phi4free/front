@@ -1,5 +1,5 @@
 import { Container, Logo, User, LogoImg, UserImg } from "./styles";
-import { close, menu } from "../../../assets/LandingPage";
+import { close, menu, bellsolid } from "../../../assets/LandingPage";
 import { useState } from "react";
 import logo from "../../../assets/logo.png";
 import { useTranslation } from "react-i18next";
@@ -24,33 +24,16 @@ export default function Header(props) {
                     <LogoImg src={logo} alt="Phi4free" />
                 </a>
             </Logo>
-            <div className="flex flex-1 justify-end items-center px-4 pt-4">
-                <div className={`${"sm:flex hidden"} mx-4 z-1`}>
-                    {isStudent ? (
-                        <button
-                            type="button"
-                            className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
-                            onClick={() => underConstruction(true)}
-                        >
-                            {t("ranking")}
-                        </button>
-                    ) : (
-                        <button
-                            type="button"
-                            className="border-1 border-solid border-primary hover:border-transparent px-4 py-1 text-sm text-primary"
-                            onClick={() => navigate("/cadastro-artigo")}
-                        >
-                            {t("writeArticle")}
-                        </button>
-                    )}
-                    <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md text-btnhover px-5 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto bg-btnprimary"
-                        onClick={() => underConstruction(true)}
-                    >
-                        {t("store")}
-                    </button>
-                </div>
+            <div className="flex flex-1 justify-end items-center px-4">
+                {
+                    // AJUSTAR A COR DESSE BELL
+                }
+                <img
+                    src={bellsolid}
+                    alt="notification-bell"
+                    className="w-[36px] h-[36px] object-contain cursor-pointer mx-6"
+                    onClick={() => console.log("Deve abrir aba de notificações")}
+                />
                 <img
                     src={toggle ? close : menu}
                     alt="menu"
@@ -66,7 +49,7 @@ export default function Header(props) {
                 >
                     <ul className="list-none flex justify-end items-start flex-1 flex-col">
                         {!toggle ? null : (
-                            <div className="sm:hidden">
+                            <div>
                                 <li
                                     className={`font-normal cursor-pointer text-[16px] mb-4 text-dimWhite`}
                                     onClick={() => underConstruction(true)}

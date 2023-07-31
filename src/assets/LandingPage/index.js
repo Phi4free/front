@@ -9,6 +9,7 @@ import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import lampada from "./lampada.png";
 import defaultIcon from "../profileicondefault.png"
+import bellsolid from "./bellsolid.svg"
 
 export {
   lampada,
@@ -21,5 +22,6 @@ export {
   menu,
   close,
   arrowUp,
-  defaultIcon
+  defaultIcon,
+  bellsolid
 };
