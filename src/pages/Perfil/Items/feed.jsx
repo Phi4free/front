@@ -72,7 +72,7 @@ export function Feed(props) {
                             return (
                                 <div
                                     key={"key-div-" + nome + "-" + index}
-                                    className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer"
+                                    className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-black/75 hover:bg-white/10 cursor-pointer"
                                 >
                                     <div className="sm:flex block items-center">
                                         <svg
@@ -132,7 +132,7 @@ export function Feed(props) {
                 let color = colors[getRandomColor()];
                 return isStudent ? (
                     <div className={"mx-4 py-2 sm:h-96 h-80"}>
-                        <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-gradient-to-r from-black hover:from-white/25 to-transparent cursor-pointer">
+                        <div className="flex sm:items-left sm:justify-start items-center justify-center rounded-lg mx-4 my-2 px-1 py-0 sm:px-4 sm:py-4 h-32 sm:h-24 bg-black/75 hover:bg-white/10 cursor-pointer">
                             <div className="sm:flex block items-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
