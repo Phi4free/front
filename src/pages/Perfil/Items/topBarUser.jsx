@@ -68,41 +68,44 @@ export function TopBarUser(props) {
 
                             {
                                 // deverá puxar um array do BD e exibir as conquistas do usuário dinamicamente
+                                isStudent ?
                                 <div
                                     className="flex flex-wrap justify-center sm:justify-start mx-4 my-2 sm:mx-0"
                                     onClick={() => isShowBadgeToast(true)}
                                 >
-                                    <div className="w-fit badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
-                                                name: "certificate",
+                                                name: "star",
                                                 style: "solid",
                                             })}
                                         />
-                                        <a>Pioneiros da Phi4Free</a>
+                                        <a className="mr-2">Pioneiros da Phi4Free</a>
                                     </div>
-                                    <div className="w-fit badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
-                                                name: "certificate",
+                                                name: "star",
                                                 style: "solid",
                                             })}
                                         />
-                                        <a>Philantropia I</a>
+                                        <a className="mr-2">Philantropia I</a>
                                     </div>
-                                    <div className="w-fit badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
-                                                name: "certificate",
+                                                name: "star",
                                                 style: "solid",
                                             })}
                                         />
-                                        <a>Que comecem os estudos</a>
+                                        <a className="mr-2">Que comecem os estudos</a>
                                     </div>
                                 </div>
+
+                                : null //Se não é estudante, não precisa disso.
                             }
                         </div>
                     </div>

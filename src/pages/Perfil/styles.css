@@ -6,8 +6,8 @@
 .badge{
     margin-top: 1vh;
     margin-right: 0.5vw;
-    padding: 1vh 1vw;
-    background-image: linear-gradient(transparent, black);
+    padding: 0.5vh 1vw;
+    background-color: rgba(0, 0, 0, 0.9);
     color: #FFC300;
     border-radius: 2vw;
     font-size: small;
