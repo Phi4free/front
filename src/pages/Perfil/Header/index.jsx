@@ -25,13 +25,18 @@ export default function Header(props) {
                 </a>
             </Logo>
             <div className="flex flex-1 justify-end items-center px-4">
-                {
-                    // AJUSTAR A COR DESSE BELL
-                }
-                <img
+                {/* <img
                     src={bellsolid}
                     alt="notification-bell"
                     className="w-[36px] h-[36px] object-contain cursor-pointer mx-6"
+                    onClick={() => console.log("Deve abrir aba de notificações")}
+                /> */}
+                <FontAwesomeIcon
+                    className="mx-6 text-2xl hover:text-3xl ease-in-out duration-300 cursor-pointer text-primary"
+                    icon={icon({
+                        name: "bell",
+                        style: "solid",
+                    })}
                     onClick={() => console.log("Deve abrir aba de notificações")}
                 />
                 <img

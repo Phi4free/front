@@ -70,10 +70,10 @@ export function TopBarUser(props) {
                                 // deverá puxar um array do BD e exibir as conquistas do usuário dinamicamente
                                 isStudent ?
                                 <div
-                                    className="flex flex-wrap justify-center sm:justify-start mx-4 my-2 sm:mx-0"
+                                    className="flex flex-wrap justify-center sm:justify-start mx-4 mt-2 sm:mx-0"
                                     onClick={() => isShowBadgeToast(true)}
                                 >
-                                    <div className="w-fit mx-2 badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer hover:text-lg ease-in-out duration-300">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
@@ -83,7 +83,7 @@ export function TopBarUser(props) {
                                         />
                                         <a className="mr-2">Pioneiros da Phi4Free</a>
                                     </div>
-                                    <div className="w-fit mx-2 badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer hover:text-lg ease-in-out duration-300">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
@@ -93,7 +93,7 @@ export function TopBarUser(props) {
                                         />
                                         <a className="mr-2">Philantropia I</a>
                                     </div>
-                                    <div className="w-fit mx-2 badge cursor-pointer">
+                                    <div className="w-fit mx-2 badge cursor-pointer hover:text-lg ease-in-out duration-300">
                                         <FontAwesomeIcon
                                             className="mx-1"
                                             icon={icon({
